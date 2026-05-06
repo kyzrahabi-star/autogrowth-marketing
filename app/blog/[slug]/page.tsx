@@ -1,0 +1,73 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
+import { MDXRemote } from "next-mdx-remote/rsc";
+
+interface Props {
+  params: { slug: string };
+}
+
+function getPost(slug: string) {
+  const filePath = path.join(process.cwd(), "content", "blog", `${slug}.mdx`);
+  if (!fs.existsSync(filePath)) return null;
+  const raw = fs.readFileSync(filePath, "utf8");
+  const { data, content } = matter(raw);
+  return {
+    title: (data.title as string) ?? slug,
+    date: (data.date as string) ?? "",
+    excerpt: (data.excerpt as string) ?? "",
+    author: (data.author as string) ?? "AutoGrowth AI",
+    content,
+  };
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = getPost(params.slug);
+  if (!post) return { title: "Post Not Found" };
+  return {
+    title: post.title,
+    description: post.excerpt,
+  };
+}
+
+export async function generateStaticParams() {
+  const blogDir = path.join(process.cwd(), "content", "blog");
+  if (!fs.existsSync(blogDir)) return [];
+  const files = fs.readdirSync(blogDir).filter((f) => f.endsWith(".mdx"));
+  return files.map((f) => ({ slug: f.replace(/\.mdx$/, "") }));
+}
+
+export default function BlogPostPage({ params }: Props) {
+  const post = getPost(params.slug);
+  if (!post) notFound();
+
+  return (
+    <div className="min-h-screen bg-zinc-950 py-20 px-4">
+      <div className="max-w-2xl mx-auto">
+        <Link
+          href="/blog"
+          className="text-sm text-zinc-400 hover:text-white transition-colors mb-8 inline-block"
+        >
+          ← Back to blog
+        </Link>
+
+        <div className="mb-8">
+          <p className="text-xs text-zinc-500 mb-3">
+            {post.date} · By {post.author}
+          </p>
+          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+            {post.title}
+          </h1>
+          <p className="text-zinc-400">{post.excerpt}</p>
+        </div>
+
+        <div className="mdx-content text-zinc-300 leading-relaxed space-y-4">
+          <MDXRemote source={post.content} />
+        </div>
+      </div>
+    </div>
+  );
+}
