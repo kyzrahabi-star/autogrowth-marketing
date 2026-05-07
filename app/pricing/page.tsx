@@ -37,7 +37,7 @@ const tiers = [
       "Dedicated content calendar",
     ],
     cta: "Start Growing",
-    ctaHref: "/audit",
+    ctaHref: "/get-started",
     ctaVariant: "outline-gray",
   },
   {
@@ -56,7 +56,7 @@ const tiers = [
       "Full AutoGrowth dashboard",
     ],
     cta: "Get More Jobs",
-    ctaHref: "/audit",
+    ctaHref: "/get-started",
     ctaVariant: "green",
   },
   {
@@ -77,7 +77,7 @@ const tiers = [
       "Dedicated account manager + monthly strategy call",
     ],
     cta: "Dominate Your Market",
-    ctaHref: "/audit",
+    ctaHref: "/get-started",
     ctaVariant: "outline-gray",
   },
   {
