@@ -182,7 +182,7 @@ export function Navbar() {
           {/* Right side — desktop */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="https://autogrowth-platform.kyzrahabi.workers.dev"
+              href="https://autogrowth-platform.kyzrahabi.workers.dev/admin/tenants"
               className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
             >
               <LogIn className="w-4 h-4" />
@@ -377,7 +377,7 @@ export function Navbar() {
           {/* Login + phone */}
           <div className="border-t border-gray-100 pt-4 mt-2 flex flex-col gap-3">
             <a
-              href="https://autogrowth-platform.kyzrahabi.workers.dev"
+              href="https://autogrowth-platform.kyzrahabi.workers.dev/admin/tenants"
               className="flex items-center gap-2 text-sm text-gray-600"
             >
               <LogIn className="w-4 h-4" />
