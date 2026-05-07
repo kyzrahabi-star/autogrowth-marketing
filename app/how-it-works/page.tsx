@@ -1,5 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import {
+  Search,
+  PenTool,
+  Zap,
+  MessageSquare,
+  Star,
+  Check,
+  Thermometer,
+  Wrench,
+  Home,
+  Car,
+  Smile,
+  Scale,
+  Building,
+  Sparkles,
+  Utensils,
+  type LucideIcon,
+} from "lucide-react";
 
 export const metadata: Metadata = {
   title: "How AutoGrowth AI Works",
@@ -7,9 +25,15 @@ export const metadata: Metadata = {
     "5 specialists that run your marketing on autopilot — AI search, content, leads, follow-up, and reputation.",
 };
 
-const specialists = [
+const specialists: Array<{
+  Icon: LucideIcon;
+  name: string;
+  description: string;
+  whatYouSee: string;
+  realExample: string;
+}> = [
   {
-    icon: "🔍",
+    Icon: Search,
     name: "AI Search Analyst",
     description:
       "Runs daily scans of ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot. Searches 20+ queries relevant to your business — 'AC repair Columbus OH', 'best HVAC near me', and more. You get a morning briefing email with your citation count vs. competitors.",
@@ -19,7 +43,7 @@ const specialists = [
       "Reynolds Heating and Cooling had 0 AI citations on Day 1. After 6 weeks: 14 citations across 3 AI engines.",
   },
   {
-    icon: "✏️",
+    Icon: PenTool,
     name: "Content Director",
     description:
       "Writes one long-form blog post and four video scripts per week. Content covers your services, your city, real HVAC problems with concrete answers. Written to sound like a real technician — because AI search rewards expertise, not marketing copy.",
@@ -29,7 +53,7 @@ const specialists = [
       "Reynolds' blog post 'AC Repair Columbus OH: What It Costs in 2026' earned 3 Perplexity citations in 11 days.",
   },
   {
-    icon: "⚡",
+    Icon: Zap,
     name: "Lead Specialist",
     description:
       "Every inbound call, form fill, or chat gets scored 0–100 in under 60 seconds. Score 80+: instant SMS to your phone with name, number, service requested, and a one-line reason why they're hot. Score below 40: filed for follow-up, not dropped.",
@@ -39,7 +63,7 @@ const specialists = [
       "Reynolds gets 60–80 leads/month. Before: 40% follow-up rate. After: 94%. 18 additional jobs booked in 30 days.",
   },
   {
-    icon: "🎯",
+    Icon: MessageSquare,
     name: "Customer Pursuit Manager",
     description:
       "Sends 6 follow-up messages over 14 days when a lead doesn't book. Day 0: immediate reply. Day 1: check-in. Day 3: seasonal tip. Day 7: last question. Day 10: competitor warning. Day 14: final offer. Stops the moment they book or say stop.",
@@ -49,7 +73,7 @@ const specialists = [
       "Reynolds' 14-day drip converted 11 leads that had gone silent. Average value: $420. $4,620 in recovered revenue.",
   },
   {
-    icon: "⭐",
+    Icon: Star,
     name: "Reputation Director",
     description:
       "Sends a review request SMS 2 hours after job complete. Monitors Google and Yelp for new reviews — positive or negative. Drafts a response in your voice for every review. Alerts you immediately when a negative review hits.",
@@ -60,17 +84,17 @@ const specialists = [
   },
 ];
 
-const industries = [
-  { icon: "🌡️", name: "HVAC" },
-  { icon: "🔧", name: "Plumbing" },
-  { icon: "⚡", name: "Electrical" },
-  { icon: "🏠", name: "Roofing" },
-  { icon: "🚗", name: "Auto Repair" },
-  { icon: "🦷", name: "Dental" },
-  { icon: "⚖️", name: "Legal" },
-  { icon: "🏡", name: "Real Estate" },
-  { icon: "💅", name: "Beauty & Wellness" },
-  { icon: "🍽️", name: "Restaurants" },
+const industries: Array<{ Icon: LucideIcon; name: string }> = [
+  { Icon: Thermometer, name: "HVAC" },
+  { Icon: Wrench, name: "Plumbing" },
+  { Icon: Zap, name: "Electrical" },
+  { Icon: Home, name: "Roofing" },
+  { Icon: Car, name: "Auto Repair" },
+  { Icon: Smile, name: "Dental" },
+  { Icon: Scale, name: "Legal" },
+  { Icon: Building, name: "Real Estate" },
+  { Icon: Sparkles, name: "Beauty & Wellness" },
+  { Icon: Utensils, name: "Restaurants" },
 ];
 
 export default function HowItWorksPage() {
@@ -107,9 +131,14 @@ export default function HowItWorksPage() {
 
               {/* Text */}
               <div>
-                <p className="text-sm text-emerald-600 font-semibold mb-1">
-                  Specialist {i + 1} of 5
-                </p>
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="bg-emerald-50 rounded-xl p-2.5">
+                    <s.Icon className="w-7 h-7 text-emerald-600" strokeWidth={1.5} />
+                  </div>
+                  <p className="text-sm text-emerald-600 font-semibold">
+                    Specialist {i + 1} of 5
+                  </p>
+                </div>
                 <h2 className="text-3xl font-bold text-gray-900 mb-4">{s.name}</h2>
                 <p className="text-gray-700 text-base leading-relaxed mb-6">
                   {s.description}
@@ -139,11 +168,8 @@ export default function HowItWorksPage() {
               "Leads scored and alerted automatically.",
               "You answer the phone and do the work.",
             ].map((item, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-3 text-gray-700 text-base"
-              >
-                <span className="text-emerald-500 mt-0.5">✓</span>
+              <li key={i} className="flex items-start gap-3 text-gray-700 text-base">
+                <Check className="w-5 h-5 text-emerald-500 mt-0.5 shrink-0" strokeWidth={2.5} />
                 {item}
               </li>
             ))}
@@ -164,12 +190,10 @@ export default function HowItWorksPage() {
             {industries.map((ind, i) => (
               <div
                 key={i}
-                className="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center gap-2 hover:border-emerald-300 hover:bg-emerald-50 transition-colors text-center text-gray-700"
+                className="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center gap-2 hover:border-emerald-300 hover:bg-emerald-50 transition-colors text-center"
               >
-                <span className="text-2xl">{ind.icon}</span>
-                <span className="text-xs text-gray-700">
-                  {ind.name}
-                </span>
+                <ind.Icon className="w-6 h-6 text-gray-500" strokeWidth={1.5} />
+                <span className="text-xs text-gray-700">{ind.name}</span>
               </div>
             ))}
           </div>

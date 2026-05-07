@@ -1,33 +1,34 @@
 import Link from "next/link";
+import { Search, PenTool, Zap, MessageSquare, Star, type LucideIcon } from "lucide-react";
 
 export default function HomePage() {
-  const specialists = [
+  const specialists: Array<{ Icon: LucideIcon; name: string; description: string }> = [
     {
-      icon: "🔍",
+      Icon: Search,
       name: "AI Search Analyst",
       description:
         "Scans ChatGPT, Perplexity, and Google AI daily. Knows exactly where you rank — and where you don't. You get a morning report every day.",
     },
     {
-      icon: "✏️",
+      Icon: PenTool,
       name: "Content Director",
       description:
         "Writes blog posts and video scripts that get you cited by AI. Sounds like a real technician, not a marketing bot. One new piece every week, automatically.",
     },
     {
-      icon: "⚡",
+      Icon: Zap,
       name: "Lead Specialist",
       description:
         "Scores every inbound lead 0–100 in under 60 seconds. Hot leads trigger an instant SMS to your phone. Cold leads get filed automatically.",
     },
     {
-      icon: "🎯",
+      Icon: MessageSquare,
       name: "Customer Pursuit Manager",
       description:
         "Follows up with every lead automatically. 6-touch sequence over 14 days. No lead falls through the cracks — even the ones who ghost you.",
     },
     {
-      icon: "⭐",
+      Icon: Star,
       name: "Reputation Director",
       description:
         "Requests reviews after every job. Monitors Google and Yelp nightly. Drafts responses in your voice. Alerts you the moment a bad review hits.",
@@ -369,8 +370,8 @@ export default function HomePage() {
                 key={i}
                 className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow p-6"
               >
-                <div className="bg-emerald-50 rounded-xl p-3 w-fit mb-4">
-                  <span className="text-2xl">{s.icon}</span>
+                <div className="bg-emerald-50 rounded-xl p-2.5 w-fit mb-4">
+                  <s.Icon className="w-10 h-10 text-emerald-600" strokeWidth={1.5} />
                 </div>
                 <h3 className="text-gray-900 font-semibold text-lg mb-2">
                   {s.name}
@@ -443,7 +444,11 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-6">
             {testimonials.map((t, i) => (
               <div key={i} className="bg-white border border-gray-200 rounded-xl shadow-sm p-8">
-                <div className="text-emerald-500 text-lg mb-4">★★★★★</div>
+                <div className="flex gap-0.5 mb-4">
+                  {Array.from({ length: 5 }).map((_, k) => (
+                    <Star key={k} className="w-4 h-4 text-emerald-500 fill-emerald-500" strokeWidth={0} />
+                  ))}
+                </div>
                 <p className="text-gray-700 leading-relaxed mb-6">
                   &ldquo;{t.quote}&rdquo;
                 </p>

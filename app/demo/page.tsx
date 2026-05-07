@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Book a Demo — AutoGrowth AI",
@@ -27,7 +28,7 @@ export default function DemoPage() {
               "Walk away with a concrete action plan",
             ].map((item) => (
               <li key={item} className="flex items-center gap-2 text-sm text-gray-700">
-                <span className="text-emerald-500">✓</span>
+                <Check className="w-4 h-4 text-emerald-500 shrink-0" strokeWidth={2.5} />
                 {item}
               </li>
             ))}

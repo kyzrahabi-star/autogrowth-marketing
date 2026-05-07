@@ -2,6 +2,7 @@
 
 import { useState, useMemo } from "react";
 import Link from "next/link";
+import { ChevronUp, ChevronDown } from "lucide-react";
 
 export default function ROIPage() {
   const [calls, setCalls] = useState(50);
@@ -203,7 +204,9 @@ export default function ROIPage() {
             onClick={() => setShowMath(!showMath)}
           >
             <span>How we calculate this</span>
-            <span className="text-gray-400">{showMath ? "▲" : "▼"}</span>
+            <span className="text-gray-400">
+              {showMath ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+            </span>
           </button>
           {showMath && (
             <div className="px-6 pb-6 text-sm text-gray-500 space-y-2">

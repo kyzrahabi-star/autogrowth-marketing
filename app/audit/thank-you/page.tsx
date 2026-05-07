@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Audit Submitted — AutoGrowth AI",
@@ -12,7 +13,7 @@ export default function ThankYouPage() {
       <div className="max-w-lg mx-auto text-center">
         {/* Checkmark */}
         <div className="w-20 h-20 bg-emerald-100 rounded-full flex items-center justify-center mx-auto mb-6">
-          <span className="text-emerald-500 text-4xl">✓</span>
+          <Check className="w-10 h-10 text-emerald-500" strokeWidth={2.5} />
         </div>
 
         <h1 className="text-3xl font-bold text-gray-900 mb-4">Your audit is running.</h1>

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { Check, ChevronUp, ChevronDown } from "lucide-react";
 
 const tiers = [
   {
@@ -198,7 +199,7 @@ export default function PricingPage() {
               <ul className="space-y-2 mb-8 flex-1">
                 {tier.features.map((f, j) => (
                   <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
-                    <span className="text-emerald-500 shrink-0">✓</span>
+                    <Check className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" strokeWidth={2.5} />
                     {f}
                   </li>
                 ))}
@@ -228,8 +229,10 @@ export default function PricingPage() {
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
                   <span className="text-sm">{faq.q}</span>
-                  <span className="text-gray-400 text-xs ml-4 shrink-0">
-                    {openFaq === i ? "▲" : "▼"}
+                  <span className="text-gray-400 ml-4 shrink-0">
+                    {openFaq === i
+                      ? <ChevronUp className="w-4 h-4" />
+                      : <ChevronDown className="w-4 h-4" />}
                   </span>
                 </button>
                 {openFaq === i && (

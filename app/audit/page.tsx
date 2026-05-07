@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { Check } from "lucide-react";
 
 const services = [
   "HVAC",
@@ -74,7 +75,7 @@ export default function AuditPage() {
               "Competitor data included",
             ].map((item) => (
               <li key={item} className="flex items-center gap-2 text-sm text-gray-700">
-                <span className="text-emerald-500">✓</span>
+                <Check className="w-4 h-4 text-emerald-500 shrink-0" strokeWidth={2.5} />
                 {item}
               </li>
             ))}
