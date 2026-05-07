@@ -43,7 +43,7 @@ export default function ContentCreationPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/demo"
-              className="bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
+              className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
             >
               See Sample Content — Book a Demo
             </Link>
@@ -271,7 +271,7 @@ export default function ContentCreationPage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/demo"
-              className="inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-white text-gray-900 font-semibold px-8 py-4 rounded-full text-base transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
             >
               See Sample Content — Book a Demo
               <ArrowRight className="w-4 h-4" />

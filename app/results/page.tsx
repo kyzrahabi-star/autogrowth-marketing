@@ -171,7 +171,7 @@ export default function ResultsPage() {
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-full px-8 py-3 text-sm transition-colors mt-8"
+              className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full px-8 py-3 text-sm transition-colors mt-8"
             >
               Get Your Free Audit →
             </Link>
@@ -191,7 +191,7 @@ export default function ResultsPage() {
           </p>
           <Link
             href="/audit"
-            className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-full px-8 py-4 text-sm transition-colors mt-10"
+            className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full px-8 py-4 text-sm transition-colors mt-10"
           >
             Get Your Free Audit →
           </Link>

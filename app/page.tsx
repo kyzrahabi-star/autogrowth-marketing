@@ -108,7 +108,8 @@ export default function HomePage() {
             AI Search Visibility
           </span>
           <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-6">
-            Your Competitors Are Getting All the Calls
+            Your Competitors Are Getting{" "}
+            <span className="text-gradient">All the Calls</span>
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto">
             When homeowners search Google, ask ChatGPT, or check Perplexity for
@@ -519,7 +520,7 @@ export default function HomePage() {
           <div className="mt-14 text-center">
             <Link
               href="/audit"
-              className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+              className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
             >
               Start your free audit →
             </Link>
@@ -565,7 +566,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/audit"
-            className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+            className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
           >
             Get your free audit →
           </Link>

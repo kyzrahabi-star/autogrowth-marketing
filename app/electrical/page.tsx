@@ -81,7 +81,7 @@ export default function ElectricalPage() {
           </p>
           <a
             href="#waitlist"
-            className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
+            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
           >
             Join the Electrical Waitlist
             <ArrowRight className="w-4 h-4" />

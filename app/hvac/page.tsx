@@ -74,7 +74,7 @@ export default function HvacPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/audit"
-              className="bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
+              className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
             >
               Get Your Free HVAC Audit →
             </Link>

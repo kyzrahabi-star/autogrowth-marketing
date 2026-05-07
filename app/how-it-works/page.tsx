@@ -341,7 +341,7 @@ export default function HowItWorksPage() {
           </div>
           <Link
             href="/demo"
-            className="inline-flex items-center justify-center bg-gray-100 hover:bg-white text-gray-900 font-semibold px-8 py-4 rounded-full transition-colors text-base"
+            className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
           >
             Book a 15-min demo →
           </Link>
@@ -370,7 +370,7 @@ export default function HowItWorksPage() {
           <div className="mt-12 text-center">
             <Link
               href="/audit"
-              className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+              className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
             >
               Get your free audit →
             </Link>

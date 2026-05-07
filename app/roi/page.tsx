@@ -241,7 +241,7 @@ export default function ROIPage() {
           </p>
           <Link
             href="/audit"
-            className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+            className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
           >
             Get your real score — free
           </Link>
