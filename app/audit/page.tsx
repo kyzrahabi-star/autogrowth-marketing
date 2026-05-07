@@ -16,6 +16,17 @@ const services = [
   "Other",
 ];
 
+const hearAboutOptions = [
+  { value: "", label: "How did you hear about us? (optional)" },
+  { value: "Google Search", label: "Google Search" },
+  { value: "ChatGPT/AI Search", label: "ChatGPT / AI Search" },
+  { value: "Social Media", label: "Social Media" },
+  { value: "Referral", label: "Referral" },
+  { value: "Facebook Ad", label: "Facebook Ad" },
+  { value: "Google Ad", label: "Google Ad" },
+  { value: "Other", label: "Other" },
+];
+
 export default function AuditPage() {
   const router = useRouter();
   const [form, setForm] = useState({
@@ -25,6 +36,7 @@ export default function AuditPage() {
     service: "",
     phone: "",
     email: "",
+    hearAbout: "",
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -49,7 +61,13 @@ export default function AuditPage() {
         const data = (await res.json()) as { error?: string };
         throw new Error(data.error ?? "Something went wrong");
       }
-      router.push("/audit/thank-you");
+      const params = new URLSearchParams({
+        business: form.businessName,
+        city: form.city,
+        state: form.state,
+        service: form.service,
+      });
+      router.push(`/audit/results?${params.toString()}`);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
@@ -62,7 +80,9 @@ export default function AuditPage() {
       <div className="max-w-lg mx-auto">
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 mb-3">Get Your Free Visibility Audit</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 mb-3">
+            Get Your Free Visibility Audit
+          </h1>
           <p className="text-gray-700 mb-6">
             We&apos;ll scan Google, Google Maps, ChatGPT, Perplexity, and Google
             AI Overviews for your business. See exactly where you show up — and
@@ -71,7 +91,7 @@ export default function AuditPage() {
           <ul className="space-y-2">
             {[
               "No credit card",
-              "Results in 24 hours",
+              "Live results in seconds",
               "Google + AI competitor comparison",
             ].map((item) => (
               <li key={item} className="flex items-center gap-2 text-sm text-gray-700">
@@ -182,6 +202,21 @@ export default function AuditPage() {
                 placeholder="you@yourbusiness.com"
                 className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none text-sm"
               />
+            </div>
+
+            <div>
+              <select
+                name="hearAbout"
+                value={form.hearAbout}
+                onChange={handleChange}
+                className="w-full border border-gray-200 rounded-lg px-4 py-3 text-gray-500 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none text-sm bg-white"
+              >
+                {hearAboutOptions.map((o) => (
+                  <option key={o.value} value={o.value}>
+                    {o.label}
+                  </option>
+                ))}
+              </select>
             </div>
 
             {error && (

@@ -9,9 +9,10 @@ export async function POST(req: NextRequest) {
       service?: string;
       phone?: string;
       email?: string;
+      hearAbout?: string;
     };
 
-    const { businessName, city, state, service, phone, email } = body;
+    const { businessName, city, state, service, phone, email, hearAbout } = body;
 
     if (!businessName || !city || !state || !service || !phone || !email) {
       return NextResponse.json({ error: "All fields required" }, { status: 400 });
@@ -24,6 +25,7 @@ export async function POST(req: NextRequest) {
       service,
       phone,
       email,
+      hearAbout,
       submittedAt: new Date().toISOString(),
     });
 
@@ -40,6 +42,7 @@ export async function POST(req: NextRequest) {
           primary_service: service,
           phone,
           email,
+          hear_about: hearAbout ?? "",
           source: "website_audit",
         }),
       }
