@@ -1,30 +1,155 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { useState, useEffect } from "react";
+import {
+  Menu,
+  X,
+  LogIn,
+  Flame,
+  Wrench,
+  Zap,
+  Home,
+  Phone,
+  Target,
+  PenTool,
+  Star,
+  ChevronDown,
+} from "lucide-react";
 
 export function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileExpanded, setMobileExpanded] = useState<string | null>(null);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", handler);
+    return () => window.removeEventListener("scroll", handler);
+  }, []);
 
   return (
-    <nav className="sticky top-0 z-50 bg-white border-b border-gray-200">
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-200 ${
+        scrolled
+          ? "bg-white shadow-sm backdrop-blur-sm"
+          : "bg-white border-b border-gray-200"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center shrink-0">
             <span className="text-2xl font-bold text-gray-900">
               AutoGrowth<span className="text-emerald-500">.</span>
             </span>
           </Link>
 
-          {/* Center nav — desktop */}
-          <div className="hidden md:flex items-center gap-8">
-            <Link
-              href="/how-it-works"
-              className="text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
+          {/* Desktop nav */}
+          <nav className="hidden md:flex items-center gap-6">
+            {/* Who We Help dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("whoWeHelp")}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
-              How It Works
-            </Link>
+              <button className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900 font-medium py-2">
+                Who We Help{" "}
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform ${
+                    activeDropdown === "whoWeHelp" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {activeDropdown === "whoWeHelp" && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 z-50 py-2">
+                  <p className="uppercase text-[10px] tracking-widest text-gray-400 px-4 pt-2 pb-2">
+                    Industries
+                  </p>
+                  <Link
+                    href="/hvac"
+                    className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 rounded-lg text-sm text-gray-700 mx-1"
+                  >
+                    <Flame className="w-4 h-4 text-orange-500 shrink-0" />
+                    HVAC
+                  </Link>
+                  <div className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-gray-400 mx-1 cursor-default">
+                    <Wrench className="w-4 h-4 text-blue-400 shrink-0" />
+                    Plumbing
+                    <span className="ml-auto text-[10px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full whitespace-nowrap">
+                      Coming Soon
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-gray-400 mx-1 cursor-default">
+                    <Zap className="w-4 h-4 text-yellow-400 shrink-0" />
+                    Electrical
+                    <span className="ml-auto text-[10px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full whitespace-nowrap">
+                      Coming Soon
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-gray-400 mx-1 cursor-default">
+                    <Home className="w-4 h-4 text-purple-400 shrink-0" />
+                    Roofing
+                    <span className="ml-auto text-[10px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full whitespace-nowrap">
+                      Coming Soon
+                    </span>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* Features dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("features")}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <button className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900 font-medium py-2">
+                Features{" "}
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform ${
+                    activeDropdown === "features" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {activeDropdown === "features" && (
+                <div className="absolute top-full left-0 mt-2 w-56 bg-white rounded-xl shadow-lg border border-gray-100 z-50 py-2">
+                  <p className="uppercase text-[10px] tracking-widest text-gray-400 px-4 pt-2 pb-2">
+                    Your AI Staff
+                  </p>
+                  <Link
+                    href="/features/ai-receptionist"
+                    className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 rounded-lg text-sm text-gray-700 mx-1"
+                  >
+                    <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
+                    AI Receptionist
+                  </Link>
+                  <Link
+                    href="/features/lead-scoring"
+                    className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 rounded-lg text-sm text-gray-700 mx-1"
+                  >
+                    <Target className="w-4 h-4 text-emerald-500 shrink-0" />
+                    Lead Scoring
+                  </Link>
+                  <Link
+                    href="/features/content-creation"
+                    className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 rounded-lg text-sm text-gray-700 mx-1"
+                  >
+                    <PenTool className="w-4 h-4 text-emerald-500 shrink-0" />
+                    Content Creation
+                  </Link>
+                  <Link
+                    href="/features/review-management"
+                    className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 rounded-lg text-sm text-gray-700 mx-1"
+                  >
+                    <Star className="w-4 h-4 text-emerald-500 shrink-0" />
+                    Review Management
+                  </Link>
+                </div>
+              )}
+            </div>
+
             <Link
               href="/pricing"
               className="text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
@@ -32,10 +157,10 @@ export function Navbar() {
               Pricing
             </Link>
             <Link
-              href="/roi"
+              href="/results"
               className="text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
             >
-              ROI Calculator
+              Results
             </Link>
             <Link
               href="/blog"
@@ -43,79 +168,209 @@ export function Navbar() {
             >
               Blog
             </Link>
-          </div>
+          </nav>
 
-          {/* CTA — desktop */}
-          <div className="hidden md:block">
-            <Link
-              href="/audit"
-              className="inline-flex items-center px-5 py-2 rounded-full text-sm font-semibold text-white bg-emerald-500 hover:bg-emerald-600 transition-colors"
+          {/* Right side — desktop */}
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="https://autogrowth-platform.kyzrahabi.workers.dev"
+              className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
             >
-              Get Free Audit
-            </Link>
+              <LogIn className="w-4 h-4" />
+              Login
+            </a>
+            <a
+              href="tel:+18449102116"
+              className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
+            >
+              (844) 910-2116
+            </a>
+            <a
+              href="https://cal.com/evan-ringsonce-demo/ringsonce-demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors"
+            >
+              Book a Demo
+            </a>
           </div>
 
-          {/* Hamburger — mobile */}
-          <button
-            className="md:hidden text-gray-600 hover:text-gray-900 p-2"
-            onClick={() => setMenuOpen(!menuOpen)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
+          {/* Mobile right side — Book Demo always visible + hamburger */}
+          <div className="flex md:hidden items-center gap-3">
+            <a
+              href="https://cal.com/evan-ringsonce-demo/ringsonce-demo"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-4 py-2 rounded-full text-xs transition-colors"
+            >
+              Book a Demo
+            </a>
+            <button
+              className="text-gray-600 hover:text-gray-900 p-1.5"
+              onClick={() => setMobileOpen(!mobileOpen)}
+              aria-label="Toggle menu"
+            >
+              {mobileOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
-      {menuOpen && (
-        <div className="md:hidden border-t border-gray-200 bg-white">
-          <div className="px-6 py-4 flex flex-col gap-4">
-            <Link
-              href="/how-it-works"
-              className="text-sm text-gray-600 hover:text-gray-900 font-medium"
-              onClick={() => setMenuOpen(false)}
+      {/* Mobile menu panel */}
+      {mobileOpen && (
+        <div className="md:hidden bg-white border-t border-gray-200 px-6 py-4">
+          {/* Who We Help accordion */}
+          <div className="mb-1">
+            <button
+              className="w-full flex items-center justify-between py-3 text-sm font-medium text-gray-700"
+              onClick={() =>
+                setMobileExpanded(
+                  mobileExpanded === "whoWeHelp" ? null : "whoWeHelp"
+                )
+              }
             >
-              How It Works
-            </Link>
-            <Link
-              href="/pricing"
-              className="text-sm text-gray-600 hover:text-gray-900 font-medium"
-              onClick={() => setMenuOpen(false)}
+              Who We Help
+              <ChevronDown
+                className={`w-4 h-4 text-gray-400 transition-transform ${
+                  mobileExpanded === "whoWeHelp" ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {mobileExpanded === "whoWeHelp" && (
+              <div className="pl-4 pb-2 flex flex-col gap-1">
+                <Link
+                  href="/hvac"
+                  className="flex items-center gap-3 py-2 text-sm text-gray-600"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <Flame className="w-4 h-4 text-orange-500" />
+                  HVAC
+                </Link>
+                <div className="flex items-center gap-3 py-2 text-sm text-gray-400">
+                  <Wrench className="w-4 h-4 text-blue-400" />
+                  Plumbing
+                  <span className="ml-auto text-[10px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full">
+                    Coming Soon
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 py-2 text-sm text-gray-400">
+                  <Zap className="w-4 h-4 text-yellow-400" />
+                  Electrical
+                  <span className="ml-auto text-[10px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full">
+                    Coming Soon
+                  </span>
+                </div>
+                <div className="flex items-center gap-3 py-2 text-sm text-gray-400">
+                  <Home className="w-4 h-4 text-purple-400" />
+                  Roofing
+                  <span className="ml-auto text-[10px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full">
+                    Coming Soon
+                  </span>
+                </div>
+              </div>
+            )}
+          </div>
+
+          {/* Features accordion */}
+          <div className="mb-1">
+            <button
+              className="w-full flex items-center justify-between py-3 text-sm font-medium text-gray-700"
+              onClick={() =>
+                setMobileExpanded(
+                  mobileExpanded === "features" ? null : "features"
+                )
+              }
             >
-              Pricing
-            </Link>
-            <Link
-              href="/roi"
-              className="text-sm text-gray-600 hover:text-gray-900 font-medium"
-              onClick={() => setMenuOpen(false)}
+              Features
+              <ChevronDown
+                className={`w-4 h-4 text-gray-400 transition-transform ${
+                  mobileExpanded === "features" ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {mobileExpanded === "features" && (
+              <div className="pl-4 pb-2 flex flex-col gap-1">
+                <Link
+                  href="/features/ai-receptionist"
+                  className="flex items-center gap-3 py-2 text-sm text-gray-600"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <Phone className="w-4 h-4 text-emerald-500" />
+                  AI Receptionist
+                </Link>
+                <Link
+                  href="/features/lead-scoring"
+                  className="flex items-center gap-3 py-2 text-sm text-gray-600"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <Target className="w-4 h-4 text-emerald-500" />
+                  Lead Scoring
+                </Link>
+                <Link
+                  href="/features/content-creation"
+                  className="flex items-center gap-3 py-2 text-sm text-gray-600"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <PenTool className="w-4 h-4 text-emerald-500" />
+                  Content Creation
+                </Link>
+                <Link
+                  href="/features/review-management"
+                  className="flex items-center gap-3 py-2 text-sm text-gray-600"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <Star className="w-4 h-4 text-emerald-500" />
+                  Review Management
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Direct links */}
+          <Link
+            href="/pricing"
+            className="block py-3 text-sm font-medium text-gray-700 border-t border-gray-100"
+            onClick={() => setMobileOpen(false)}
+          >
+            Pricing
+          </Link>
+          <Link
+            href="/results"
+            className="block py-3 text-sm font-medium text-gray-700 border-t border-gray-100"
+            onClick={() => setMobileOpen(false)}
+          >
+            Results
+          </Link>
+          <Link
+            href="/blog"
+            className="block py-3 text-sm font-medium text-gray-700 border-t border-gray-100"
+            onClick={() => setMobileOpen(false)}
+          >
+            Blog
+          </Link>
+
+          {/* Login + phone */}
+          <div className="border-t border-gray-100 pt-4 mt-2 flex flex-col gap-3">
+            <a
+              href="https://autogrowth-platform.kyzrahabi.workers.dev"
+              className="flex items-center gap-2 text-sm text-gray-600"
             >
-              ROI Calculator
-            </Link>
-            <Link
-              href="/blog"
-              className="text-sm text-gray-600 hover:text-gray-900 font-medium"
-              onClick={() => setMenuOpen(false)}
+              <LogIn className="w-4 h-4" />
+              Login
+            </a>
+            <a
+              href="tel:+18449102116"
+              className="text-sm text-gray-500"
             >
-              Blog
-            </Link>
-            <Link
-              href="/audit"
-              className="inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-semibold text-white bg-emerald-500 hover:bg-emerald-600 transition-colors"
-              onClick={() => setMenuOpen(false)}
-            >
-              Get Free Audit
-            </Link>
+              (844) 910-2116
+            </a>
           </div>
         </div>
       )}
-    </nav>
+    </header>
   );
 }

@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/roi`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
     { url: `${base}/audit`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.9 },
     { url: `${base}/demo`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.8 },
+    { url: `${base}/results`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
     {
       url: `${base}/blog/hvac-invisible-chatgpt`,

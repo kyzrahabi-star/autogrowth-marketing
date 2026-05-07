@@ -32,7 +32,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-white text-gray-900 antialiased`}>
         <Navbar />
-        <main>{children}</main>
+        <main className="pt-16">{children}</main>
         <Footer />
         {/* Analytics placeholder — uncomment to activate
         <Script src="https://plausible.io/js/script.js" data-domain="autogrowthai.com" />
