@@ -143,11 +143,29 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Hero — green gradient + iPhone mockup */}
+      {/* Social proof bar */}
+      <section className="bg-gray-50 border-y border-gray-200 py-6 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-center text-sm text-gray-500 mb-5">
+            Trusted by contractors across Ohio
+          </p>
+          <div className="flex items-center justify-center gap-6 flex-wrap">
+            {["Logo", "Logo", "Logo"].map((label, i) => (
+              <div
+                key={i}
+                className="bg-white border border-gray-200 rounded-lg px-6 py-3 text-sm text-gray-400"
+              >
+                {label}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Hero — iPhone mockup on emerald gradient */}
       <section className="relative overflow-hidden">
-        {/* Gradient fill */}
+        {/* Soft gradient: white → emerald-50 → emerald-100 → white */}
         <div className="absolute inset-0 bg-gradient-to-b from-white via-emerald-50 to-emerald-100" />
-        {/* Bottom wave fade back to white */}
         <svg
           className="absolute bottom-0 left-0 w-full z-10"
           viewBox="0 0 1440 80"
@@ -159,9 +177,9 @@ export default function HomePage() {
         </svg>
 
         {/* iPhone frame */}
-        <div className="relative z-20 flex justify-center pt-10 pb-20">
+        <div className="relative z-20 flex justify-center pt-12 pb-20">
           <div
-            className="relative bg-gray-900 rounded-[3rem] max-w-[300px] w-full mx-6"
+            className="relative bg-gray-900 rounded-[3rem] max-w-[320px] w-full mx-6"
             style={{ padding: "12px", boxShadow: "0 40px 80px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.08) inset" }}
           >
             {/* Physical buttons */}
@@ -174,14 +192,13 @@ export default function HomePage() {
             <div className="bg-white rounded-[2.5rem] overflow-hidden">
               {/* Dynamic Island */}
               <div className="flex justify-center pt-3 pb-1">
-                <div className="w-[112px] h-7 bg-black rounded-full" />
+                <div className="w-28 h-7 bg-black rounded-full" />
               </div>
 
               {/* Status bar */}
               <div className="flex items-center justify-between px-5 pb-2">
                 <span className="text-[10px] font-bold text-gray-900 tabular-nums">9:41</span>
                 <div className="flex items-center gap-1.5">
-                  {/* Signal bars */}
                   <div className="flex items-end gap-[2px]">
                     {[3, 5, 7, 9].map((h, i) => (
                       <div
@@ -191,15 +208,13 @@ export default function HomePage() {
                       />
                     ))}
                   </div>
-                  {/* WiFi */}
                   <svg width="13" height="10" viewBox="0 0 13 10" fill="none">
                     <path d="M6.5 7.2a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z" fill="#111827" />
                     <path d="M3.2 4.8a4.7 4.7 0 016.6 0" stroke="#111827" strokeWidth="1.2" strokeLinecap="round" />
                     <path d="M1 2.5a7.5 7.5 0 0111 0" stroke="#111827" strokeWidth="1.2" strokeLinecap="round" />
                   </svg>
-                  {/* Battery */}
                   <div className="relative flex items-center">
-                    <div className="w-[22px] h-[11px] border border-gray-900 rounded-[2px] relative">
+                    <div className="w-[22px] h-[11px] border border-gray-900 rounded-[2px]">
                       <div className="absolute inset-[1.5px] right-[2px] bg-gray-900 rounded-[1px]" />
                     </div>
                     <div className="w-[2px] h-[5px] bg-gray-900 rounded-r-sm ml-[1px]" />
@@ -209,9 +224,12 @@ export default function HomePage() {
 
               {/* App content */}
               <div className="px-4 pb-6 pt-1">
-                {/* App bar */}
+                {/* App bar — logo + green dot */}
                 <div className="flex items-center justify-between mb-3">
-                  <span className="text-[11px] font-bold text-gray-900">AutoGrowth</span>
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-[11px] font-bold text-gray-900">AutoGrowth</span>
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
+                  </div>
                   <span className="text-[9px] bg-red-100 text-red-600 px-2 py-0.5 rounded-full font-semibold">
                     Action needed
                   </span>
@@ -219,26 +237,23 @@ export default function HomePage() {
 
                 {/* Score block */}
                 <div className="bg-gray-50 rounded-2xl p-3 mb-3">
-                  <p className="text-[10px] text-gray-500 font-medium mb-2">Your AI Visibility Report</p>
+                  <p className="text-[10px] text-gray-500 font-medium mb-2">Your Visibility Report</p>
                   <div className="flex items-end gap-1 mb-1.5">
                     <span className="text-5xl font-bold text-red-500 leading-none">0</span>
                     <span className="text-sm text-gray-400 pb-1">/100</span>
                   </div>
-                  <div className="flex items-center gap-1.5">
-                    <div className="w-2 h-2 rounded-full bg-red-500 shrink-0" />
-                    <span className="text-[11px] text-red-600 font-medium">You&apos;re invisible to AI</span>
-                  </div>
+                  <p className="text-[11px] text-red-600 font-bold">You&apos;re invisible online</p>
                 </div>
 
                 {/* Competitor bars */}
                 <div className="mb-3">
-                  <p className="text-[9px] font-semibold text-gray-500 uppercase tracking-wide mb-2">
+                  <p className="text-[9px] font-semibold text-gray-600 uppercase tracking-wide mb-2">
                     Competitors getting your calls:
                   </p>
                   {[
-                    { name: "Columbus Worthington Air", count: 7, pct: "100%" },
-                    { name: "Custom Air", count: 6, pct: "86%" },
-                    { name: "Hetter Heating", count: 5, pct: "71%" },
+                    { name: "Columbus Worthington Air", count: 7, pct: "70%" },
+                    { name: "Custom Air", count: 6, pct: "60%" },
+                    { name: "Hetter Heating", count: 5, pct: "50%" },
                   ].map((c) => (
                     <div key={c.name} className="mb-2">
                       <div className="flex items-center justify-between mb-0.5">
@@ -257,10 +272,10 @@ export default function HomePage() {
                 {/* Warnings */}
                 <div className="bg-red-50 rounded-xl p-2.5 mb-3">
                   <p className="text-[10px] font-semibold text-red-700 mb-1.5">
-                    ⚠ 3 services with zero AI presence
+                    ⚠ 3 services with zero visibility
                   </p>
                   <div className="space-y-0.5">
-                    {["AC repair", "Furnace installation", "Emergency AC"].map((s) => (
+                    {["AC repair", "Furnace install", "Emergency AC"].map((s) => (
                       <div key={s} className="flex items-center gap-1.5">
                         <span className="text-red-400 text-[10px] leading-none">✕</span>
                         <span className="text-[10px] text-red-600">{s}</span>
@@ -275,25 +290,6 @@ export default function HomePage() {
                 </button>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Social proof bar */}
-      <section className="bg-gray-50 border-y border-gray-200 py-8 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-center text-sm text-gray-500 mb-6">
-            Trusted by contractors across Ohio
-          </p>
-          <div className="flex items-center justify-center gap-6 flex-wrap">
-            {["Logo", "Logo", "Logo"].map((label, i) => (
-              <div
-                key={i}
-                className="bg-white border border-gray-200 rounded-lg px-6 py-3 text-sm text-gray-400"
-              >
-                {label}
-              </div>
-            ))}
           </div>
         </div>
       </section>
