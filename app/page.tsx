@@ -162,133 +162,234 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Hero — iPhone mockup on emerald gradient */}
-      <section className="relative overflow-hidden">
-        {/* Soft gradient: white → emerald-50 → emerald-100 → white */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-emerald-50 to-emerald-100" />
-        <svg
-          className="absolute bottom-0 left-0 w-full z-10"
-          viewBox="0 0 1440 80"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          <path d="M0 80C360 20 1080 20 1440 80V80H0Z" fill="white" />
-        </svg>
+      {/* Hero — MacBook dashboard mockup */}
+      <section className="relative overflow-hidden bg-white py-16 px-6 lg:px-8">
+        {/* Radial emerald glow behind laptop */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background:
+              "radial-gradient(ellipse 80% 55% at 50% 65%, #d1fae5 0%, #ecfdf5 38%, #ffffff 68%)",
+          }}
+        />
 
-        {/* iPhone frame */}
-        <div className="relative z-20 flex justify-center pt-12 pb-20">
-          <div
-            className="relative bg-gray-900 rounded-[3rem] max-w-[320px] w-full mx-6"
-            style={{ padding: "12px", boxShadow: "0 40px 80px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.08) inset" }}
-          >
-            {/* Physical buttons */}
-            <div className="absolute left-[-3px] top-[76px] w-[3px] h-7 bg-gray-700 rounded-l-sm" />
-            <div className="absolute left-[-3px] top-[116px] w-[3px] h-9 bg-gray-700 rounded-l-sm" />
-            <div className="absolute left-[-3px] top-[156px] w-[3px] h-9 bg-gray-700 rounded-l-sm" />
-            <div className="absolute right-[-3px] top-[116px] w-[3px] h-14 bg-gray-700 rounded-r-sm" />
+        <div className="relative z-10 max-w-[900px] mx-auto">
+          {/* Laptop wrapper */}
+          <div className="shadow-[0_20px_80px_-20px_rgba(0,0,0,0.3)]">
 
-            {/* Screen */}
-            <div className="bg-white rounded-[2.5rem] overflow-hidden">
-              {/* Dynamic Island */}
-              <div className="flex justify-center pt-3 pb-1">
-                <div className="w-28 h-7 bg-black rounded-full" />
-              </div>
+            {/* Screen bezel */}
+            <div className="bg-gray-900 rounded-t-2xl pt-8 px-4 pb-4 relative">
+              {/* Camera dot */}
+              <div className="w-2.5 h-2.5 rounded-full bg-gray-600 mx-auto mb-3" />
 
-              {/* Status bar */}
-              <div className="flex items-center justify-between px-5 pb-2">
-                <span className="text-[10px] font-bold text-gray-900 tabular-nums">9:41</span>
-                <div className="flex items-center gap-1.5">
-                  <div className="flex items-end gap-[2px]">
-                    {[3, 5, 7, 9].map((h, i) => (
+              {/* Screen surface */}
+              <div className="rounded-xl bg-white overflow-hidden min-h-[480px] flex">
+
+                {/* ── Sidebar ── */}
+                <div className="w-[200px] shrink-0 bg-gray-50 border-r border-gray-200 flex flex-col">
+                  {/* Logo */}
+                  <div className="px-4 pt-4 pb-3 border-b border-gray-200">
+                    <div className="flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
+                      <span className="text-sm font-bold text-gray-900 tracking-tight">AUTOGROWTH</span>
+                    </div>
+                  </div>
+
+                  {/* Nav */}
+                  <nav className="flex-1 px-2 py-3">
+                    <p className="text-[10px] uppercase tracking-widest text-gray-400 px-3 pb-2 pt-1">
+                      Overview
+                    </p>
+                    {[
+                      { label: "Dashboard", active: true },
+                      { label: "Rankings", active: false },
+                      { label: "Content", active: false },
+                      { label: "Leads", active: false },
+                      { label: "Reviews", active: false },
+                    ].map((item) => (
                       <div
-                        key={i}
-                        className={`w-[3px] rounded-sm ${i < 3 ? "bg-gray-900" : "bg-gray-300"}`}
-                        style={{ height: `${h}px` }}
-                      />
+                        key={item.label}
+                        className={`text-xs font-medium py-2 px-3 cursor-default mb-0.5 ${
+                          item.active
+                            ? "bg-emerald-50 text-emerald-700 border-l-2 border-emerald-500 rounded-r-lg"
+                            : "text-gray-600 rounded-lg hover:bg-gray-100"
+                        }`}
+                      >
+                        {item.label}
+                      </div>
+                    ))}
+                  </nav>
+
+                  {/* Bottom */}
+                  <div className="px-2 pb-4 mt-auto">
+                    <div className="text-xs font-medium py-2 px-3 text-gray-400 cursor-default rounded-lg hover:bg-gray-100 mb-1">
+                      Settings
+                    </div>
+                    <div className="px-3 pt-2 border-t border-gray-200">
+                      <div className="flex items-center gap-1.5 mb-0.5">
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0" />
+                        <span className="text-xs font-medium text-gray-700">Reynolds Heating</span>
+                      </div>
+                      <span className="text-[10px] text-gray-400 pl-3">Columbus, OH</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* ── Main content ── */}
+                <div className="flex-1 p-5 overflow-hidden">
+                  {/* Top bar */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-lg font-semibold text-gray-900">Good morning, James</span>
+                    <span className="text-sm text-gray-400">Tuesday, May 6, 2026</span>
+                  </div>
+
+                  {/* 4 stat cards */}
+                  <div className="grid grid-cols-4 gap-3 mb-4">
+                    {[
+                      {
+                        label: "AI Visibility",
+                        value: "12",
+                        suffix: "/100",
+                        suffixCls: "text-sm font-normal text-gray-300",
+                        valueCls: "text-emerald-500",
+                        sub: "↑ 12 pts this week",
+                        subCls: "text-emerald-500",
+                      },
+                      {
+                        label: "Google Ranking",
+                        value: "#14",
+                        suffix: "",
+                        suffixCls: "",
+                        valueCls: "text-gray-900",
+                        sub: "↑ 3 spots",
+                        subCls: "text-emerald-500",
+                      },
+                      {
+                        label: "Leads This Week",
+                        value: "8",
+                        suffix: "",
+                        suffixCls: "",
+                        valueCls: "text-gray-900",
+                        sub: "3 hot · 4 warm · 1 cool",
+                        subCls: "text-gray-500",
+                      },
+                      {
+                        label: "Review Score",
+                        value: "4.6",
+                        suffix: " ★",
+                        suffixCls: "text-sm font-normal text-yellow-400",
+                        valueCls: "text-gray-900",
+                        sub: "↑ 0.3 this month",
+                        subCls: "text-emerald-500",
+                      },
+                    ].map((card) => (
+                      <div
+                        key={card.label}
+                        className="bg-white border border-gray-100 rounded-xl p-3 shadow-sm"
+                      >
+                        <p className="text-[10px] uppercase tracking-wide text-gray-400 mb-1">
+                          {card.label}
+                        </p>
+                        <p className={`text-3xl font-bold leading-none mb-1 ${card.valueCls}`}>
+                          {card.value}
+                          {card.suffix && (
+                            <span className={card.suffixCls}>{card.suffix}</span>
+                          )}
+                        </p>
+                        <p className={`text-[10px] ${card.subCls}`}>{card.sub}</p>
+                      </div>
                     ))}
                   </div>
-                  <svg width="13" height="10" viewBox="0 0 13 10" fill="none">
-                    <path d="M6.5 7.2a1.1 1.1 0 110 2.2 1.1 1.1 0 010-2.2z" fill="#111827" />
-                    <path d="M3.2 4.8a4.7 4.7 0 016.6 0" stroke="#111827" strokeWidth="1.2" strokeLinecap="round" />
-                    <path d="M1 2.5a7.5 7.5 0 0111 0" stroke="#111827" strokeWidth="1.2" strokeLinecap="round" />
-                  </svg>
-                  <div className="relative flex items-center">
-                    <div className="w-[22px] h-[11px] border border-gray-900 rounded-[2px]">
-                      <div className="absolute inset-[1.5px] right-[2px] bg-gray-900 rounded-[1px]" />
+
+                  {/* Two-column cards */}
+                  <div className="grid grid-cols-2 gap-4">
+                    {/* Competitor Visibility */}
+                    <div className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
+                      <p className="text-sm font-semibold text-gray-900 mb-3">Competitor Visibility</p>
+                      <div className="space-y-2.5">
+                        {[
+                          { name: "Columbus Worthington Air", pct: 72, barCls: "bg-emerald-500", highlight: false },
+                          { name: "Custom Air",               pct: 58, barCls: "bg-emerald-500", highlight: false },
+                          { name: "Hetter Heating",           pct: 45, barCls: "bg-emerald-400", highlight: false },
+                          { name: "Logan Services",           pct: 38, barCls: "bg-emerald-400", highlight: false },
+                          { name: "You (Reynolds)",           pct: 12, barCls: "bg-orange-500",  highlight: true  },
+                        ].map((row) => (
+                          <div
+                            key={row.name}
+                            className={
+                              row.highlight
+                                ? "bg-orange-50 border border-dashed border-orange-300 rounded-lg px-2 py-1 -mx-1"
+                                : ""
+                            }
+                          >
+                            <div className="flex items-center justify-between mb-1">
+                              <span
+                                className={`text-[10px] font-medium truncate ${
+                                  row.highlight ? "text-orange-700" : "text-gray-600"
+                                }`}
+                              >
+                                {row.name}
+                              </span>
+                              <span
+                                className={`text-[10px] font-semibold ml-2 shrink-0 ${
+                                  row.highlight ? "text-orange-600" : "text-gray-500"
+                                }`}
+                              >
+                                {row.pct}%
+                              </span>
+                            </div>
+                            <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                              <div
+                                className={`h-full rounded-full ${row.barCls}`}
+                                style={{ width: `${row.pct}%` }}
+                              />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                    <div className="w-[2px] h-[5px] bg-gray-900 rounded-r-sm ml-[1px]" />
+
+                    {/* Recent Leads */}
+                    <div className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
+                      <p className="text-sm font-semibold text-gray-900 mb-3">Recent Leads</p>
+                      <div>
+                        {[
+                          { dot: "bg-red-500",    name: "Sarah Mitchell", service: "AC repair",      score: 83, badge: "HOT",  badgeCls: "bg-red-100 text-red-600 font-bold" },
+                          { dot: "bg-yellow-400", name: "Mike Torres",    service: "Furnace install", score: 61, badge: "WARM", badgeCls: "bg-yellow-50 text-yellow-700" },
+                          { dot: "bg-blue-400",   name: "Linda Chen",     service: "Maintenance",     score: 34, badge: "COOL", badgeCls: "bg-blue-50 text-blue-600" },
+                          { dot: "bg-red-500",    name: "James Wright",   service: "Emergency AC",    score: 91, badge: "HOT",  badgeCls: "bg-red-100 text-red-600 font-bold" },
+                        ].map((lead, i) => (
+                          <div
+                            key={lead.name}
+                            className={`flex items-center gap-2 py-2 text-xs ${
+                              i < 3 ? "border-b border-gray-50" : ""
+                            }`}
+                          >
+                            <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${lead.dot}`} />
+                            <span className="text-gray-800 font-medium w-24 truncate shrink-0">
+                              {lead.name}
+                            </span>
+                            <span className="text-gray-400 flex-1 truncate">{lead.service}</span>
+                            <span className="text-gray-500 w-16 shrink-0 text-right">
+                              Score: {lead.score}
+                            </span>
+                            <span
+                              className={`text-[10px] px-1.5 py-0.5 rounded-full shrink-0 ${lead.badgeCls}`}
+                            >
+                              {lead.badge}
+                            </span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* App content */}
-              <div className="px-4 pb-6 pt-1">
-                {/* App bar — logo + green dot */}
-                <div className="flex items-center justify-between mb-3">
-                  <div className="flex items-center gap-1.5">
-                    <span className="text-[11px] font-bold text-gray-900">AutoGrowth</span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 inline-block" />
-                  </div>
-                  <span className="text-[9px] bg-red-100 text-red-600 px-2 py-0.5 rounded-full font-semibold">
-                    Action needed
-                  </span>
-                </div>
-
-                {/* Score block */}
-                <div className="bg-gray-50 rounded-2xl p-3 mb-3">
-                  <p className="text-[10px] text-gray-500 font-medium mb-2">Your Visibility Report</p>
-                  <div className="flex items-end gap-1 mb-1.5">
-                    <span className="text-5xl font-bold text-red-500 leading-none">0</span>
-                    <span className="text-sm text-gray-400 pb-1">/100</span>
-                  </div>
-                  <p className="text-[11px] text-red-600 font-bold">You&apos;re invisible online</p>
-                </div>
-
-                {/* Competitor bars */}
-                <div className="mb-3">
-                  <p className="text-[9px] font-semibold text-gray-600 uppercase tracking-wide mb-2">
-                    Competitors getting your calls:
-                  </p>
-                  {[
-                    { name: "Columbus Worthington Air", count: 7, pct: "70%" },
-                    { name: "Custom Air", count: 6, pct: "60%" },
-                    { name: "Hetter Heating", count: 5, pct: "50%" },
-                  ].map((c) => (
-                    <div key={c.name} className="mb-2">
-                      <div className="flex items-center justify-between mb-0.5">
-                        <span className="text-[10px] text-gray-700 truncate pr-2">{c.name}</span>
-                        <span className="text-[10px] text-emerald-600 font-semibold shrink-0">
-                          Cited {c.count}×
-                        </span>
-                      </div>
-                      <div className="h-1.5 bg-gray-100 rounded-full overflow-hidden">
-                        <div className="h-full bg-emerald-500 rounded-full" style={{ width: c.pct }} />
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                {/* Warnings */}
-                <div className="bg-red-50 rounded-xl p-2.5 mb-3">
-                  <p className="text-[10px] font-semibold text-red-700 mb-1.5">
-                    ⚠ 3 services with zero visibility
-                  </p>
-                  <div className="space-y-0.5">
-                    {["AC repair", "Furnace install", "Emergency AC"].map((s) => (
-                      <div key={s} className="flex items-center gap-1.5">
-                        <span className="text-red-400 text-[10px] leading-none">✕</span>
-                        <span className="text-[10px] text-red-600">{s}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                {/* CTA */}
-                <button className="w-full bg-emerald-500 text-white text-[11px] font-bold py-2.5 rounded-xl">
-                  Fix Your Visibility
-                </button>
-              </div>
+            {/* Base / keyboard bar */}
+            <div className="bg-gradient-to-b from-gray-300 to-gray-400 h-5 rounded-b-2xl mx-16 flex items-center justify-center">
+              <div className="w-16 h-2.5 bg-black/10 rounded-full" />
             </div>
           </div>
         </div>
