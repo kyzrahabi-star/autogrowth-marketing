@@ -17,7 +17,6 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "All fields required" }, { status: 400 });
     }
 
-    // Log submission — wire to Lead Specialist webhook later
     console.log("[audit-submission]", {
       businessName,
       city,
@@ -28,7 +27,23 @@ export async function POST(req: NextRequest) {
       submittedAt: new Date().toISOString(),
     });
 
-    // TODO: POST to webhook, send confirmation email via Resend, store in DB
+    // Fire-and-forget — Twin Lead Specialist webhook
+    fetch(
+      "https://build.twin.so/triggers/990247dd-e6d8-4e12-9a15-d822a2b296a3/webhook",
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          business_name: businessName,
+          city,
+          state,
+          primary_service: service,
+          phone,
+          email,
+          source: "website_audit",
+        }),
+      }
+    ).catch((err) => console.error("[audit-webhook]", err));
 
     return NextResponse.json({ success: true });
   } catch (err) {
