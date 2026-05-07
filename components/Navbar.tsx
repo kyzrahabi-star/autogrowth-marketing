@@ -74,27 +74,36 @@ export function Navbar() {
                     <Flame className="w-4 h-4 text-orange-500 shrink-0" />
                     HVAC
                   </Link>
-                  <div className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-gray-400 mx-1 cursor-default">
+                  <Link
+                    href="/plumbing"
+                    className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 rounded-lg text-sm text-gray-500 hover:text-gray-700 mx-1"
+                  >
                     <Wrench className="w-4 h-4 text-blue-400 shrink-0" />
                     Plumbing
                     <span className="ml-auto text-[10px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full whitespace-nowrap">
                       Coming Soon
                     </span>
-                  </div>
-                  <div className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-gray-400 mx-1 cursor-default">
+                  </Link>
+                  <Link
+                    href="/electrical"
+                    className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 rounded-lg text-sm text-gray-500 hover:text-gray-700 mx-1"
+                  >
                     <Zap className="w-4 h-4 text-yellow-400 shrink-0" />
                     Electrical
                     <span className="ml-auto text-[10px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full whitespace-nowrap">
                       Coming Soon
                     </span>
-                  </div>
-                  <div className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm text-gray-400 mx-1 cursor-default">
+                  </Link>
+                  <Link
+                    href="/roofing"
+                    className="flex items-center gap-3 px-4 py-2.5 hover:bg-gray-50 rounded-lg text-sm text-gray-500 hover:text-gray-700 mx-1"
+                  >
                     <Home className="w-4 h-4 text-purple-400 shrink-0" />
                     Roofing
                     <span className="ml-auto text-[10px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full whitespace-nowrap">
                       Coming Soon
                     </span>
-                  </div>
+                  </Link>
                 </div>
               )}
             </div>
@@ -250,27 +259,39 @@ export function Navbar() {
                   <Flame className="w-4 h-4 text-orange-500" />
                   HVAC
                 </Link>
-                <div className="flex items-center gap-3 py-2 text-sm text-gray-400">
+                <Link
+                  href="/plumbing"
+                  className="flex items-center gap-3 py-2 text-sm text-gray-500"
+                  onClick={() => setMobileOpen(false)}
+                >
                   <Wrench className="w-4 h-4 text-blue-400" />
                   Plumbing
                   <span className="ml-auto text-[10px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full">
                     Coming Soon
                   </span>
-                </div>
-                <div className="flex items-center gap-3 py-2 text-sm text-gray-400">
+                </Link>
+                <Link
+                  href="/electrical"
+                  className="flex items-center gap-3 py-2 text-sm text-gray-500"
+                  onClick={() => setMobileOpen(false)}
+                >
                   <Zap className="w-4 h-4 text-yellow-400" />
                   Electrical
                   <span className="ml-auto text-[10px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full">
                     Coming Soon
                   </span>
-                </div>
-                <div className="flex items-center gap-3 py-2 text-sm text-gray-400">
+                </Link>
+                <Link
+                  href="/roofing"
+                  className="flex items-center gap-3 py-2 text-sm text-gray-500"
+                  onClick={() => setMobileOpen(false)}
+                >
                   <Home className="w-4 h-4 text-purple-400" />
                   Roofing
                   <span className="ml-auto text-[10px] bg-gray-100 text-gray-400 px-2 py-0.5 rounded-full">
                     Coming Soon
                   </span>
-                </div>
+                </Link>
               </div>
             )}
           </div>
