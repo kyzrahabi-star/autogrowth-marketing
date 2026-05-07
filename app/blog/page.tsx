@@ -42,35 +42,35 @@ export default function BlogPage() {
   const posts = getPosts();
 
   return (
-    <div className="min-h-screen bg-zinc-950 py-20 px-4">
+    <div className="min-h-screen bg-white py-20 px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="mb-14">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-3">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-3">
             The AutoGrowth Blog
           </h1>
-          <p className="text-zinc-400 text-lg">
+          <p className="text-gray-600 text-lg">
             Tactics, data, and real examples — no theory.
           </p>
         </div>
 
         {posts.length === 0 ? (
-          <p className="text-zinc-500">No posts yet. Check back soon.</p>
+          <p className="text-gray-500">No posts yet. Check back soon.</p>
         ) : (
           <div className="grid sm:grid-cols-2 gap-6">
             {posts.map((post) => (
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group block bg-zinc-900 border border-zinc-800 rounded-2xl p-8 hover:border-zinc-600 transition-colors"
+                className="group block bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow overflow-hidden p-8"
               >
-                <p className="text-xs text-zinc-500 mb-3">{post.date}</p>
-                <h2 className="text-lg font-semibold text-white mb-3 group-hover:text-blue-400 transition-colors">
+                <p className="text-xs text-gray-400 mb-3">{post.date}</p>
+                <h2 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-emerald-600 transition-colors">
                   {post.title}
                 </h2>
-                <p className="text-sm text-zinc-400 mb-4 leading-relaxed">
+                <p className="text-sm text-gray-600 mb-4 leading-relaxed">
                   {post.excerpt}
                 </p>
-                <span className="text-sm text-blue-400 group-hover:text-blue-300">
+                <span className="text-sm text-emerald-600 group-hover:text-emerald-700 font-medium">
                   Read more →
                 </span>
               </Link>

@@ -123,14 +123,11 @@ function CtaButton({
   href: string;
   children: React.ReactNode;
 }) {
-  const base =
-    "inline-flex items-center justify-center w-full py-3 rounded-lg text-sm font-semibold transition-colors";
   if (style === "green")
     return (
       <Link
         href={href}
-        className={base + " text-white"}
-        style={{ backgroundColor: "#10B981" }}
+        className="inline-flex items-center justify-center w-full py-3 rounded-full text-sm font-semibold transition-colors text-white bg-emerald-500 hover:bg-emerald-600"
       >
         {children}
       </Link>
@@ -139,16 +136,16 @@ function CtaButton({
     return (
       <Link
         href={href}
-        className={base + " text-white"}
-        style={{ backgroundColor: "#3B82F6" }}
+        className="inline-flex items-center justify-center w-full py-3 rounded-full text-sm font-semibold transition-colors text-gray-700 border border-gray-300 hover:border-gray-900 hover:text-gray-900"
       >
         {children}
       </Link>
     );
+  // ghost — used for Free Audit and Enterprise
   return (
     <Link
       href={href}
-      className={base + " text-zinc-300 border border-zinc-700 hover:border-zinc-500"}
+      className="inline-flex items-center justify-center w-full py-3 rounded-full text-sm font-semibold transition-colors text-emerald-600 border border-emerald-500 hover:bg-emerald-500 hover:text-white"
     >
       {children}
     </Link>
@@ -159,14 +156,14 @@ export default function PricingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-zinc-950 py-20 px-4">
-      <div className="max-w-7xl mx-auto">
+    <div className="min-h-screen bg-white">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-14">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+        <div className="text-center py-24 pb-14">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-4">
             Clear pricing. No contracts. Cancel any time.
           </h1>
-          <p className="text-zinc-400 text-lg">
+          <p className="text-gray-600 text-lg">
             Start with a free audit. Upgrade when you&apos;re ready.
           </p>
         </div>
@@ -176,37 +173,32 @@ export default function PricingPage() {
           {tiers.map((tier, i) => (
             <div
               key={i}
-              className={`relative bg-zinc-900 rounded-2xl p-8 flex flex-col ${
+              className={`relative bg-white rounded-2xl p-8 flex flex-col ${
                 tier.popular
-                  ? "border-2 border-blue-500"
-                  : "border border-zinc-800"
+                  ? "border-2 border-emerald-500 shadow-lg"
+                  : "border border-gray-200 shadow-sm"
               }`}
             >
               {tier.popular && (
                 <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                  <span
-                    className="px-3 py-1 rounded-full text-xs font-bold text-white"
-                    style={{ backgroundColor: "#10B981" }}
-                  >
+                  <span className="px-4 py-1 rounded-full text-xs font-semibold text-white bg-emerald-500">
                     Most Popular
                   </span>
                 </div>
               )}
               <div className="mb-6">
-                <h2 className="text-base font-semibold text-white mb-2">
-                  {tier.name}
-                </h2>
-                <div className="text-3xl font-bold text-white">
+                <p className="text-gray-500 text-sm font-medium uppercase tracking-wide">{tier.name}</p>
+                <div className="text-4xl font-bold text-gray-900 mt-1">
                   {tier.price}
                 </div>
                 {tier.priceNote && (
-                  <p className="text-xs text-zinc-500 mt-1">{tier.priceNote}</p>
+                  <p className="text-gray-400 text-lg font-normal mt-1">{tier.priceNote}</p>
                 )}
               </div>
               <ul className="space-y-2 mb-8 flex-1">
                 {tier.features.map((f, j) => (
-                  <li key={j} className="flex items-start gap-2 text-sm text-zinc-300">
-                    <span className="text-emerald-400 shrink-0">✓</span>
+                  <li key={j} className="flex items-start gap-2 text-sm text-gray-600">
+                    <span className="text-emerald-500 shrink-0">✓</span>
                     {f}
                   </li>
                 ))}
@@ -217,30 +209,32 @@ export default function PricingPage() {
             </div>
           ))}
         </div>
+      </div>
 
-        {/* FAQ */}
+      {/* FAQ */}
+      <div className="bg-gray-50 py-24 px-6 lg:px-8">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-8">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 text-center mb-8">
             Common questions
           </h2>
           <div className="space-y-2">
             {faqs.map((faq, i) => (
               <div
                 key={i}
-                className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden"
+                className="bg-white border border-gray-200 rounded-xl overflow-hidden"
               >
                 <button
-                  className="w-full px-6 py-4 text-left flex items-center justify-between text-white font-medium hover:text-zinc-200"
+                  className="w-full px-6 py-4 text-left flex items-center justify-between text-gray-900 font-semibold hover:text-gray-700 transition-colors"
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                 >
                   <span className="text-sm">{faq.q}</span>
-                  <span className="text-zinc-500 text-xs ml-4 shrink-0">
+                  <span className="text-gray-400 text-xs ml-4 shrink-0">
                     {openFaq === i ? "▲" : "▼"}
                   </span>
                 </button>
                 {openFaq === i && (
                   <div className="px-6 pb-5">
-                    <p className="text-sm text-zinc-400">{faq.a}</p>
+                    <p className="text-sm text-gray-600">{faq.a}</p>
                   </div>
                 )}
               </div>

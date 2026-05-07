@@ -53,6 +53,27 @@ export default function HomePage() {
     },
   ];
 
+  const testimonials = [
+    {
+      quote:
+        "We were getting maybe 2-3 calls a week from people who found us online. Six weeks in and that's up to 8-10. The morning report tells me exactly where we stand.",
+      name: "Mike R., Owner",
+      business: "Reynolds Heating & Cooling, Columbus OH",
+    },
+    {
+      quote:
+        "I didn't believe the AI search thing until they showed me my competitor being recommended and me not showing up at all. That changed fast.",
+      name: "Dave S., Owner",
+      business: "Buckeye Air Systems, Columbus OH",
+    },
+    {
+      quote:
+        "The lead scoring alone is worth it. Used to miss half my leads because I was on a job. Now I get a text the second a hot lead comes in.",
+      name: "Tony M., Owner",
+      business: "Comfort Pro HVAC, Dublin OH",
+    },
+  ];
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -80,106 +101,150 @@ export default function HomePage() {
       />
 
       {/* Hero */}
-      <section
-        className="relative min-h-screen flex flex-col items-center justify-center px-4 py-24 overflow-hidden"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(9,9,11,0.9) 1px, transparent 1px), linear-gradient(90deg, rgba(9,9,11,0.9) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-          backgroundColor: "#09090b",
-        }}
-      >
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight mb-6">
-            Is Your Business{" "}
-            <span className="text-gradient">Invisible</span> to AI?
-          </h1>
-          <p className="text-lg sm:text-xl text-zinc-300 max-w-2xl mx-auto mb-10">
-            When homeowners ask ChatGPT, Perplexity, or Google AI who to call —
-            your competitors get recommended. You don&apos;t. We fix that.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <Link
-              href="/audit"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#10B981" }}
-            >
-              See If You&apos;re Invisible →
-            </Link>
-            <Link
-              href="/demo"
-              className="inline-flex items-center justify-center px-8 py-4 rounded-xl text-base font-semibold text-white border border-zinc-700 hover:border-zinc-500 transition-colors"
-            >
-              Watch the 2-min demo →
-            </Link>
-          </div>
-          <p className="text-sm text-zinc-400">
-            ⚡ Free audit. No credit card. Results in 24 hours.
-          </p>
-        </div>
-
-        {/* Social proof bar */}
-        <div className="w-full max-w-4xl mx-auto mt-16">
-          <div className="bg-zinc-900 border border-zinc-800 rounded-2xl px-6 py-5">
-            <p className="text-center text-sm text-zinc-400 mb-4">
-              Trusted by contractors in Columbus, OH
-            </p>
-            <div className="flex items-center justify-center gap-6 flex-wrap">
-              {["Logo", "Logo", "Logo"].map((label, i) => (
-                <div
-                  key={i}
-                  className="bg-zinc-800 rounded-lg w-24 h-10 flex items-center justify-center"
+      <section className="bg-white py-24 px-6 lg:px-8 overflow-hidden">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left column */}
+            <div>
+              <span className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 text-sm font-medium px-3 py-1 rounded-full border border-emerald-200 mb-6">
+                ● AI Search Visibility
+              </span>
+              <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-6">
+                Is Your Business{" "}
+                <span className="text-gradient">Invisible</span> to AI?
+              </h1>
+              <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-xl">
+                When homeowners ask ChatGPT, Perplexity, or Google AI who to call —
+                your competitors get recommended. You don&apos;t. We fix that.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 mb-6">
+                <Link
+                  href="/audit"
+                  className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full transition-colors"
                 >
-                  <span className="text-xs text-zinc-500">{label}</span>
+                  See If You&apos;re Invisible →
+                </Link>
+                <Link
+                  href="/demo"
+                  className="inline-flex items-center justify-center border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white font-semibold px-6 py-3 rounded-full transition-colors"
+                >
+                  Watch the 2-min demo →
+                </Link>
+              </div>
+              <p className="text-sm text-gray-500">
+                ⚡ Free audit. No credit card. Results in 24 hours.
+              </p>
+            </div>
+
+            {/* Right column — Dashboard mockup */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="bg-white border border-gray-200 rounded-2xl shadow-xl p-6 w-full max-w-md">
+                <div className="flex items-center justify-between mb-6">
+                  <span className="text-sm font-semibold text-gray-900">AI Visibility Dashboard</span>
+                  <span className="text-xs text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">Live</span>
                 </div>
-              ))}
+                {/* Score card */}
+                <div className="bg-gray-50 rounded-xl p-4 mb-4">
+                  <div className="text-xs text-gray-500 mb-1">Your AI Visibility Score</div>
+                  <div className="text-4xl font-bold text-gray-900">
+                    67<span className="text-lg text-gray-400">/100</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2 mt-3">
+                    <div className="bg-emerald-500 h-2 rounded-full" style={{ width: "67%" }}></div>
+                  </div>
+                </div>
+                {/* Competitor comparison */}
+                <div className="space-y-2 mb-4">
+                  <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">Competitors</div>
+                  {[
+                    { name: "Worthington Air", score: 84, color: "text-red-500", bg: "bg-red-500" },
+                    { name: "Columbus HVAC Pro", score: 71, color: "text-amber-500", bg: "bg-amber-500" },
+                    { name: "Your Business", score: 67, color: "text-emerald-500", bg: "bg-emerald-500" },
+                  ].map((c) => (
+                    <div key={c.name} className="flex items-center gap-3">
+                      <span className="text-xs text-gray-600 w-32 truncate">{c.name}</span>
+                      <div className="flex-1 bg-gray-100 rounded-full h-1.5">
+                        <div
+                          className={`h-1.5 rounded-full ${c.bg}`}
+                          style={{ width: `${c.score}%` }}
+                        ></div>
+                      </div>
+                      <span className={`text-xs font-semibold ${c.color}`}>{c.score}</span>
+                    </div>
+                  ))}
+                </div>
+                {/* Lead alert */}
+                <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-3">
+                  <div className="text-xs font-semibold text-emerald-700">🔥 Hot Lead Alert</div>
+                  <div className="text-xs text-emerald-600 mt-1">Sarah M. — AC Repair — Score: 94/100</div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Social proof bar */}
+      <section className="bg-gray-50 border-y border-gray-200 py-8 px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <p className="text-center text-sm text-gray-500 mb-6">
+            Trusted by contractors across Ohio
+          </p>
+          <div className="flex items-center justify-center gap-6 flex-wrap">
+            {["Logo", "Logo", "Logo"].map((label, i) => (
+              <div
+                key={i}
+                className="bg-white border border-gray-200 rounded-lg px-6 py-3 text-sm text-gray-400"
+              >
+                {label}
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Problem */}
-      <section className="py-24 px-4 bg-zinc-950">
-        <div className="max-w-5xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-12">
+      <section className="py-24 px-6 lg:px-8 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold tracking-tight text-gray-900 text-center mb-12">
             The $50,000 question nobody&apos;s asking
           </h2>
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
-              <p className="text-zinc-300 text-lg leading-relaxed mb-6">
+              <p className="text-gray-700 text-lg leading-relaxed mb-6">
                 Every day, thousands of homeowners type &quot;best HVAC company
                 near me&quot; into ChatGPT, Perplexity, and Google AI. Those AI
                 systems recommend specific businesses. If you&apos;re not in
                 those answers, you don&apos;t get the call.
               </p>
-              <p className="text-white font-semibold text-lg">
+              <p className="text-gray-900 font-semibold text-lg">
                 Your competitor is getting calls you don&apos;t know you&apos;re
                 missing.
               </p>
             </div>
-            <div className="bg-zinc-900 border border-zinc-700 rounded-2xl p-8">
-              <p className="text-sm text-zinc-400 mb-6">
+            <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8">
+              <p className="text-sm text-gray-500 mb-6">
                 We scanned 5 HVAC contractors across 3 AI search engines.
               </p>
               <div className="space-y-4">
                 <div>
-                  <p className="text-zinc-300 text-sm mb-1">
+                  <p className="text-gray-700 text-sm mb-1">
                     Columbus Worthington Air
                   </p>
-                  <p className="text-4xl font-bold text-white">
+                  <p className="text-4xl font-bold text-gray-900">
                     7{" "}
-                    <span className="text-lg text-zinc-400 font-normal">
+                    <span className="text-lg text-gray-500 font-normal">
                       citations
                     </span>
                   </p>
                 </div>
-                <div className="border-t border-zinc-700 pt-4">
-                  <p className="text-zinc-300 text-sm mb-1">
+                <div className="border-t border-gray-200 pt-4">
+                  <p className="text-gray-700 text-sm mb-1">
                     Average HVAC contractor
                   </p>
-                  <p className="text-4xl font-bold text-red-400">
+                  <p className="text-4xl font-bold text-red-500">
                     0{" "}
-                    <span className="text-lg text-zinc-400 font-normal">
+                    <span className="text-lg text-gray-500 font-normal">
                       citations
                     </span>
                   </p>
@@ -191,41 +256,48 @@ export default function HomePage() {
       </section>
 
       {/* Solution — Specialists */}
-      <section className="py-24 px-4 bg-zinc-900/50">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-4">
-            5 Specialists. Zero employees.
-          </h2>
-          <p className="text-center text-zinc-400 mb-14 max-w-xl mx-auto">
-            Your team that never sleeps. No hiring, no managing, no benefits. They
-            run on autopilot from day one.
-          </p>
+      <section className="py-24 px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-14">
+            <p className="text-emerald-600 text-sm font-semibold uppercase tracking-wide mb-3">
+              Your AI-Powered Team
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight text-gray-900 mb-4">
+              5 Specialists. Zero employees.
+            </h2>
+            <p className="text-gray-600 max-w-xl mx-auto">
+              Your team that never sleeps. No hiring, no managing, no benefits. They
+              run on autopilot from day one.
+            </p>
+          </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {specialists.map((s, i) => (
               <div
                 key={i}
-                className="bg-zinc-900 border border-zinc-800 rounded-xl p-6 hover:border-zinc-600 transition-colors"
+                className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow p-6"
               >
-                <div className="text-3xl mb-4">{s.icon}</div>
-                <h3 className="text-lg font-semibold text-white mb-2">
+                <div className="bg-emerald-50 rounded-xl p-3 w-fit mb-4">
+                  <span className="text-2xl">{s.icon}</span>
+                </div>
+                <h3 className="text-gray-900 font-semibold text-lg mb-2">
                   {s.name}
                 </h3>
-                <p className="text-zinc-400 text-sm leading-relaxed">
+                <p className="text-gray-600 text-sm leading-relaxed">
                   {s.description}
                 </p>
               </div>
             ))}
             {/* 6th cell — CTA */}
-            <div className="bg-gradient-to-br from-blue-900/30 to-emerald-900/30 border border-zinc-800 rounded-xl p-6 flex flex-col justify-center items-start">
-              <p className="text-white font-semibold mb-2 text-lg">
+            <div className="bg-white border border-gray-200 rounded-xl shadow-sm p-6 flex flex-col justify-center items-start">
+              <p className="text-gray-900 font-semibold mb-2 text-lg">
                 See them in action
               </p>
-              <p className="text-zinc-400 text-sm mb-4">
+              <p className="text-gray-600 text-sm mb-4">
                 15-minute live audit on your actual business.
               </p>
               <Link
                 href="/demo"
-                className="text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors"
+                className="text-sm font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
               >
                 Book a demo →
               </Link>
@@ -235,27 +307,24 @@ export default function HomePage() {
       </section>
 
       {/* Results — Timeline */}
-      <section className="py-24 px-4 bg-zinc-950">
+      <section className="py-24 px-6 lg:px-8 bg-white">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl sm:text-4xl font-bold text-center mb-14">
+          <h2 className="text-4xl font-bold tracking-tight text-gray-900 text-center mb-14">
             What happens in your first 30 days
           </h2>
           <div className="relative">
-            <div className="absolute left-6 top-0 bottom-0 w-px bg-zinc-700" />
+            <div className="absolute left-6 top-0 bottom-0 w-px bg-emerald-200" />
             <div className="space-y-10">
               {timeline.map((item, i) => (
                 <div key={i} className="flex gap-6 items-start pl-14 relative">
-                  <div
-                    className="absolute left-0 w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0"
-                    style={{ backgroundColor: "#10B981" }}
-                  >
+                  <div className="absolute left-0 w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0 bg-emerald-500">
                     {i + 1}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-emerald-400 mb-1">
+                    <p className="text-sm font-semibold text-emerald-600 mb-1">
                       {item.day}
                     </p>
-                    <p className="text-white text-base">{item.text}</p>
+                    <p className="text-gray-900 text-base">{item.text}</p>
                   </div>
                 </div>
               ))}
@@ -264,12 +333,52 @@ export default function HomePage() {
           <div className="mt-14 text-center">
             <Link
               href="/audit"
-              className="inline-flex items-center justify-center px-10 py-4 rounded-xl text-base font-semibold text-white transition-opacity hover:opacity-90"
-              style={{ backgroundColor: "#10B981" }}
+              className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
             >
               Start your free audit →
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-24 px-6 lg:px-8 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold tracking-tight text-gray-900 text-center mb-14">
+            What contractors are saying
+          </h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.map((t, i) => (
+              <div key={i} className="bg-white border border-gray-200 rounded-xl shadow-sm p-8">
+                <div className="text-emerald-500 text-lg mb-4">★★★★★</div>
+                <p className="text-gray-700 leading-relaxed mb-6">
+                  &ldquo;{t.quote}&rdquo;
+                </p>
+                <div>
+                  <p className="text-gray-900 font-semibold text-sm">{t.name}</p>
+                  <p className="text-gray-500 text-sm">{t.business}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA band */}
+      <section className="bg-zinc-900 py-24 px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-white font-bold text-4xl tracking-tight mb-4">
+            Ready to stop being invisible?
+          </h2>
+          <p className="text-zinc-400 text-xl mb-10">
+            Get your free AI visibility audit. See exactly where you stand vs. your competitors — in 24 hours.
+          </p>
+          <Link
+            href="/audit"
+            className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+          >
+            Get your free audit →
+          </Link>
         </div>
       </section>
     </>

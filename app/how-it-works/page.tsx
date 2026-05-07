@@ -75,14 +75,14 @@ const industries = [
 
 export default function HowItWorksPage() {
   return (
-    <div className="min-h-screen bg-zinc-950">
+    <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="py-24 px-4 text-center">
+      <section className="py-24 px-6 lg:px-8 text-center bg-white">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-4">
             5 Specialists. Your market. Dominated.
           </h1>
-          <p className="text-zinc-400 text-lg">
+          <p className="text-gray-500 text-lg">
             Each one handles a specific part of your marketing — automatically.
             Together, they run your entire growth operation while you focus on
             the work.
@@ -91,42 +91,34 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Specialists */}
-      <section className="px-4 pb-24">
+      <section className="px-6 lg:px-8 pb-24">
         <div className="max-w-5xl mx-auto space-y-24">
           {specialists.map((s, i) => (
             <div
               key={i}
               className={`grid md:grid-cols-2 gap-12 items-start ${
-                i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
-              }`}
+                i % 2 === 0 ? "bg-white" : "bg-gray-50 rounded-2xl p-8 -mx-8"
+              } ${i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""}`}
             >
               {/* Placeholder visual */}
-              <div className="bg-zinc-900 border border-zinc-800 rounded-2xl p-8 min-h-48 flex flex-col justify-between">
-                <div className="text-3xl mb-2">{s.icon}</div>
-                <div className="bg-zinc-800 rounded-xl p-4 flex items-center justify-center h-32">
-                  <p className="text-sm text-zinc-500 text-center">
-                    Dashboard Screenshot
-                  </p>
-                </div>
-                <p className="text-xs text-zinc-500 mt-3 italic">
-                  {s.whatYouSee}
-                </p>
+              <div className="bg-gray-50 border border-gray-200 rounded-xl flex items-center justify-center h-48 text-gray-400 text-sm">
+                Dashboard Screenshot
               </div>
 
               {/* Text */}
               <div>
-                <p className="text-sm text-emerald-400 font-semibold mb-1">
+                <p className="text-sm text-emerald-600 font-semibold mb-1">
                   Specialist {i + 1} of 5
                 </p>
-                <h2 className="text-3xl font-bold text-white mb-4">{s.name}</h2>
-                <p className="text-zinc-300 text-base leading-relaxed mb-6">
+                <h2 className="text-3xl font-bold text-gray-900 mb-4">{s.name}</h2>
+                <p className="text-gray-700 text-base leading-relaxed mb-6">
                   {s.description}
                 </p>
-                <div className="bg-zinc-900 border border-zinc-800 rounded-xl p-5">
-                  <p className="text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-2">
+                <div className="bg-white border border-gray-200 rounded-xl p-5 shadow-sm">
+                  <p className="text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
                     Real example
                   </p>
-                  <p className="text-sm text-zinc-300 italic">{s.realExample}</p>
+                  <p className="text-sm text-gray-700 italic">{s.realExample}</p>
                 </div>
               </div>
             </div>
@@ -135,9 +127,9 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Autopilot */}
-      <section className="py-20 px-4 bg-zinc-900/50">
+      <section className="py-20 px-6 lg:px-8 bg-gray-50">
         <div className="max-w-2xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-10">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 text-center mb-10">
             Everything runs on autopilot
           </h2>
           <ul className="space-y-4">
@@ -149,9 +141,9 @@ export default function HowItWorksPage() {
             ].map((item, i) => (
               <li
                 key={i}
-                className="flex items-start gap-3 text-zinc-300 text-base"
+                className="flex items-start gap-3 text-gray-700 text-base"
               >
-                <span className="text-emerald-400 mt-0.5">✓</span>
+                <span className="text-emerald-500 mt-0.5">✓</span>
                 {item}
               </li>
             ))}
@@ -160,22 +152,22 @@ export default function HowItWorksPage() {
       </section>
 
       {/* Built for trades */}
-      <section className="py-20 px-4 bg-zinc-950">
+      <section className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-4">
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 text-center mb-4">
             Built for trades
           </h2>
-          <p className="text-center text-zinc-400 mb-12">
+          <p className="text-center text-gray-500 mb-12">
             Works for any service business.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
             {industries.map((ind, i) => (
               <div
                 key={i}
-                className="bg-zinc-900 border border-zinc-800 rounded-xl p-4 flex flex-col items-center gap-2 hover:border-zinc-600 transition-colors"
+                className="bg-white border border-gray-200 rounded-xl p-4 flex flex-col items-center gap-2 hover:border-emerald-300 hover:bg-emerald-50 transition-colors text-center text-gray-700"
               >
                 <span className="text-2xl">{ind.icon}</span>
-                <span className="text-xs text-zinc-400 text-center">
+                <span className="text-xs text-gray-700">
                   {ind.name}
                 </span>
               </div>
@@ -185,19 +177,36 @@ export default function HowItWorksPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 px-4 text-center">
-        <h2 className="text-3xl font-bold mb-4">See it in action</h2>
-        <p className="text-zinc-400 mb-8">
+      <section className="py-20 px-6 lg:px-8 text-center bg-gray-50">
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">See it in action</h2>
+        <p className="text-gray-500 mb-8">
           Book a 15-minute demo. We&apos;ll run a live audit on your actual
           business.
         </p>
         <Link
           href="/demo"
-          className="inline-flex items-center justify-center px-10 py-4 rounded-xl text-base font-semibold text-white transition-opacity hover:opacity-90"
-          style={{ backgroundColor: "#3B82F6" }}
+          className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
         >
           Book a 15-min demo →
         </Link>
+      </section>
+
+      {/* Dark CTA band */}
+      <section className="bg-zinc-900 py-24 px-6 lg:px-8">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-white font-bold text-4xl tracking-tight mb-4">
+            Ready to stop being invisible?
+          </h2>
+          <p className="text-zinc-400 text-xl mb-10">
+            Get your free AI visibility audit. See exactly where you stand vs. your competitors — in 24 hours.
+          </p>
+          <Link
+            href="/audit"
+            className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+          >
+            Get your free audit →
+          </Link>
+        </div>
       </section>
     </div>
   );

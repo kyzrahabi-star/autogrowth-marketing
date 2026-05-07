@@ -8,14 +8,14 @@ export const metadata: Metadata = {
 
 export default function DemoPage() {
   return (
-    <div className="min-h-screen bg-zinc-950 py-20 px-4">
+    <div className="min-h-screen bg-white py-20 px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         {/* Header */}
         <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-4">
             See AutoGrowth in action
           </h1>
-          <p className="text-zinc-400 text-lg mb-8">
+          <p className="text-gray-600 text-xl mb-8">
             15 minutes. No pitch. We&apos;ll run a live AI audit on your
             business and show you exactly where your competitors are being
             recommended — and you&apos;re not.
@@ -26,8 +26,8 @@ export default function DemoPage() {
               "See competitor citations in real time",
               "Walk away with a concrete action plan",
             ].map((item) => (
-              <li key={item} className="flex items-center gap-2 text-sm text-zinc-300">
-                <span className="text-emerald-400">✓</span>
+              <li key={item} className="flex items-center gap-2 text-sm text-gray-700">
+                <span className="text-emerald-500">✓</span>
                 {item}
               </li>
             ))}
@@ -35,9 +35,9 @@ export default function DemoPage() {
         </div>
 
         {/* Cal embed */}
-        <div className="bg-zinc-900 border border-zinc-800 rounded-2xl overflow-hidden">
+        <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
           <iframe
-            src="https://cal.com/evan-ringsonce-demo/ringsonce-demo?embed=true&theme=dark"
+            src="https://cal.com/evan-ringsonce-demo/ringsonce-demo?embed=true&theme=light"
             width="100%"
             height="700"
             frameBorder="0"

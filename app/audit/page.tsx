@@ -57,12 +57,12 @@ export default function AuditPage() {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-950 py-20 px-4">
+    <div className="min-h-screen bg-white py-20 px-6 lg:px-8">
       <div className="max-w-lg mx-auto">
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-4xl font-bold mb-3">See Where You Stand</h1>
-          <p className="text-zinc-400 mb-6">
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 mb-3">See Where You Stand</h1>
+          <p className="text-gray-700 mb-6">
             Enter your business below. We&apos;ll scan 3 AI search engines,
             compare you to your top 3 competitors, and send you a full report —
             free.
@@ -73,8 +73,8 @@ export default function AuditPage() {
               "Results in 24 hours",
               "Competitor data included",
             ].map((item) => (
-              <li key={item} className="flex items-center gap-2 text-sm text-zinc-300">
-                <span className="text-emerald-400">✓</span>
+              <li key={item} className="flex items-center gap-2 text-sm text-gray-700">
+                <span className="text-emerald-500">✓</span>
                 {item}
               </li>
             ))}
@@ -82,128 +82,133 @@ export default function AuditPage() {
         </div>
 
         {/* Form */}
-        <form onSubmit={handleSubmit} className="space-y-5">
-          <div>
-            <label className="block text-sm text-zinc-300 mb-1.5">
-              Business name <span className="text-red-400">*</span>
-            </label>
-            <input
-              name="businessName"
-              type="text"
-              required
-              value={form.businessName}
-              onChange={handleChange}
-              placeholder="Reynolds Heating and Cooling"
-              className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-blue-500 transition-colors"
-            />
-          </div>
-
-          <div className="grid grid-cols-2 gap-4">
+        <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-8">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-sm text-zinc-300 mb-1.5">
-                City <span className="text-red-400">*</span>
+              <label className="block text-sm text-gray-700 font-medium mb-1">
+                Business name <span className="text-red-400">*</span>
               </label>
               <input
-                name="city"
+                name="businessName"
                 type="text"
                 required
-                value={form.city}
+                value={form.businessName}
                 onChange={handleChange}
-                placeholder="Columbus"
-                className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-blue-500 transition-colors"
+                placeholder="Reynolds Heating and Cooling"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none text-sm"
               />
             </div>
-            <div>
-              <label className="block text-sm text-zinc-300 mb-1.5">
-                State <span className="text-red-400">*</span>
-              </label>
-              <input
-                name="state"
-                type="text"
-                required
-                maxLength={2}
-                value={form.state}
-                onChange={handleChange}
-                placeholder="OH"
-                className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-blue-500 transition-colors uppercase"
-              />
-            </div>
-          </div>
 
-          <div>
-            <label className="block text-sm text-zinc-300 mb-1.5">
-              Primary service <span className="text-red-400">*</span>
-            </label>
-            <select
-              name="service"
-              required
-              value={form.service}
-              onChange={handleChange}
-              className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-500 transition-colors"
-            >
-              <option value="" disabled>
-                Select a service
-              </option>
-              {services.map((s) => (
-                <option key={s} value={s}>
-                  {s}
+            <div className="grid grid-cols-2 gap-4">
+              <div>
+                <label className="block text-sm text-gray-700 font-medium mb-1">
+                  City <span className="text-red-400">*</span>
+                </label>
+                <input
+                  name="city"
+                  type="text"
+                  required
+                  value={form.city}
+                  onChange={handleChange}
+                  placeholder="Columbus"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none text-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-sm text-gray-700 font-medium mb-1">
+                  State <span className="text-red-400">*</span>
+                </label>
+                <input
+                  name="state"
+                  type="text"
+                  required
+                  maxLength={2}
+                  value={form.state}
+                  onChange={handleChange}
+                  placeholder="OH"
+                  className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none text-sm uppercase"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label className="block text-sm text-gray-700 font-medium mb-1">
+                Primary service <span className="text-red-400">*</span>
+              </label>
+              <select
+                name="service"
+                required
+                value={form.service}
+                onChange={handleChange}
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none text-sm bg-white"
+              >
+                <option value="" disabled>
+                  Select a service
                 </option>
-              ))}
-            </select>
-          </div>
+                {services.map((s) => (
+                  <option key={s} value={s}>
+                    {s}
+                  </option>
+                ))}
+              </select>
+            </div>
 
-          <div>
-            <label className="block text-sm text-zinc-300 mb-1.5">
-              Best phone to reach you <span className="text-red-400">*</span>
-            </label>
-            <input
-              name="phone"
-              type="tel"
-              required
-              value={form.phone}
-              onChange={handleChange}
-              placeholder="(614) 555-0100"
-              className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-blue-500 transition-colors"
-            />
-          </div>
+            <div>
+              <label className="block text-sm text-gray-700 font-medium mb-1">
+                Best phone to reach you <span className="text-red-400">*</span>
+              </label>
+              <input
+                name="phone"
+                type="tel"
+                required
+                value={form.phone}
+                onChange={handleChange}
+                placeholder="(614) 555-0100"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none text-sm"
+              />
+            </div>
 
-          <div>
-            <label className="block text-sm text-zinc-300 mb-1.5">
-              Email <span className="text-red-400">*</span>
-            </label>
-            <input
-              name="email"
-              type="email"
-              required
-              value={form.email}
-              onChange={handleChange}
-              placeholder="you@yourbusiness.com"
-              className="w-full bg-zinc-900 border border-zinc-700 rounded-lg px-4 py-3 text-white placeholder-zinc-500 text-sm focus:outline-none focus:border-blue-500 transition-colors"
-            />
-          </div>
+            <div>
+              <label className="block text-sm text-gray-700 font-medium mb-1">
+                Email <span className="text-red-400">*</span>
+              </label>
+              <input
+                name="email"
+                type="email"
+                required
+                value={form.email}
+                onChange={handleChange}
+                placeholder="you@yourbusiness.com"
+                className="w-full border border-gray-300 rounded-lg px-4 py-3 text-gray-900 placeholder-gray-400 focus:ring-2 focus:ring-emerald-500 focus:border-transparent outline-none text-sm"
+              />
+            </div>
 
-          {error && (
-            <p className="text-sm text-red-400 bg-red-900/20 border border-red-800 rounded-lg px-4 py-3">
-              {error}
-            </p>
-          )}
-
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full py-4 rounded-xl text-base font-semibold text-white transition-opacity hover:opacity-90 disabled:opacity-60 flex items-center justify-center gap-3"
-            style={{ backgroundColor: "#10B981" }}
-          >
-            {loading ? (
-              <>
-                <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
-                Scanning AI search engines...
-              </>
-            ) : (
-              "Generate My Audit →"
+            {error && (
+              <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
+                {error}
+              </p>
             )}
-          </button>
-        </form>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full py-4 rounded-xl text-lg font-semibold text-white bg-emerald-500 hover:bg-emerald-600 transition-colors disabled:opacity-60 flex items-center justify-center gap-3"
+            >
+              {loading ? (
+                <>
+                  <span className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                  Scanning AI search engines...
+                </>
+              ) : (
+                "Generate My Audit →"
+              )}
+            </button>
+          </form>
+        </div>
+
+        <p className="text-center text-gray-400 text-sm mt-4">
+          🔒 Your info is private. No spam.
+        </p>
       </div>
     </div>
   );

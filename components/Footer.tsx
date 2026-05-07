@@ -2,31 +2,33 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="bg-zinc-900 border-t border-zinc-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-gray-50 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="text-xl font-bold text-white mb-2">AutoGrowth</div>
-            <p className="text-sm text-zinc-400">Your market. Dominated.</p>
+            <div className="text-xl font-bold text-gray-900 mb-2">
+              AutoGrowth<span className="text-emerald-500">.</span>
+            </div>
+            <p className="text-sm text-gray-500">Your market. Dominated.</p>
           </div>
 
           {/* Product */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Product</h3>
+            <h3 className="text-gray-900 font-semibold text-sm mb-4">Product</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/how-it-works" className="text-sm text-zinc-400 hover:text-white transition-colors">
+                <Link href="/how-it-works" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
                   How It Works
                 </Link>
               </li>
               <li>
-                <Link href="/pricing" className="text-sm text-zinc-400 hover:text-white transition-colors">
+                <Link href="/pricing" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
                   Pricing
                 </Link>
               </li>
               <li>
-                <Link href="/roi" className="text-sm text-zinc-400 hover:text-white transition-colors">
+                <Link href="/roi" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
                   ROI Calculator
                 </Link>
               </li>
@@ -35,15 +37,15 @@ export function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Resources</h3>
+            <h3 className="text-gray-900 font-semibold text-sm mb-4">Resources</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/blog" className="text-sm text-zinc-400 hover:text-white transition-colors">
+                <Link href="/blog" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
                   Blog
                 </Link>
               </li>
               <li>
-                <Link href="/audit" className="text-sm text-zinc-400 hover:text-white transition-colors">
+                <Link href="/audit" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
                   Free Audit
                 </Link>
               </li>
@@ -52,15 +54,15 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="text-sm font-semibold text-white mb-4">Company</h3>
+            <h3 className="text-gray-900 font-semibold text-sm mb-4">Company</h3>
             <ul className="space-y-2">
               <li>
-                <Link href="/demo" className="text-sm text-zinc-400 hover:text-white transition-colors">
+                <Link href="/demo" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
                   Demo
                 </Link>
               </li>
               <li>
-                <a href="mailto:hello@autogrowthai.com" className="text-sm text-zinc-400 hover:text-white transition-colors">
+                <a href="mailto:hello@autogrowthai.com" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
                   Contact
                 </a>
               </li>
@@ -68,17 +70,17 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="flex items-center gap-4 text-sm text-zinc-500">
-            <span>Built in Columbus, OH</span>
+        <div className="border-t border-gray-200 mt-12 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-4 text-sm text-gray-400">
+            <span className="text-gray-500">Built in Columbus, OH</span>
             <span>|</span>
             <span>© 2026 AutoGrowth AI. All rights reserved.</span>
           </div>
           <div className="flex items-center gap-4">
-            <Link href="/privacy" className="text-sm text-zinc-500 hover:text-white transition-colors">
+            <Link href="/privacy" className="text-sm text-gray-400 hover:text-gray-900 transition-colors">
               Privacy
             </Link>
-            <Link href="/terms" className="text-sm text-zinc-500 hover:text-white transition-colors">
+            <Link href="/terms" className="text-sm text-gray-400 hover:text-gray-900 transition-colors">
               Terms
             </Link>
           </div>

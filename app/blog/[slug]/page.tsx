@@ -45,26 +45,26 @@ export default function BlogPostPage({ params }: Props) {
   if (!post) notFound();
 
   return (
-    <div className="min-h-screen bg-zinc-950 py-20 px-4">
+    <div className="min-h-screen bg-white py-20 px-6 lg:px-8">
       <div className="max-w-2xl mx-auto">
         <Link
           href="/blog"
-          className="text-sm text-zinc-400 hover:text-white transition-colors mb-8 inline-block"
+          className="text-sm text-gray-500 hover:text-gray-900 transition-colors mb-8 inline-block"
         >
           ← Back to blog
         </Link>
 
         <div className="mb-8">
-          <p className="text-xs text-zinc-500 mb-3">
+          <p className="text-xs text-gray-400 mb-3">
             {post.date} · By {post.author}
           </p>
-          <h1 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          <h1 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-4">
             {post.title}
           </h1>
-          <p className="text-zinc-400">{post.excerpt}</p>
+          <p className="text-gray-600">{post.excerpt}</p>
         </div>
 
-        <div className="mdx-content text-zinc-300 leading-relaxed space-y-4">
+        <div className="mdx-content text-gray-700 leading-relaxed space-y-4">
           <MDXRemote source={post.content} />
         </div>
       </div>
