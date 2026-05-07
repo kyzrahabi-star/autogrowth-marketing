@@ -104,12 +104,11 @@ export default function HomePage() {
       {/* Hero — text + search bar */}
       <section className="bg-white pt-20 pb-10 px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 text-sm font-medium px-3 py-1 rounded-full border border-emerald-200 mb-6">
-            ● AI Search Visibility
+          <span className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 text-sm font-medium px-3 py-1 rounded-full mb-6">
+            AI Search Visibility
           </span>
           <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-6">
-            Your Competitors Are Getting{" "}
-            <span className="text-gradient">All the Calls</span>
+            Your Competitors Are Getting All the Calls
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto">
             When homeowners search Google, ask ChatGPT, or check Perplexity for
@@ -451,9 +450,6 @@ export default function HomePage() {
       <section className="py-24 px-6 lg:px-8 bg-gray-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <p className="text-emerald-600 text-sm font-semibold uppercase tracking-wide mb-3">
-              Your AI-Powered Team
-            </p>
             <h2 className="text-4xl font-bold tracking-tight text-gray-900 mb-4">
               5 Specialists. Zero employees.
             </h2>
@@ -468,9 +464,7 @@ export default function HomePage() {
                 key={i}
                 className="bg-white border border-gray-200 rounded-xl shadow-sm hover:shadow-md transition-shadow p-6"
               >
-                <div className="bg-emerald-50 rounded-xl p-2.5 w-fit mb-4">
-                  <s.Icon className="w-10 h-10 text-emerald-600" strokeWidth={1.5} />
-                </div>
+                <s.Icon className="w-5 h-5 text-gray-400 mb-4" strokeWidth={1.5} />
                 <h3 className="text-gray-900 font-semibold text-lg mb-2">
                   {s.name}
                 </h3>
@@ -509,11 +503,11 @@ export default function HomePage() {
             <div className="space-y-10">
               {timeline.map((item, i) => (
                 <div key={i} className="flex gap-6 items-start pl-14 relative">
-                  <div className="absolute left-0 w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0 bg-emerald-500">
+                  <div className="absolute left-0 w-12 h-12 rounded-full flex items-center justify-center text-sm font-bold text-white shrink-0 bg-gray-900">
                     {i + 1}
                   </div>
                   <div>
-                    <p className="text-sm font-semibold text-emerald-600 mb-1">
+                    <p className="text-sm font-semibold text-gray-500 mb-1">
                       {item.day}
                     </p>
                     <p className="text-gray-900 text-base">{item.text}</p>
@@ -525,7 +519,7 @@ export default function HomePage() {
           <div className="mt-14 text-center">
             <Link
               href="/audit"
-              className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+              className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
             >
               Start your free audit →
             </Link>
@@ -544,7 +538,7 @@ export default function HomePage() {
               <div key={i} className="bg-white border border-gray-200 rounded-xl shadow-sm p-8">
                 <div className="flex gap-0.5 mb-4">
                   {Array.from({ length: 5 }).map((_, k) => (
-                    <Star key={k} className="w-4 h-4 text-emerald-500 fill-emerald-500" strokeWidth={0} />
+                    <Star key={k} className="w-4 h-4 text-yellow-400 fill-yellow-400" strokeWidth={0} />
                   ))}
                 </div>
                 <p className="text-gray-700 leading-relaxed mb-6">
@@ -571,7 +565,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/audit"
-            className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+            className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
           >
             Get your free audit →
           </Link>

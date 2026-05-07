@@ -56,16 +56,16 @@ export default function HvacPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-gradient-to-b from-orange-50 to-white pt-24 pb-20 px-6 lg:px-8">
+      <section className="bg-gradient-to-b from-gray-50 to-white pt-24 pb-20 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
             <Flame className="w-3.5 h-3.5" />
             Built for HVAC contractors
           </div>
           <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-gray-900 mb-5 leading-tight">
             Full Schedules.
             <br />
-            <span className="text-orange-500">No Matter the Season.</span>
+            No Matter the Season.
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
             AutoGrowth gets your HVAC business recommended by Google AND AI
@@ -74,7 +74,7 @@ export default function HvacPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/audit"
-              className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-xl text-base transition-colors"
+              className="bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
             >
               Get Your Free HVAC Audit →
             </Link>

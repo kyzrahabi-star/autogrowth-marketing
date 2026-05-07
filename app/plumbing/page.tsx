@@ -64,9 +64,9 @@ export default function PlumbingPage() {
       </div>
 
       {/* Hero */}
-      <section className="bg-gradient-to-b from-blue-50 to-white pt-16 pb-20 px-6 lg:px-8">
+      <section className="bg-gradient-to-b from-gray-50 to-white pt-16 pb-20 px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6 mt-8">
+          <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1.5 rounded-full mb-6 mt-8">
             <Wrench className="w-3.5 h-3.5" />
             Built for plumbing contractors
           </div>
@@ -81,7 +81,7 @@ export default function PlumbingPage() {
           </p>
           <a
             href="#waitlist"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl text-base transition-colors"
+            className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
           >
             Join the Plumbing Waitlist
             <ArrowRight className="w-4 h-4" />

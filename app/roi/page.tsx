@@ -158,42 +158,42 @@ export default function ROIPage() {
             </div>
 
             {/* 50% visibility */}
-            <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-              <p className="text-sm text-emerald-700 mb-2">At 50% Online Visibility</p>
-              <p className="text-3xl font-bold text-emerald-700">
+            <div className="bg-white border border-gray-200 rounded-xl p-6">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">At 50% Online Visibility</p>
+              <p className="text-3xl font-bold text-gray-900">
                 {fmt(results.revenue50)}
-                <span className="text-lg text-gray-500 font-normal">
+                <span className="text-lg text-gray-400 font-normal">
                   /month
                 </span>
               </p>
-              <p className="text-sm text-emerald-600 mt-1">
+              <p className="text-sm text-gray-500 mt-1">
                 +{results.calls50} additional calls/month from Google + AI
               </p>
             </div>
 
             {/* 80% visibility */}
-            <div className="bg-emerald-500 rounded-xl p-6">
-              <p className="text-sm text-white mb-2 font-medium">
+            <div className="bg-gray-900 rounded-xl p-6">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">
                 At 80% Online Visibility
               </p>
               <p className="text-3xl font-bold text-white">
                 {fmt(results.revenue80)}
-                <span className="text-lg text-emerald-100 font-normal">
+                <span className="text-lg text-gray-500 font-normal">
                   /month
                 </span>
               </p>
-              <p className="text-sm text-emerald-100 mt-1">
+              <p className="text-sm text-gray-400 mt-1">
                 +{results.calls80} additional calls/month from Google + AI
               </p>
             </div>
 
             {/* Annual lift */}
-            <div className="bg-gray-900 text-white rounded-xl p-6">
-              <p className="text-sm text-gray-400 mb-2">Annual revenue lift</p>
-              <p className="text-3xl font-bold text-gradient">
+            <div className="bg-emerald-500 rounded-xl p-6">
+              <p className="text-sm text-emerald-100 mb-2">Annual revenue lift</p>
+              <p className="text-3xl font-bold text-white">
                 {fmt(results.annualLow)} — {fmt(results.annualHigh)}
               </p>
-              <p className="text-xs text-gray-400 mt-1">based on Google + AI visibility improving from 0 to 50–80%</p>
+              <p className="text-xs text-emerald-100 mt-1">based on visibility improving from 0 to 50–80%</p>
             </div>
           </div>
         </div>
@@ -241,7 +241,7 @@ export default function ROIPage() {
           </p>
           <Link
             href="/audit"
-            className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+            className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
           >
             Get your real score — free
           </Link>

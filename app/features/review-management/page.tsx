@@ -12,10 +12,10 @@ export default function ReviewManagementPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="pt-24 pb-20 px-6 lg:px-8 bg-gradient-to-b from-yellow-50 to-white">
+      <section className="pt-24 pb-20 px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
-            <Star className="w-3.5 h-3.5 fill-yellow-500" />
+          <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+            <Star className="w-3.5 h-3.5 fill-gray-500" />
             Reputation Agent
           </div>
           <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-gray-900 mb-5">
@@ -29,7 +29,7 @@ export default function ReviewManagementPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/audit"
-              className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-xl text-base transition-colors"
+              className="bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
             >
               Start Building Your Reputation →
             </Link>
@@ -253,7 +253,7 @@ export default function ReviewManagementPage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/audit"
-              className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-xl text-base transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-white text-gray-900 font-semibold px-8 py-4 rounded-full text-base transition-colors"
             >
               Start Building Your Reputation
               <ArrowRight className="w-4 h-4" />

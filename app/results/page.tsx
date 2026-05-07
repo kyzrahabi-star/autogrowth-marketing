@@ -68,12 +68,12 @@ export default function ResultsPage() {
           {/* Before / After */}
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8">
             {/* Before */}
-            <div className="bg-red-50 border border-red-100 rounded-2xl p-6">
-              <p className="text-sm font-semibold text-red-700 mb-3">
+            <div className="bg-white border border-gray-200 rounded-2xl p-6">
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">
                 Before AutoGrowth
               </p>
-              <p className="text-5xl font-bold text-red-500">0/100</p>
-              <p className="text-xs text-red-400 mb-4">AI Visibility Score</p>
+              <p className="text-5xl font-bold text-gray-900">0/100</p>
+              <p className="text-xs text-gray-400 mb-4">AI Visibility Score</p>
               <ul className="space-y-2">
                 {[
                   "Zero citations across ChatGPT, Perplexity, Google AI",
@@ -81,8 +81,8 @@ export default function ResultsPage() {
                   "No follow-up system",
                   "No review strategy",
                 ].map((item) => (
-                  <li key={item} className="text-sm text-red-700 flex items-start gap-2">
-                    <span className="shrink-0 mt-0.5">•</span>
+                  <li key={item} className="text-sm text-gray-600 flex items-start gap-2">
+                    <span className="shrink-0 mt-0.5 text-gray-400">–</span>
                     {item}
                   </li>
                 ))}
@@ -90,12 +90,12 @@ export default function ResultsPage() {
             </div>
 
             {/* After */}
-            <div className="bg-emerald-50 border border-emerald-100 rounded-2xl p-6">
-              <p className="text-sm font-semibold text-emerald-700 mb-3">
+            <div className="bg-white border border-emerald-200 rounded-2xl p-6">
+              <p className="text-xs font-semibold text-emerald-600 uppercase tracking-wide mb-3">
                 After 30 Days
               </p>
-              <p className="text-5xl font-bold text-emerald-500">12/100</p>
-              <p className="text-xs text-emerald-400 mb-4">AI Visibility Score</p>
+              <p className="text-5xl font-bold text-gray-900">12/100</p>
+              <p className="text-xs text-gray-400 mb-4">AI Visibility Score</p>
               <ul className="space-y-2">
                 {[
                   "First AI citations appearing across 3 engines",
@@ -103,8 +103,8 @@ export default function ResultsPage() {
                   "3-step automated follow-up running",
                   "Daily competitor tracking active",
                 ].map((item) => (
-                  <li key={item} className="text-sm text-emerald-700 flex items-start gap-2">
-                    <span className="shrink-0 mt-0.5">•</span>
+                  <li key={item} className="text-sm text-gray-600 flex items-start gap-2">
+                    <span className="shrink-0 mt-0.5 text-emerald-500">✓</span>
                     {item}
                   </li>
                 ))}
@@ -113,16 +113,15 @@ export default function ResultsPage() {
           </div>
 
           {/* Quote */}
-          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8 mt-8">
-            <p className="text-4xl text-gray-200 leading-none mb-2">&ldquo;</p>
+          <blockquote className="border-l-2 border-gray-200 pl-6 mt-8">
             <p className="text-xl text-gray-700 italic leading-relaxed">
               I had no idea AI search engines even existed. Turns out my competitors
               were getting recommended while I was invisible.
             </p>
-            <p className="text-sm text-gray-500 mt-4">
+            <p className="text-sm text-gray-500 mt-3">
               — James London, Reynolds Heating &amp; Cooling
             </p>
-          </div>
+          </blockquote>
 
           {/* Stats grid */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-8">
@@ -172,7 +171,7 @@ export default function ResultsPage() {
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full px-8 py-3 text-sm transition-colors mt-8"
+              className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-full px-8 py-3 text-sm transition-colors mt-8"
             >
               Get Your Free Audit →
             </Link>
@@ -192,7 +191,7 @@ export default function ResultsPage() {
           </p>
           <Link
             href="/audit"
-            className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold rounded-full px-8 py-4 text-sm transition-colors mt-10"
+            className="inline-flex items-center justify-center bg-gray-900 hover:bg-gray-800 text-white font-semibold rounded-full px-8 py-4 text-sm transition-colors mt-10"
           >
             Get Your Free Audit →
           </Link>

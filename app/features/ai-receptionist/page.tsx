@@ -21,9 +21,9 @@ export default function AiReceptionistPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero */}
-      <section className="pt-24 pb-20 px-6 lg:px-8 bg-gradient-to-b from-emerald-50 to-white">
+      <section className="pt-24 pb-20 px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 bg-emerald-100 text-emerald-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
+          <div className="inline-flex items-center gap-2 bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1.5 rounded-full mb-6">
             <Phone className="w-3.5 h-3.5" />
             AI Receptionist
           </div>
@@ -38,7 +38,7 @@ export default function AiReceptionistPage() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/demo"
-              className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-xl text-base transition-colors"
+              className="bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
             >
               See It In Action — Book a Demo
             </Link>
@@ -78,7 +78,7 @@ export default function AiReceptionistPage() {
             {conversationSteps.map(({ label, detail }, i) => (
               <div key={label} className="flex items-start gap-5">
                 <div className="flex flex-col items-center">
-                  <div className="w-9 h-9 rounded-full bg-emerald-500 text-white text-sm font-bold flex items-center justify-center shrink-0">
+                  <div className="w-9 h-9 rounded-full bg-gray-900 text-white text-sm font-bold flex items-center justify-center shrink-0">
                     {i + 1}
                   </div>
                   {i < conversationSteps.length - 1 && (
@@ -187,8 +187,8 @@ export default function AiReceptionistPage() {
             The difference it makes
           </h2>
           <div className="grid sm:grid-cols-2 gap-5">
-            <div className="bg-red-50 rounded-2xl p-6 border border-red-100">
-              <div className="text-sm font-bold text-red-700 mb-4">
+            <div className="bg-white rounded-2xl p-6 border border-gray-200">
+              <div className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-4">
                 Without AI Receptionist
               </div>
               <ul className="space-y-3">
@@ -207,8 +207,8 @@ export default function AiReceptionistPage() {
                 ))}
               </ul>
             </div>
-            <div className="bg-emerald-50 rounded-2xl p-6 border border-emerald-100">
-              <div className="text-sm font-bold text-emerald-700 mb-4">
+            <div className="bg-white rounded-2xl p-6 border border-emerald-200">
+              <div className="text-xs font-semibold text-emerald-600 uppercase tracking-wide mb-4">
                 With AI Receptionist
               </div>
               <ul className="space-y-3">
@@ -244,7 +244,7 @@ export default function AiReceptionistPage() {
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
               href="/demo"
-              className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-xl text-base transition-colors"
+              className="inline-flex items-center justify-center gap-2 bg-gray-100 hover:bg-white text-gray-900 font-semibold px-8 py-4 rounded-full text-base transition-colors"
             >
               See It In Action — Book a Demo
               <ArrowRight className="w-4 h-4" />

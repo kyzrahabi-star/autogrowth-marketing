@@ -81,7 +81,7 @@ export default function RoofingPage() {
           </p>
           <a
             href="#waitlist"
-            className="inline-flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-semibold px-8 py-4 rounded-xl text-base transition-colors"
+            className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
           >
             Join the Roofing Waitlist
             <ArrowRight className="w-4 h-4" />
