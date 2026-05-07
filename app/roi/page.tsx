@@ -45,11 +45,12 @@ export default function ROIPage() {
     <div className="min-h-screen bg-white py-20 px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 text-center mb-4">
-          ROI Calculator
+          How Much Revenue Are You Losing to Google AND AI?
         </h1>
         <p className="text-gray-500 text-center mb-14 max-w-xl mx-auto">
-          How much revenue could AI search visibility add to your business?
-          Adjust the sliders and find out.
+          Homeowners now search Google, ChatGPT, and Perplexity before they call
+          anyone. Missing from any of them means lost revenue. See what it&apos;s
+          costing you.
         </p>
 
         <div className="grid md:grid-cols-2 gap-10">
@@ -132,7 +133,7 @@ export default function ROIPage() {
             <div>
               <div className="flex justify-between mb-2">
                 <label className="text-sm text-gray-700 font-medium">
-                  Current AI visibility
+                  Current online visibility score
                 </label>
                 <span className="text-sm font-bold text-red-500">0 / 100</span>
               </div>
@@ -140,7 +141,7 @@ export default function ROIPage() {
                 <div className="bg-red-500 h-2 rounded-full w-0" />
               </div>
               <p className="text-xs text-gray-500 mt-1">
-                You&apos;re currently invisible
+                You&apos;re missing across Google and AI search
               </p>
             </div>
           </div>
@@ -152,13 +153,13 @@ export default function ROIPage() {
               <p className="text-sm text-gray-500 mb-2">Currently</p>
               <p className="text-3xl font-bold text-gray-900">$0</p>
               <p className="text-sm text-gray-500 mt-1">
-                0 AI-referred calls/month — $0 revenue from AI
+                0 calls from Google + AI search — $0 revenue
               </p>
             </div>
 
             {/* 50% visibility */}
             <div className="bg-emerald-50 border border-emerald-200 rounded-xl p-6">
-              <p className="text-sm text-emerald-700 mb-2">At 50% AI Visibility</p>
+              <p className="text-sm text-emerald-700 mb-2">At 50% Online Visibility</p>
               <p className="text-3xl font-bold text-emerald-700">
                 {fmt(results.revenue50)}
                 <span className="text-lg text-gray-500 font-normal">
@@ -166,14 +167,14 @@ export default function ROIPage() {
                 </span>
               </p>
               <p className="text-sm text-emerald-600 mt-1">
-                +{results.calls50} additional calls/month
+                +{results.calls50} additional calls/month from Google + AI
               </p>
             </div>
 
             {/* 80% visibility */}
             <div className="bg-emerald-500 rounded-xl p-6">
               <p className="text-sm text-white mb-2 font-medium">
-                At 80% AI Visibility
+                At 80% Online Visibility
               </p>
               <p className="text-3xl font-bold text-white">
                 {fmt(results.revenue80)}
@@ -182,7 +183,7 @@ export default function ROIPage() {
                 </span>
               </p>
               <p className="text-sm text-emerald-100 mt-1">
-                +{results.calls80} additional calls/month
+                +{results.calls80} additional calls/month from Google + AI
               </p>
             </div>
 
@@ -192,7 +193,7 @@ export default function ROIPage() {
               <p className="text-3xl font-bold text-gradient">
                 {fmt(results.annualLow)} — {fmt(results.annualHigh)}
               </p>
-              <p className="text-xs text-gray-400 mt-1">50% to 80% scenarios</p>
+              <p className="text-xs text-gray-400 mt-1">based on Google + AI visibility improving from 0 to 50–80%</p>
             </div>
           </div>
         </div>
@@ -211,9 +212,9 @@ export default function ROIPage() {
           {showMath && (
             <div className="px-6 pb-6 text-sm text-gray-500 space-y-2">
               <p>
-                <strong className="text-gray-900">AI search share:</strong> 15%
-                of all inbound searches now originate from AI tools (ChatGPT,
-                Perplexity, Google AI Overviews).
+                <strong className="text-gray-900">Google + AI share:</strong> 15%
+                of inbound calls now come from AI tools (ChatGPT, Perplexity,
+                Google AI Overviews), on top of existing Google search traffic.
               </p>
               <p>
                 <strong className="text-gray-900">Capture rate:</strong> At 50%
@@ -236,7 +237,7 @@ export default function ROIPage() {
         {/* CTA */}
         <div className="mt-12 text-center">
           <p className="text-gray-500 mb-4">
-            See your real score — not an estimate.
+            See your real visibility score across Google and AI — free.
           </p>
           <Link
             href="/audit"

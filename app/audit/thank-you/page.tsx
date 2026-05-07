@@ -16,12 +16,13 @@ export default function ThankYouPage() {
           <Check className="w-10 h-10 text-emerald-500" strokeWidth={2.5} />
         </div>
 
-        <h1 className="text-3xl font-bold text-gray-900 mb-4">Your audit is running.</h1>
+        <h1 className="text-3xl font-bold text-gray-900 mb-4">Your visibility audit is running.</h1>
         <p className="text-gray-600 text-lg mb-10">
-          We&apos;re scanning ChatGPT, Perplexity, and Google AI for your
-          business right now. Check your email in the next 24 hours — you&apos;ll
-          get a full report with your AI visibility score, your top 3
-          competitors&apos; scores, and a prioritized list of actions.
+          We&apos;re scanning Google, Google Maps, ChatGPT, Perplexity, and
+          Google AI Overviews for your business right now. Check your email in
+          the next 24 hours — you&apos;ll get a full report with your visibility
+          score across all platforms, your top 3 competitors&apos; scores, and a
+          prioritized list of actions.
         </p>
 
         <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-8 text-left">

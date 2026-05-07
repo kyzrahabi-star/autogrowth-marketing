@@ -36,21 +36,21 @@ const specialists: Array<{
     Icon: Search,
     name: "AI Search Analyst",
     description:
-      "Runs daily scans of ChatGPT, Perplexity, Google AI Overviews, and Bing Copilot. Searches 20+ queries relevant to your business — 'AC repair Columbus OH', 'best HVAC near me', and more. You get a morning briefing email with your citation count vs. competitors.",
+      "Runs daily scans across Google Search, Google Maps, Google AI Overviews, ChatGPT, Perplexity, and Bing Copilot. Checks 20+ queries relevant to your business every morning. You get a briefing email showing your citation count, Google ranking position, and exactly where competitors are beating you.",
     whatYouSee:
       "Morning briefing showing 'Reynolds HVAC: 3 citations yesterday. Top competitor: 7. Gap: closing.'",
     realExample:
-      "Reynolds Heating and Cooling had 0 AI citations on Day 1. After 6 weeks: 14 citations across 3 AI engines.",
+      "Reynolds Heating and Cooling had 0 AI citations and ranked page 3 on Google on Day 1. After 6 weeks: 14 AI citations and page 1 rankings for 3 local searches.",
   },
   {
     Icon: PenTool,
     name: "Content Director",
     description:
-      "Writes one long-form blog post and four video scripts per week. Content covers your services, your city, real HVAC problems with concrete answers. Written to sound like a real technician — because AI search rewards expertise, not marketing copy.",
+      "Writes one long-form blog post and four video scripts per week. Each piece is optimized to rank on Google AND to be cited by AI engines. Written to sound like a real technician — because both Google and AI reward genuine expertise.",
     whatYouSee:
       "Content calendar showing published posts, citation impact, and which posts earned AI citations.",
     realExample:
-      "Reynolds' blog post 'AC Repair Columbus OH: What It Costs in 2026' earned 3 Perplexity citations in 11 days.",
+      "Reynolds' post 'AC Repair Columbus OH: What It Costs in 2026' ranked on Google page 1 in 3 weeks and earned 3 Perplexity citations in 11 days.",
   },
   {
     Icon: Zap,
@@ -76,11 +76,11 @@ const specialists: Array<{
     Icon: Star,
     name: "Reputation Director",
     description:
-      "Sends a review request SMS 2 hours after job complete. Monitors Google and Yelp for new reviews — positive or negative. Drafts a response in your voice for every review. Alerts you immediately when a negative review hits.",
+      "Sends a review request SMS 2 hours after job complete. Google reviews directly impact both your local Google ranking and your AI citation count. Monitors Google and Yelp, drafts responses in your voice, and alerts you immediately when a negative review hits.",
     whatYouSee:
       "Review inbox showing new reviews, drafted responses (one-click approve), and 30-day review velocity.",
     realExample:
-      "Reynolds went from 47 Google reviews (3.8 stars) to 89 reviews (4.7 stars) in 60 days.",
+      "Reynolds went from 47 Google reviews (3.8★) to 89 reviews (4.7★) in 60 days. Their Google Maps ranking improved from position 7 to position 2 in their area.",
   },
 ];
 
@@ -107,9 +107,9 @@ export default function HowItWorksPage() {
             5 Specialists. Your market. Dominated.
           </h1>
           <p className="text-gray-500 text-lg">
-            Each one handles a specific part of your marketing — automatically.
-            Together, they run your entire growth operation while you focus on
-            the work.
+            Each one handles a specific part of your visibility — Google, AI
+            search, content, leads, and reputation. Together they run your
+            entire growth operation while you focus on the work.
           </p>
         </div>
       </section>
@@ -152,6 +152,27 @@ export default function HowItWorksPage() {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* One system section */}
+      <section className="py-20 px-6 lg:px-8 bg-zinc-900">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-white mb-6">
+            One system. Every platform.
+          </h2>
+          <p className="text-zinc-300 text-lg leading-relaxed mb-10">
+            Other agencies do SEO. Some startups do AI optimization. Nobody does both.
+            AutoGrowth covers Google Search, Google Maps, Google AI Overviews, ChatGPT,
+            and Perplexity — all from one dashboard, with one team of specialists.
+          </p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-xl mx-auto">
+            {["Google Search", "Google Maps", "Google AI Overviews", "ChatGPT", "Perplexity", "Review Sites"].map((platform) => (
+              <div key={platform} className="bg-zinc-800 border border-zinc-700 rounded-xl px-4 py-3 text-sm text-zinc-200 font-medium">
+                {platform}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -204,8 +225,9 @@ export default function HowItWorksPage() {
       <section className="py-20 px-6 lg:px-8 text-center bg-gray-50">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-4">See it in action</h2>
         <p className="text-gray-500 mb-8">
-          Book a 15-minute demo. We&apos;ll run a live audit on your actual
-          business.
+          Book a 15-minute demo. We&apos;ll run a live audit on your business
+          across Google and AI search engines and show you exactly where
+          customers are finding your competitors instead of you.
         </p>
         <Link
           href="/demo"
@@ -219,10 +241,10 @@ export default function HowItWorksPage() {
       <section className="bg-zinc-900 py-24 px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-white font-bold text-4xl tracking-tight mb-4">
-            Ready to stop being invisible?
+            Ready to show up everywhere your customers are looking?
           </h2>
           <p className="text-zinc-400 text-xl mb-10">
-            Get your free AI visibility audit. See exactly where you stand vs. your competitors — in 24 hours.
+            Get your free visibility audit. See exactly where you rank on Google AND AI — vs. your top competitors.
           </p>
           <Link
             href="/audit"

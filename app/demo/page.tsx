@@ -17,15 +17,15 @@ export default function DemoPage() {
             See AutoGrowth in action
           </h1>
           <p className="text-gray-600 text-xl mb-8">
-            15 minutes. No pitch. We&apos;ll run a live AI audit on your
-            business and show you exactly where your competitors are being
-            recommended — and you&apos;re not.
+            15 minutes. No pitch. We&apos;ll run a live visibility audit across
+            Google and AI search engines and show you exactly where customers
+            are finding your competitors instead of you.
           </p>
           <ul className="space-y-2 text-left max-w-sm mx-auto">
             {[
               "Live audit on your actual business",
               "See competitor citations in real time",
-              "Walk away with a concrete action plan",
+              "See your Google + AI visibility score live",
             ].map((item) => (
               <li key={item} className="flex items-center gap-2 text-sm text-gray-700">
                 <Check className="w-4 h-4 text-emerald-500 shrink-0" strokeWidth={2.5} />

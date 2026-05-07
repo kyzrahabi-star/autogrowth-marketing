@@ -62,17 +62,17 @@ export default function AuditPage() {
       <div className="max-w-lg mx-auto">
         {/* Header */}
         <div className="mb-10">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 mb-3">See Where You Stand</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-gray-900 mb-3">Get Your Free Visibility Audit</h1>
           <p className="text-gray-700 mb-6">
-            Enter your business below. We&apos;ll scan 3 AI search engines,
-            compare you to your top 3 competitors, and send you a full report —
-            free.
+            We&apos;ll scan Google, Google Maps, ChatGPT, Perplexity, and Google
+            AI Overviews for your business. See exactly where you show up — and
+            where you&apos;re invisible.
           </p>
           <ul className="space-y-2">
             {[
               "No credit card",
               "Results in 24 hours",
-              "Competitor data included",
+              "Google + AI competitor comparison",
             ].map((item) => (
               <li key={item} className="flex items-center gap-2 text-sm text-gray-700">
                 <Check className="w-4 h-4 text-emerald-500 shrink-0" strokeWidth={2.5} />

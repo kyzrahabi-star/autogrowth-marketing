@@ -11,8 +11,8 @@ const tiers = [
     priceNote: "One-time",
     popular: false,
     features: [
-      "AI visibility score across 3 engines",
-      "Competitor comparison (3 businesses)",
+      "Visibility score across Google, ChatGPT, and Perplexity",
+      "Competitor comparison across Google + AI (3 businesses)",
       "Recommended actions report",
       "Delivered by email in 24 hours",
     ],
@@ -26,8 +26,8 @@ const tiers = [
     priceNote: "per month, billed monthly",
     popular: false,
     features: [
-      "AI Search Analyst (daily scans)",
-      "Weekly content: 1 blog post + 4 video scripts",
+      "AI Search Analyst — daily Google + AI visibility scans",
+      "Weekly content: 1 SEO blog post + 4 video scripts",
       "Google Sheets dashboard",
       "Weekly email reports",
       "Up to 1 location",
@@ -46,7 +46,7 @@ const tiers = [
       "Lead Specialist (real-time scoring)",
       "SMS + email alerts on hot leads",
       "Customer Pursuit Manager (6-touch drip)",
-      "Telegram alerts",
+      "SEO + AI-optimized content",
       "Up to 1 location",
     ],
     cta: "Get More Jobs",
@@ -60,8 +60,8 @@ const tiers = [
     popular: false,
     features: [
       "Everything in Growth",
-      "Reputation Director (review management)",
-      "Full AutoGrowth dashboard",
+      "Reputation Director (Google reviews + AI boost)",
+      "Full Google + AI + review dashboard",
       "Review response drafting",
       "Priority support (4hr response)",
       "Up to 2 locations",
@@ -107,11 +107,15 @@ const faqs = [
   },
   {
     q: "Is this just SEO?",
-    a: "No. Traditional SEO targets Google's blue links. We target AI search — ChatGPT, Perplexity, Google AI Overviews. Different algorithms, different content strategy, different results.",
+    a: "It's SEO plus AI search optimization. Traditional SEO gets you ranked on Google. We also get you recommended by ChatGPT, Perplexity, and Google AI Overviews. Most agencies only do one. We do both.",
   },
   {
     q: "What do you need from me to get started?",
     a: "Business name, city, primary service, and your website URL. The audit takes it from there.",
+  },
+  {
+    q: "How is this different from my current marketing?",
+    a: "Your current marketing probably covers Google Ads or basic SEO. It doesn't cover AI search engines, which now answer 40% of 'who should I call' questions. We cover everything — Google, AI, reviews, and content — in one system.",
   },
 ];
 

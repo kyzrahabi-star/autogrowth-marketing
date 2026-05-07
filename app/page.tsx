@@ -7,13 +7,13 @@ export default function HomePage() {
       Icon: Search,
       name: "AI Search Analyst",
       description:
-        "Scans ChatGPT, Perplexity, and Google AI daily. Knows exactly where you rank — and where you don't. You get a morning report every day.",
+        "Monitors your visibility across Google, Google Maps, ChatGPT, Perplexity, and Google AI Overviews. Daily reports show exactly where you rank — and where your competitors are beating you.",
     },
     {
       Icon: PenTool,
       name: "Content Director",
       description:
-        "Writes blog posts and video scripts that get you cited by AI. Sounds like a real technician, not a marketing bot. One new piece every week, automatically.",
+        "Creates SEO-optimized content that ranks on Google AND gets cited by AI engines. Blog posts, video scripts, all written like a real technician — not a marketing bot.",
     },
     {
       Icon: Zap,
@@ -31,26 +31,26 @@ export default function HomePage() {
       Icon: Star,
       name: "Reputation Director",
       description:
-        "Requests reviews after every job. Monitors Google and Yelp nightly. Drafts responses in your voice. Alerts you the moment a bad review hits.",
+        "Manages your Google reviews — which boost both your Google ranking and your AI citations. Requests reviews after every job, drafts responses, and alerts you the moment a negative hits.",
     },
   ];
 
   const timeline = [
     {
       day: "Day 1",
-      text: "Audit complete. You see your AI visibility score vs. competitors.",
+      text: "Full visibility audit across Google, AI engines, and review sites. You see exactly where you stand.",
     },
     {
       day: "Day 7",
-      text: "First content published. Your AI Search Analyst starts building citations.",
+      text: "First content published — optimized for both Google ranking and AI citations.",
     },
     {
       day: "Day 14",
-      text: "First citations appear in AI search results. Lead Specialist goes live.",
+      text: "Google rankings start improving. First AI citations begin appearing.",
     },
     {
       day: "Day 30",
-      text: "Full dashboard with real data. Calls, citations, reviews — all tracked.",
+      text: "Dashboard shows your visibility climbing across all platforms. Calls, citations, reviews — tracked.",
     },
   ];
 
@@ -108,12 +108,13 @@ export default function HomePage() {
             ● AI Search Visibility
           </span>
           <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-6">
-            Is Your Business{" "}
-            <span className="text-gradient">Invisible</span> to AI?
+            Your Competitors Are Getting{" "}
+            <span className="text-gradient">All the Calls</span>
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto">
-            When homeowners ask ChatGPT, Perplexity, or Google AI who to call —
-            your competitors get recommended. You don&apos;t. We fix that.
+            When homeowners search Google, ask ChatGPT, or check Perplexity for
+            who to call — your competitors show up. You don&apos;t. We fix that
+            across every platform.
           </p>
 
           {/* Pill search bar */}
@@ -132,7 +133,7 @@ export default function HomePage() {
               type="submit"
               className="shrink-0 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-colors flex items-center gap-2"
             >
-              Get Your AI Report
+              See Where You&apos;re Missing
               <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
                 <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -306,19 +307,19 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-10 items-center">
             <div>
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                Every day, thousands of homeowners type &quot;best HVAC company
-                near me&quot; into ChatGPT, Perplexity, and Google AI. Those AI
-                systems recommend specific businesses. If you&apos;re not in
-                those answers, you don&apos;t get the call.
+                Google search, Google Maps, Google AI Overviews, ChatGPT,
+                Perplexity — there are now 5+ places homeowners look before they
+                call someone. Most contractors show up in maybe one. Your
+                competitors are showing up in all of them.
               </p>
               <p className="text-gray-900 font-semibold text-lg">
-                Your competitor is getting calls you don&apos;t know you&apos;re
-                missing.
+                You don&apos;t know which calls you&apos;re missing because you
+                can&apos;t see where you&apos;re invisible.
               </p>
             </div>
             <div className="bg-gray-50 border border-gray-200 rounded-2xl p-8">
               <p className="text-sm text-gray-500 mb-6">
-                We scanned 5 HVAC contractors across 3 AI search engines.
+                We scanned 5 HVAC contractors across Google, ChatGPT, and Perplexity.
               </p>
               <div className="space-y-4">
                 <div>
@@ -360,8 +361,8 @@ export default function HomePage() {
               5 Specialists. Zero employees.
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
-              Your team that never sleeps. No hiring, no managing, no benefits. They
-              run on autopilot from day one.
+              Your team that never sleeps. Covers Google, AI engines, reviews, and
+              follow-up — on autopilot from day one.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -466,10 +467,10 @@ export default function HomePage() {
       <section className="bg-zinc-900 py-24 px-6 lg:px-8">
         <div className="max-w-3xl mx-auto text-center">
           <h2 className="text-white font-bold text-4xl tracking-tight mb-4">
-            Ready to stop being invisible?
+            Ready to show up everywhere your customers are looking?
           </h2>
           <p className="text-zinc-400 text-xl mb-10">
-            Get your free AI visibility audit. See exactly where you stand vs. your competitors — in 24 hours.
+            Get your free visibility audit. See where you rank on Google AND AI search — vs. your top competitors. Results in 24 hours.
           </p>
           <Link
             href="/audit"
