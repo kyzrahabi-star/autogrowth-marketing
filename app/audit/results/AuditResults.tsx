@@ -640,7 +640,7 @@ export function AuditResults() {
                       <p className="text-xs text-gray-600 mt-1 leading-relaxed">{issue.body}</p>
                     </div>
                     <Link
-                      href="/demo"
+                      href="/fix"
                       className="shrink-0 text-xs font-semibold text-emerald-600 hover:text-emerald-700 whitespace-nowrap underline underline-offset-2"
                     >
                       Fix with AutoGrowth →
