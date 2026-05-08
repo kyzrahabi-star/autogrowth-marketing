@@ -11,8 +11,7 @@ function Fallback() {
         </h1>
         <p className="text-gray-500">
           We&apos;re scanning Google, ChatGPT, Perplexity, and Google AI for
-          your business. Results will also be sent to your email within 24
-          hours.
+          your business. Results are usually ready in under 3 minutes.
         </p>
       </div>
     </div>
@@ -34,8 +33,7 @@ export default function AuditResultsPage() {
             Audit submitted successfully
           </h1>
           <p style={{ color: "#6b7280" }}>
-            Your full audit report will be delivered to your email within 24
-            hours.
+            Your full audit report will be ready in under 3 minutes.
           </p>
         </div>
       </noscript>

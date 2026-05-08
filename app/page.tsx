@@ -139,7 +139,7 @@ export default function HomePage() {
               </svg>
             </button>
           </form>
-          <p className="text-sm text-gray-500">⚡ Free audit. No credit card. Results in 24 hours.</p>
+          <p className="text-sm text-gray-500">⚡ Free audit. No credit card. Results in under 3 minutes.</p>
         </div>
       </section>
 
@@ -556,7 +556,7 @@ export default function HomePage() {
             Ready to show up everywhere your customers are looking?
           </h2>
           <p className="text-zinc-400 text-xl mb-10">
-            Get your free visibility audit. See where you rank on Google AND AI search — vs. your top competitors. Results in 24 hours.
+            Get your free visibility audit. See where you rank on Google AND AI search — vs. your top competitors. Results in under 3 minutes.
           </p>
           <Link
             href="/audit"

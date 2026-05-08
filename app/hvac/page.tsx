@@ -358,7 +358,7 @@ export default function HvacPage() {
             Ready to stop being invisible?
           </h2>
           <p className="text-gray-400 mb-8">
-            Get a free audit of your current Google + AI visibility in 24 hours.
+            Get a free audit of your current Google + AI visibility in under 3 minutes.
             No pitch. No credit card.
           </p>
           <Link

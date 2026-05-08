@@ -4,7 +4,7 @@ import { Check } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Audit Submitted — AutoGrowth AI",
-  description: "Your AI visibility audit is running. Check your email in 24 hours.",
+  description: "Your AI visibility audit is running. Results ready in under 3 minutes.",
 };
 
 export default function ThankYouPage() {
@@ -19,10 +19,10 @@ export default function ThankYouPage() {
         <h1 className="text-3xl font-bold text-gray-900 mb-4">Your visibility audit is running.</h1>
         <p className="text-gray-600 text-lg mb-10">
           We&apos;re scanning Google, Google Maps, ChatGPT, Perplexity, and
-          Google AI Overviews for your business right now. Check your email in
-          the next 24 hours — you&apos;ll get a full report with your visibility
-          score across all platforms, your top 3 competitors&apos; scores, and a
-          prioritized list of actions.
+          Google AI Overviews for your business right now. Results are usually
+          ready in under 3 minutes — you&apos;ll get a full report with your
+          visibility score across all platforms, your top 3 competitors&apos;
+          scores, and a prioritized list of actions.
         </p>
 
         <div className="bg-white border border-gray-200 rounded-2xl shadow-sm p-8 text-left">

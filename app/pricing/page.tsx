@@ -18,7 +18,7 @@ const tiers = [
       "Full visibility audit across Google Search, Google Maps, ChatGPT, Perplexity, and Google AI Overviews",
       "Competitor comparison report",
       "Visibility score (0–100)",
-      "Delivered to your email within 24 hours",
+      "Results delivered in under 3 minutes",
     ],
     cta: "Get Your Free Audit",
     ctaHref: "/audit",

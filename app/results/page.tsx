@@ -187,7 +187,7 @@ export default function ResultsPage() {
           </h2>
           <p className="text-zinc-400 text-xl mt-4 max-w-2xl">
             Get your free audit. See exactly where you rank vs. your competitors — in
-            24 hours.
+            under 3 minutes.
           </p>
           <Link
             href="/audit"
