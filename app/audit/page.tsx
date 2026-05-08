@@ -51,16 +51,46 @@ export default function AuditPage() {
     e.preventDefault();
     setError("");
     setLoading(true);
+
+    const WORKERS = "https://autogrowth-platform.kyzrahabi.workers.dev";
+
     try {
-      const res = await fetch("/api/audit", {
+      let audit_id: string | null = null;
+
+      try {
+        const res = await fetch(`${WORKERS}/api/audit`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            business_name: form.businessName,
+            city: form.city,
+            state: form.state,
+            email: form.email || undefined,
+            phone: form.phone || undefined,
+          }),
+        });
+        if (res.ok) {
+          const data = (await res.json()) as { audit_id?: string };
+          audit_id = data.audit_id ?? null;
+        }
+      } catch {
+        // Workers unreachable — fall through to local fallback
+      }
+
+      if (audit_id) {
+        const params = new URLSearchParams({ id: audit_id });
+        if (form.email) params.set("email", form.email);
+        window.location.href = `${WORKERS}/audit/results?${params.toString()}`;
+        return;
+      }
+
+      // Fallback: local API (fires Lead webhook only, no real DB record)
+      await fetch("/api/audit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!res.ok) {
-        const data = (await res.json()) as { error?: string };
-        throw new Error(data.error ?? "Something went wrong");
-      }
+
       const params = new URLSearchParams({
         business: form.businessName,
         city: form.city,
