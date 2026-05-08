@@ -22,7 +22,7 @@ const tiers = [
     ],
     cta: "Get Your Free Audit",
     ctaHref: "/audit",
-    ctaVariant: "outline-emerald",
+    ctaVariant: "green",
   },
   {
     id: "ai-receptionist",
@@ -41,7 +41,7 @@ const tiers = [
     ],
     cta: "Get Started",
     ctaHref: "/get-started",
-    ctaVariant: "outline-gray",
+    ctaVariant: "green",
   },
   {
     id: "ai-employee",
@@ -85,7 +85,7 @@ const tiers = [
     ],
     cta: "Start Growing",
     ctaHref: "/get-started",
-    ctaVariant: "outline-gray",
+    ctaVariant: "green",
   },
   {
     id: "growth",
@@ -105,7 +105,7 @@ const tiers = [
     ],
     cta: "Get More Jobs",
     ctaHref: "/get-started",
-    ctaVariant: "outline-gray",
+    ctaVariant: "green",
   },
   {
     id: "complete",
@@ -123,7 +123,7 @@ const tiers = [
     ],
     cta: "Dominate Your Market",
     ctaHref: "/get-started",
-    ctaVariant: "outline-gray",
+    ctaVariant: "green",
   },
 ];
 
