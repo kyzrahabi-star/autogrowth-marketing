@@ -46,14 +46,6 @@ export default function ThankYouPage() {
                 → View pricing
               </Link>
             </li>
-            <li>
-              <Link
-                href="/demo"
-                className="text-base text-emerald-600 hover:text-emerald-700 transition-colors"
-              >
-                → Book a demo
-              </Link>
-            </li>
           </ul>
         </div>
       </div>

@@ -201,24 +201,20 @@ export function Navbar() {
               (844) 910-2116
             </a>
             <a
-              href="https://cal.com/evan-ringsonce-demo/ringsonce-demo"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/get-started"
               className="bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors"
             >
-              Book a Demo
+              Get Started
             </a>
           </div>
 
           {/* Mobile right side — Book Demo always visible + hamburger */}
           <div className="flex md:hidden items-center gap-3">
             <a
-              href="https://cal.com/evan-ringsonce-demo/ringsonce-demo"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="/get-started"
               className="bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-4 py-2 rounded-full text-xs transition-colors"
             >
-              Book a Demo
+              Get Started
             </a>
             <button
               className="text-gray-600 hover:text-gray-900 p-1.5"

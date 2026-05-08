@@ -482,12 +482,6 @@ export default function HomePage() {
               <p className="text-gray-600 text-sm mb-4">
                 15-minute live audit on your actual business.
               </p>
-              <Link
-                href="/demo"
-                className="text-sm font-semibold text-emerald-600 hover:text-emerald-700 transition-colors"
-              >
-                Book a demo →
-              </Link>
             </div>
           </div>
         </div>

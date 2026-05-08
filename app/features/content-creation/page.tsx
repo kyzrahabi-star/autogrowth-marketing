@@ -42,10 +42,10 @@ export default function ContentCreationPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/demo"
+              href="/get-started"
               className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
             >
-              See Sample Content — Book a Demo
+              Get Started
             </Link>
             <Link
               href="/audit"
@@ -270,10 +270,10 @@ export default function ContentCreationPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
-              href="/demo"
+              href="/get-started"
               className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
             >
-              See Sample Content — Book a Demo
+              Get Started
               <ArrowRight className="w-4 h-4" />
             </Link>
             <Link

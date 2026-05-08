@@ -143,12 +143,6 @@ export default function WebsiteOptimizationPage() {
             >
               Get Your Free Audit →
             </Link>
-            <Link
-              href="/demo"
-              className="text-gray-700 hover:text-gray-900 font-medium text-base underline underline-offset-4"
-            >
-              Book a demo first
-            </Link>
           </div>
         </div>
       </section>
@@ -407,12 +401,6 @@ export default function WebsiteOptimizationPage() {
             >
               Get Your Free Audit
               <ArrowRight className="w-4 h-4" />
-            </Link>
-            <Link
-              href="/demo"
-              className="inline-flex items-center justify-center gap-2 border border-white/20 hover:border-white/40 text-white font-medium px-8 py-4 rounded-xl text-base transition-colors"
-            >
-              Book a Demo
             </Link>
           </div>
         </div>

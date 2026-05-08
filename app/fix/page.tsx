@@ -304,12 +304,6 @@ export default function FixPage() {
               >
                 Start Fixing — $1,497/month
               </Link>
-              <a
-                href="https://cal.com/evan-ringsonce-demo/ringsonce-demo"
-                className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white font-semibold px-6 py-4 rounded-full text-center transition-colors"
-              >
-                Book a Demo First
-              </a>
             </div>
           </div>
         </div>
