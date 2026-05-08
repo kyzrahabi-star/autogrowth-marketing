@@ -12,6 +12,8 @@ const tiers = [
     priceNote: "/one-time",
     tagline: null,
     popular: false,
+    badge: null,
+    comparisonNote: null,
     features: [
       "Full visibility audit across Google Search, Google Maps, ChatGPT, Perplexity, and Google AI Overviews",
       "Competitor comparison report",
@@ -23,18 +25,63 @@ const tiers = [
     ctaVariant: "outline-emerald",
   },
   {
+    id: "ai-receptionist",
+    name: "AI Receptionist",
+    price: "$497",
+    priceNote: "/month",
+    tagline: "Never miss another call",
+    popular: false,
+    badge: null,
+    comparisonNote: null,
+    features: [
+      "AI Receptionist — answers every call 24/7 by your business name",
+      "Missed call SMS — texts back callers within 30 seconds",
+      "Call summary + transcript emailed after every call",
+      "Owner alerts — SMS on every inbound call",
+    ],
+    cta: "Get Started",
+    ctaHref: "/get-started",
+    ctaVariant: "outline-gray",
+  },
+  {
+    id: "ai-employee",
+    name: "AI Employee",
+    price: "$997",
+    priceNote: "/month",
+    tagline: "Your entire front office automated. One AI employee, 8 jobs.",
+    popular: true,
+    badge: "BEST VALUE",
+    comparisonNote:
+      "GoHighLevel: $594/mo (DIY). Podium: $700–1,000/mo (7 features). AutoGrowth AI Employee: $997/mo — all 8 features, done for you.",
+    features: [
+      "AI Receptionist — answers every call 24/7",
+      "AI SMS Responder — instant text-back to callers",
+      "AI Email Responder — replies in 22 seconds",
+      "Website Chatbot — captures web visitors",
+      "Appointment Setter — books jobs live during calls",
+      "Google Review Automation — requests reviews after every job",
+      "Live Dashboard — real-time Google Sheets tracking",
+      "Owner Alerts — SMS + email on every lead and emergency",
+    ],
+    cta: "Get Started",
+    ctaHref: "/get-started",
+    ctaVariant: "green",
+  },
+  {
     id: "starter",
     name: "Starter",
     price: "$1,497",
     priceNote: "/month",
     tagline: "Less than the cost of one job per month",
     popular: false,
+    badge: null,
+    comparisonNote: null,
     features: [
+      "Everything in AI Employee, plus:",
       "AI Search Analyst — daily visibility scans across Google + all AI engines",
       "Content Director — weekly SEO blog post + 4 short-form video scripts",
-      "Google Sheets dashboard with daily updates",
-      "Email reports + Telegram alerts",
       "Dedicated content calendar",
+      "Email reports + Telegram alerts",
     ],
     cta: "Start Growing",
     ctaHref: "/get-started",
@@ -46,18 +93,19 @@ const tiers = [
     price: "$1,997",
     priceNote: "/month",
     tagline: "One extra job per month pays for the entire system",
-    popular: true,
+    popular: false,
+    badge: null,
+    comparisonNote: null,
     features: [
       "Everything in Starter, plus:",
       "Lead Specialist — real-time lead scoring (0–100) with instant SMS + email alerts",
       "Customer Pursuit Manager — automated 6-step follow-up drip over 14 days",
-      "AI Email Responder — replies to every form submission within 22 seconds",
       "Hot lead SMS alerts to your phone in under 60 seconds",
       "Full AutoGrowth dashboard",
     ],
     cta: "Get More Jobs",
     ctaHref: "/get-started",
-    ctaVariant: "green",
+    ctaVariant: "outline-gray",
   },
   {
     id: "complete",
@@ -66,13 +114,10 @@ const tiers = [
     priceNote: "/month",
     tagline: "Your entire front office — for less than one employee",
     popular: false,
+    badge: null,
+    comparisonNote: null,
     features: [
       "Everything in Growth, plus:",
-      "AI Receptionist — answers every call 24/7 by your business name",
-      "AI SMS Responder — texts back missed callers within 30 seconds",
-      "Website Chatbot — captures visitors 24/7 and books appointments",
-      "Appointment Setter — books directly on your calendar",
-      "Reputation Director — review requests, monitoring, AI-drafted responses",
       "Multi-location support (up to 3 locations)",
       "Dedicated account manager + monthly strategy call",
     ],
@@ -80,46 +125,34 @@ const tiers = [
     ctaHref: "/get-started",
     ctaVariant: "outline-gray",
   },
-  {
-    id: "enterprise",
-    name: "Enterprise",
-    price: "Custom",
-    priceNote: "pricing",
-    tagline: null,
-    popular: false,
-    features: [
-      "Everything in Complete, plus:",
-      "Unlimited locations",
-      "Custom integrations",
-      "White-label options",
-      "Priority engineering support",
-    ],
-    cta: "Talk to Us",
-    ctaHref: "/demo",
-    ctaVariant: "outline-gray",
-  },
 ];
 
 const comparisonFeatures = [
-  { label: "AI + Google visibility scans",   free: true,  starter: true,  growth: true,  complete: true  },
-  { label: "Weekly content (blog + video)",   free: false, starter: true,  growth: true,  complete: true  },
-  { label: "Lead scoring + instant alerts",   free: false, starter: false, growth: true,  complete: true  },
-  { label: "Automated 6-step follow-up",      free: false, starter: false, growth: true,  complete: true  },
-  { label: "AI email auto-reply",             free: false, starter: false, growth: true,  complete: true  },
-  { label: "AI Receptionist (24/7 calls)",    free: false, starter: false, growth: false, complete: true  },
-  { label: "Missed call SMS (30 sec)",        free: false, starter: false, growth: false, complete: true  },
-  { label: "Website chatbot",                 free: false, starter: false, growth: false, complete: true  },
-  { label: "Appointment booking",             free: false, starter: false, growth: false, complete: true  },
-  { label: "Review management",               free: false, starter: false, growth: false, complete: true  },
-  { label: "Multi-location support",          free: false, starter: false, growth: false, complete: true  },
-  { label: "Dedicated account manager",       free: false, starter: false, growth: false, complete: true  },
-  { label: "Monthly strategy call",           free: false, starter: false, growth: false, complete: true  },
+  { label: "AI + Google visibility scans",       free: true,  receptionist: false, employee: false, starter: true,  growth: true,  complete: true  },
+  { label: "Weekly content (blog + video)",       free: false, receptionist: false, employee: false, starter: true,  growth: true,  complete: true  },
+  { label: "Lead scoring + instant alerts",       free: false, receptionist: false, employee: false, starter: false, growth: true,  complete: true  },
+  { label: "Automated 6-step follow-up",          free: false, receptionist: false, employee: false, starter: false, growth: true,  complete: true  },
+  { label: "AI Receptionist (24/7 calls)",        free: false, receptionist: true,  employee: true,  starter: true,  growth: true,  complete: true  },
+  { label: "Missed call SMS (30 sec)",            free: false, receptionist: true,  employee: true,  starter: true,  growth: true,  complete: true  },
+  { label: "AI Email Responder (22 sec)",         free: false, receptionist: false, employee: true,  starter: true,  growth: true,  complete: true  },
+  { label: "Website chatbot",                     free: false, receptionist: false, employee: true,  starter: true,  growth: true,  complete: true  },
+  { label: "Appointment booking",                 free: false, receptionist: false, employee: true,  starter: true,  growth: true,  complete: true  },
+  { label: "Google review automation",            free: false, receptionist: false, employee: true,  starter: true,  growth: true,  complete: true  },
+  { label: "Live dashboard",                      free: false, receptionist: false, employee: true,  starter: true,  growth: true,  complete: true  },
+  { label: "Owner alerts (SMS + email)",          free: false, receptionist: true,  employee: true,  starter: true,  growth: true,  complete: true  },
+  { label: "Multi-location support",              free: false, receptionist: false, employee: false, starter: false, growth: false, complete: true  },
+  { label: "Dedicated account manager",           free: false, receptionist: false, employee: false, starter: false, growth: false, complete: true  },
+  { label: "Monthly strategy call",               free: false, receptionist: false, employee: false, starter: false, growth: false, complete: true  },
 ];
 
 const faqs = [
   {
     q: "How fast will I see results?",
     a: "Your first visibility report arrives Day 1. AI receptionist answers calls immediately. Content starts Week 1. Most contractors see new citations within 30 days.",
+  },
+  {
+    q: "$997/month — what exactly does the AI Employee do?",
+    a: "It handles 8 jobs: answers every call 24/7, texts back missed callers, replies to emails in 22 seconds, chats with web visitors, books appointments, requests reviews after jobs, updates your Google Sheets dashboard, and alerts you on every lead.",
   },
   {
     q: "$1,497/month sounds expensive.",
@@ -183,6 +216,24 @@ function TierCTA({
   );
 }
 
+type CompRow = {
+  label: string;
+  free: boolean;
+  receptionist: boolean;
+  employee: boolean;
+  starter: boolean;
+  growth: boolean;
+  complete: boolean;
+};
+
+function Cell({ val }: { val: boolean }) {
+  return val ? (
+    <Check className="w-4 h-4 text-emerald-500 mx-auto" />
+  ) : (
+    <Minus className="w-4 h-4 text-gray-200 mx-auto" />
+  );
+}
+
 export default function PricingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
@@ -200,7 +251,7 @@ export default function PricingPage() {
         </div>
 
         {/* Pricing cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-5 gap-6 mb-20">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-20">
           {tiers.map((tier) => (
             <div
               key={tier.id}
@@ -212,7 +263,7 @@ export default function PricingPage() {
             >
               {tier.popular && (
                 <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-emerald-500 text-white text-xs font-semibold px-4 py-1 rounded-full whitespace-nowrap">
-                  Most Popular
+                  {tier.badge ?? "Most Popular"}
                 </span>
               )}
               <div className="mb-6">
@@ -229,7 +280,7 @@ export default function PricingPage() {
                   <p className="text-xs text-gray-400 mt-1 italic">{tier.tagline}</p>
                 )}
               </div>
-              <ul className="space-y-2 mb-8 flex-1">
+              <ul className="space-y-2 mb-6 flex-1">
                 {tier.features.map((f, j) => {
                   const isInherited = f.startsWith("Everything in");
                   if (isInherited) {
@@ -247,6 +298,11 @@ export default function PricingPage() {
                   );
                 })}
               </ul>
+              {tier.comparisonNote && (
+                <p className="text-xs text-gray-400 italic mb-4 border-t border-gray-100 pt-4">
+                  {tier.comparisonNote}
+                </p>
+              )}
               <TierCTA variant={tier.ctaVariant} href={tier.ctaHref}>
                 {tier.cta}
               </TierCTA>
@@ -257,7 +313,7 @@ export default function PricingPage() {
 
       {/* Feature comparison table */}
       <div className="bg-gray-50 py-20 px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl font-bold text-gray-900 text-center mb-8">
             Everything you get, compared
           </h2>
@@ -268,61 +324,26 @@ export default function PricingPage() {
                   <th className="text-left text-xs font-semibold text-gray-500 uppercase tracking-wide py-3 px-4">
                     Feature
                   </th>
-                  <th className="text-xs font-semibold text-gray-500 uppercase tracking-wide py-3 px-4 text-center">
-                    Free
-                  </th>
-                  <th className="text-xs font-semibold text-gray-500 uppercase tracking-wide py-3 px-4 text-center">
-                    Starter
-                  </th>
-                  <th className="text-xs font-semibold text-gray-500 uppercase tracking-wide py-3 px-4 text-center">
-                    Growth
-                  </th>
-                  <th className="text-xs font-semibold text-gray-500 uppercase tracking-wide py-3 px-4 text-center">
-                    Complete
-                  </th>
-                  <th className="text-xs font-semibold text-gray-500 uppercase tracking-wide py-3 px-4 text-center">
-                    Enterprise
-                  </th>
+                  <th className="text-xs font-semibold text-gray-500 uppercase tracking-wide py-3 px-4 text-center">Free</th>
+                  <th className="text-xs font-semibold text-gray-500 uppercase tracking-wide py-3 px-4 text-center">$497</th>
+                  <th className="text-xs font-semibold text-emerald-600 uppercase tracking-wide py-3 px-4 text-center">$997</th>
+                  <th className="text-xs font-semibold text-gray-500 uppercase tracking-wide py-3 px-4 text-center">$1,497</th>
+                  <th className="text-xs font-semibold text-gray-500 uppercase tracking-wide py-3 px-4 text-center">$1,997</th>
+                  <th className="text-xs font-semibold text-gray-500 uppercase tracking-wide py-3 px-4 text-center">$4,997</th>
                 </tr>
               </thead>
               <tbody>
-                {comparisonFeatures.map((row, i) => (
+                {(comparisonFeatures as CompRow[]).map((row, i) => (
                   <tr key={i} className={i % 2 === 1 ? "bg-gray-50/50" : "bg-white"}>
                     <td className="text-left text-sm text-gray-700 py-3 px-4 border-b border-gray-50">
                       {row.label}
                     </td>
-                    <td className="py-3 px-4 text-center border-b border-gray-50">
-                      {row.free ? (
-                        <Check className="w-4 h-4 text-emerald-500 mx-auto" />
-                      ) : (
-                        <Minus className="w-4 h-4 text-gray-200 mx-auto" />
-                      )}
-                    </td>
-                    <td className="py-3 px-4 text-center border-b border-gray-50">
-                      {row.starter ? (
-                        <Check className="w-4 h-4 text-emerald-500 mx-auto" />
-                      ) : (
-                        <Minus className="w-4 h-4 text-gray-200 mx-auto" />
-                      )}
-                    </td>
-                    <td className="py-3 px-4 text-center border-b border-gray-50">
-                      {row.growth ? (
-                        <Check className="w-4 h-4 text-emerald-500 mx-auto" />
-                      ) : (
-                        <Minus className="w-4 h-4 text-gray-200 mx-auto" />
-                      )}
-                    </td>
-                    <td className="py-3 px-4 text-center border-b border-gray-50">
-                      {row.complete ? (
-                        <Check className="w-4 h-4 text-emerald-500 mx-auto" />
-                      ) : (
-                        <Minus className="w-4 h-4 text-gray-200 mx-auto" />
-                      )}
-                    </td>
-                    <td className="py-3 px-4 text-center border-b border-gray-50">
-                      {/* Enterprise gets everything */}
-                      <Check className="w-4 h-4 text-emerald-500 mx-auto" />
-                    </td>
+                    <td className="py-3 px-4 text-center border-b border-gray-50"><Cell val={row.free} /></td>
+                    <td className="py-3 px-4 text-center border-b border-gray-50"><Cell val={row.receptionist} /></td>
+                    <td className="py-3 px-4 text-center border-b border-gray-50 bg-emerald-50/30"><Cell val={row.employee} /></td>
+                    <td className="py-3 px-4 text-center border-b border-gray-50"><Cell val={row.starter} /></td>
+                    <td className="py-3 px-4 text-center border-b border-gray-50"><Cell val={row.growth} /></td>
+                    <td className="py-3 px-4 text-center border-b border-gray-50"><Cell val={row.complete} /></td>
                   </tr>
                 ))}
               </tbody>
