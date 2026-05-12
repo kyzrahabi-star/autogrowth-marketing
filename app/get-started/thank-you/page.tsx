@@ -66,7 +66,7 @@ export default function GetStartedThankYouPage() {
         {/* CTAs */}
         <div className="flex flex-col gap-3">
           <a
-            href="https://cal.com/evan-ringsonce-demo/ringsonce-demo"
+            href="https://cal.com/autogrowthai/demo"
             className="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3.5 rounded-full text-sm text-center transition-colors"
           >
             Questions? Book a Call →

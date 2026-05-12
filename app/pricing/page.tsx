@@ -245,7 +245,10 @@ export default function PricingPage() {
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-4">
             Clear pricing. No contracts. Cancel any time.
           </h1>
-          <p className="text-gray-600 text-lg">
+          <p className="text-emerald-700 font-bold text-lg mb-1">
+            Every plan is powered by The AutoGrowth Engine™
+          </p>
+          <p className="text-gray-600">
             Start with a free audit. Upgrade when you&apos;re ready.
           </p>
         </div>

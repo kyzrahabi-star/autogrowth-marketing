@@ -529,6 +529,13 @@ export function AuditResults() {
               <div className="h-px bg-gray-200 flex-1" />
             </div>
 
+            {/* Engine attribution badge */}
+            <div className="flex justify-center mb-2">
+              <span className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 text-xs font-bold px-4 py-1.5 rounded-full border border-emerald-200">
+                Analyzed by The AutoGrowth Engine™
+              </span>
+            </div>
+
             {/* Overall grade + score cards */}
             <div className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm">
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-8">
@@ -686,7 +693,7 @@ export function AuditResults() {
               </ul>
               <div className="flex flex-col sm:flex-row gap-3">
                 <a
-                  href="https://cal.com/evan-ringsonce-demo/ringsonce-demo"
+                  href="https://cal.com/autogrowthai/demo"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3.5 rounded-full text-sm transition-colors"

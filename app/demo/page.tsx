@@ -38,7 +38,7 @@ export default function DemoPage() {
         {/* Cal embed */}
         <div className="rounded-2xl overflow-hidden border border-gray-200 shadow-sm">
           <iframe
-            src="https://cal.com/evan-ringsonce-demo/ringsonce-demo?embed=true&theme=light"
+            src="https://cal.com/autogrowthai/demo?embed=true&theme=light"
             width="100%"
             height="700"
             frameBorder="0"
