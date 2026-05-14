@@ -289,6 +289,65 @@ export default function HowItWorksPage() {
         </div>
       </section>
 
+      {/* 3-step audit intro */}
+      <section className="bg-gray-50 border-y border-gray-200 px-6 lg:px-8 py-20">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
+              Start free
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-4">
+              See where you stand in 3 steps
+            </h2>
+            <p className="text-gray-600 text-base max-w-xl mx-auto">
+              The free audit shows exactly how your business appears across Google, Maps, reviews, and the AI search engines that are eating organic traffic.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                n: "01",
+                title: "Enter your details",
+                body: "Enter your business name and city.",
+              },
+              {
+                n: "02",
+                title: "AI runs the analysis",
+                body: "Our AI analyzes your Google presence, website, reviews, and AI search visibility.",
+              },
+              {
+                n: "03",
+                title: "Get your action plan",
+                body: "Get a detailed report with your grade, missed revenue estimate, and action plan.",
+              },
+            ].map((step) => (
+              <div
+                key={step.n}
+                className="bg-white rounded-2xl border border-gray-200 p-6 shadow-sm"
+              >
+                <p className="font-mono text-xs tracking-[0.2em] text-emerald-600 mb-3">
+                  STEP {step.n}
+                </p>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {step.title}
+                </h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {step.body}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-10 text-center">
+            <Link
+              href="/audit"
+              className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+            >
+              Get your free audit →
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Specialists */}
       <section className="px-6 lg:px-8 pb-24">
         <div className="max-w-5xl mx-auto space-y-24">

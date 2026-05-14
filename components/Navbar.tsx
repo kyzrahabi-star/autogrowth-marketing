@@ -188,6 +188,12 @@ export function Navbar() {
               Pricing
             </Link>
             <Link
+              href="/tools"
+              className="text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
+            >
+              Free Tools
+            </Link>
+            <Link
               href="/get-started"
               className="text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
             >
@@ -382,6 +388,13 @@ export function Navbar() {
             onClick={() => setMobileOpen(false)}
           >
             Pricing
+          </Link>
+          <Link
+            href="/tools"
+            className="block py-3 text-sm font-medium text-gray-700 border-t border-gray-100"
+            onClick={() => setMobileOpen(false)}
+          >
+            Free Tools
           </Link>
           <Link
             href="/get-started"

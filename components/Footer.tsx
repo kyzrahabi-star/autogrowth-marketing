@@ -45,6 +45,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/tools" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
+                  Free Tools
+                </Link>
+              </li>
+              <li>
                 <Link href="/audit" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
                   Free Audit
                 </Link>
@@ -62,9 +67,9 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a href="mailto:hello@autogrowthai.com" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
+                <Link href="/contact" className="text-sm text-gray-500 hover:text-gray-900 transition-colors">
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
