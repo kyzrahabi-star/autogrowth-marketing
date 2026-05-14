@@ -102,9 +102,6 @@ export default function AboutPage() {
       <section className="px-6 lg:px-8 pb-24">
         <div className="max-w-3xl mx-auto">
           <div className="bg-gradient-to-br from-emerald-50 via-white to-white border border-emerald-200 rounded-3xl p-8 sm:p-10 text-center">
-            <p className="text-sm font-semibold text-gray-500 mb-2">
-              Based in Houston, Texas
-            </p>
             <p className="text-lg text-gray-700 mb-8">
               Serving local service businesses nationwide.
             </p>

@@ -82,8 +82,6 @@ export function Footer() {
         </div>
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-4 text-sm text-gray-400">
-            <span className="text-gray-500">Built in Houston, TX</span>
-            <span>|</span>
             <span>© 2026 AutoGrowth AI. All rights reserved.</span>
           </div>
           <div className="flex items-center gap-4">
