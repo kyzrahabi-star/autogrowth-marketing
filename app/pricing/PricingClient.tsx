@@ -40,7 +40,7 @@ const tiers = [
       "Owner alerts — SMS on every inbound call",
     ],
     cta: "Get Started",
-    ctaHref: "/get-started",
+    ctaHref: "/contact",
     ctaVariant: "green",
   },
   {
@@ -64,7 +64,7 @@ const tiers = [
       "Owner Alerts — SMS + email on every lead and emergency",
     ],
     cta: "Get Started",
-    ctaHref: "/get-started",
+    ctaHref: "/contact",
     ctaVariant: "green",
   },
   {
@@ -84,7 +84,7 @@ const tiers = [
       "Email reports + Telegram alerts",
     ],
     cta: "Start Growing",
-    ctaHref: "/get-started",
+    ctaHref: "/contact",
     ctaVariant: "green",
   },
   {
@@ -104,7 +104,7 @@ const tiers = [
       "Full AutoGrowth dashboard",
     ],
     cta: "Get More Jobs",
-    ctaHref: "/get-started",
+    ctaHref: "/contact",
     ctaVariant: "green",
   },
   {
@@ -122,7 +122,7 @@ const tiers = [
       "Dedicated account manager + monthly strategy call",
     ],
     cta: "Dominate Your Market",
-    ctaHref: "/get-started",
+    ctaHref: "/contact",
     ctaVariant: "green",
   },
 ];

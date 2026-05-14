@@ -62,7 +62,7 @@ export default function HomePage() {
         "Live dashboard + owner alerts",
       ],
       cta: "Get Started",
-      href: "/get-started",
+      href: "/contact",
       popular: true,
     },
     {
@@ -77,7 +77,7 @@ export default function HomePage() {
         "Weekly SEO content creation",
       ],
       cta: "Get More Jobs",
-      href: "/get-started",
+      href: "/contact",
       popular: false,
     },
   ];
@@ -717,7 +717,7 @@ export default function HomePage() {
               website with a link to their business.
             </p>
             <Link
-              href="/get-started"
+              href="/contact"
               className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full text-sm transition-colors"
             >
               Get Started →

@@ -47,7 +47,7 @@ export default function ContentCreationPage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/get-started"
+              href="/contact"
               className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
             >
               Get Started
@@ -275,7 +275,7 @@ export default function ContentCreationPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
-              href="/get-started"
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
             >
               Get Started
