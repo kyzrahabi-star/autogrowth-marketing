@@ -40,7 +40,7 @@ const tiers = [
       "Owner alerts — SMS on every inbound call",
     ],
     cta: "Get Started",
-    ctaHref: "/contact",
+    ctaHref: "https://buy.stripe.com/28E8wOfAk9aF8hDgT46Zy0a",
     ctaVariant: "green",
   },
   {
@@ -64,7 +64,7 @@ const tiers = [
       "Owner Alerts — SMS + email on every lead and emergency",
     ],
     cta: "Get Started",
-    ctaHref: "/contact",
+    ctaHref: "https://buy.stripe.com/8x214mco8euZbtPfP06Zy07",
     ctaVariant: "green",
   },
   {
@@ -84,7 +84,7 @@ const tiers = [
       "Email reports + Telegram alerts",
     ],
     cta: "Start Growing",
-    ctaHref: "/contact",
+    ctaHref: "https://buy.stripe.com/cNi28q73OeuZ2Xj6eq6Zy08",
     ctaVariant: "green",
   },
   {
@@ -104,7 +104,7 @@ const tiers = [
       "Full AutoGrowth dashboard",
     ],
     cta: "Get More Jobs",
-    ctaHref: "/contact",
+    ctaHref: "https://buy.stripe.com/7sY4gyag02MhgO96eq6Zy09",
     ctaVariant: "green",
   },
   {
@@ -122,7 +122,7 @@ const tiers = [
       "Dedicated account manager + monthly strategy call",
     ],
     cta: "Dominate Your Market",
-    ctaHref: "/contact",
+    ctaHref: "https://buy.stripe.com/8x2aEW2NydqVeG1cCO6Zy06",
     ctaVariant: "green",
   },
 ];
@@ -191,26 +191,25 @@ function TierCTA({
 }) {
   const base =
     "inline-flex items-center justify-center w-full py-3 rounded-full text-sm font-semibold transition-colors";
-  if (variant === "green")
+  const classes =
+    variant === "green"
+      ? `${base} bg-emerald-500 hover:bg-emerald-600 text-white`
+      : variant === "outline-emerald"
+        ? `${base} border border-emerald-500 text-emerald-600 hover:bg-emerald-500 hover:text-white`
+        : `${base} border border-gray-300 text-gray-700 hover:border-gray-900 hover:text-gray-900`;
+
+  // External URLs (Stripe checkout) bypass Next.js Link to avoid client
+  // navigation attempts on absolute hrefs. Same-tab (no target=_blank) by
+  // design — high-ticket flows shouldn't open a new window.
+  if (/^https?:\/\//.test(href)) {
     return (
-      <Link href={href} className={`${base} bg-emerald-500 hover:bg-emerald-600 text-white`}>
+      <a href={href} className={classes} rel="noopener">
         {children}
-      </Link>
+      </a>
     );
-  if (variant === "outline-emerald")
-    return (
-      <Link
-        href={href}
-        className={`${base} border border-emerald-500 text-emerald-600 hover:bg-emerald-500 hover:text-white`}
-      >
-        {children}
-      </Link>
-    );
+  }
   return (
-    <Link
-      href={href}
-      className={`${base} border border-gray-300 text-gray-700 hover:border-gray-900 hover:text-gray-900`}
-    >
+    <Link href={href} className={classes}>
       {children}
     </Link>
   );
