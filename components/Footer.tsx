@@ -7,8 +7,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand */}
           <div className="md:col-span-1">
-            <div className="text-xl font-bold text-gray-900 mb-2">
-              AutoGrowth<span className="text-emerald-500">.</span>
+            <div className="text-xl font-bold tracking-tight text-gray-900 mb-2">
+              Auto<span className="text-indigo-600">Growth</span>
             </div>
             <p className="text-sm text-gray-500">Your market. Dominated.</p>
           </div>

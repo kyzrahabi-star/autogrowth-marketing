@@ -56,8 +56,8 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
-            <span className="text-2xl font-bold text-gray-900">
-              AutoGrowth<span className="text-emerald-500">.</span>
+            <span className="text-2xl font-bold tracking-tight text-gray-900">
+              Auto<span className="text-indigo-600">Growth</span>
             </span>
           </Link>
 
