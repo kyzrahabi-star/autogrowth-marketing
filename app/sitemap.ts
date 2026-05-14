@@ -20,8 +20,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/features/review-management`, lastModified: new Date(), changeFrequency: "monthly" as const, priority: 0.8 },
     { url: `${base}/blog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.7 },
     {
+      url: `${base}/blog/hvac-company-lost-3-calls-last-night`,
+      lastModified: new Date("2026-05-13"),
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
+      url: `${base}/blog/chatgpt-plumber-columbus`,
+      lastModified: new Date("2026-05-11"),
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
+      url: `${base}/blog/google-reviews-losing-money`,
+      lastModified: new Date("2026-05-08"),
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
       url: `${base}/blog/hvac-invisible-chatgpt`,
       lastModified: new Date("2026-05-06"),
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
+      url: `${base}/blog/1497-phone-system-replaced-receptionist`,
+      lastModified: new Date("2026-05-04"),
+      changeFrequency: "yearly",
+      priority: 0.6,
+    },
+    {
+      url: `${base}/blog/audited-50-contractors-columbus`,
+      lastModified: new Date("2026-05-02"),
       changeFrequency: "yearly",
       priority: 0.6,
     },
