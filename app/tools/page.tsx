@@ -32,9 +32,9 @@ const tools: Tool[] = [
     description:
       "Check how often AI search engines like ChatGPT and Perplexity cite your business for the queries that matter in your service area.",
     icon: Sparkles,
-    href: null,
-    cta: "Coming soon",
-    comingSoon: true,
+    href: "/tools/ai-visibility-checker",
+    cta: "Check my visibility",
+    comingSoon: false,
   },
 ];
 
