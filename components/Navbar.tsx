@@ -5,7 +5,6 @@ import { useState, useEffect, useRef } from "react";
 import {
   Menu,
   X,
-  LogIn,
   Flame,
   Wrench,
   Zap,
@@ -15,6 +14,9 @@ import {
   PenTool,
   Star,
   ChevronDown,
+  Search,
+  Sparkles,
+  TrendingUp,
 } from "lucide-react";
 
 export function Navbar() {
@@ -187,62 +189,83 @@ export function Navbar() {
             >
               Pricing
             </Link>
-            <Link
-              href="/tools"
-              className="text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
+
+            {/* Free Tools dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => openDropdown("freeTools")}
+              onMouseLeave={scheduleClose}
             >
-              Free Tools
-            </Link>
-            <Link
-              href="/get-started"
-              className="text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
-            >
-              Get Started
-            </Link>
-            <Link
-              href="/results"
-              className="text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
-            >
-              Results
-            </Link>
-            <Link
-              href="/blog"
-              className="text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
-            >
-              Blog
-            </Link>
+              <button className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900 font-medium py-2">
+                Free Tools{" "}
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform ${
+                    activeDropdown === "freeTools" ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              {activeDropdown === "freeTools" && (
+                <div className="absolute top-full left-0 w-60 pt-2 z-50">
+                  <div className="bg-white rounded-xl shadow-xl border border-gray-200 py-2">
+                    <p className="uppercase text-[10px] tracking-widest text-gray-400 px-4 pt-2 pb-2">
+                      Free Tools
+                    </p>
+                    <Link
+                      href="/audit"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-lg text-sm text-gray-700 mx-1"
+                    >
+                      <Search className="w-4 h-4 text-emerald-500 shrink-0" />
+                      Free Business Audit
+                    </Link>
+                    <Link
+                      href="/tools/ai-visibility-checker"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-lg text-sm text-gray-700 mx-1"
+                    >
+                      <Sparkles className="w-4 h-4 text-emerald-500 shrink-0" />
+                      AI Visibility Checker
+                    </Link>
+                    <Link
+                      href="/results"
+                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-lg text-sm text-gray-700 mx-1"
+                    >
+                      <TrendingUp className="w-4 h-4 text-emerald-500 shrink-0" />
+                      Results
+                    </Link>
+                  </div>
+                </div>
+              )}
+            </div>
           </nav>
 
           {/* Right side — desktop */}
           <div className="hidden md:flex items-center gap-4">
-            <a
-              href="https://autogrowth-platform.kyzrahabi.workers.dev/admin/tenants"
-              className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
-            >
-              <LogIn className="w-4 h-4" />
-              Login
-            </a>
             <a
               href="tel:+18449102116"
               className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
             >
               (844) 910-2116
             </a>
+            <Link
+              href="/contact"
+              className="text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
+            >
+              Contact
+            </Link>
             <a
-              href="/get-started"
+              href="/audit"
               className="bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors"
             >
-              Get Started
+              Free Audit
             </a>
           </div>
 
           {/* Mobile right side */}
           <div className="flex md:hidden items-center gap-3">
             <a
-              href="/get-started"
+              href="/audit"
               className="bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-4 py-2 rounded-full text-xs transition-colors"
             >
-              Get Started
+              Free Audit
             </a>
             <button
               className="text-gray-600 hover:text-gray-900 p-1.5"
@@ -389,44 +412,63 @@ export function Navbar() {
           >
             Pricing
           </Link>
-          <Link
-            href="/tools"
-            className="block py-3 text-sm font-medium text-gray-700 border-t border-gray-100"
-            onClick={() => setMobileOpen(false)}
-          >
-            Free Tools
-          </Link>
-          <Link
-            href="/get-started"
-            className="block py-3 text-sm font-medium text-gray-700 border-t border-gray-100"
-            onClick={() => setMobileOpen(false)}
-          >
-            Get Started
-          </Link>
-          <Link
-            href="/results"
-            className="block py-3 text-sm font-medium text-gray-700 border-t border-gray-100"
-            onClick={() => setMobileOpen(false)}
-          >
-            Results
-          </Link>
-          <Link
-            href="/blog"
-            className="block py-3 text-sm font-medium text-gray-700 border-t border-gray-100"
-            onClick={() => setMobileOpen(false)}
-          >
-            Blog
-          </Link>
 
-          {/* Login + phone */}
-          <div className="border-t border-gray-100 pt-4 mt-2 flex flex-col gap-3">
-            <a
-              href="https://autogrowth-platform.kyzrahabi.workers.dev/admin/tenants"
-              className="flex items-center gap-2 text-sm text-gray-600"
+          {/* Free Tools accordion */}
+          <div className="border-t border-gray-100">
+            <button
+              className="w-full flex items-center justify-between py-3 text-sm font-medium text-gray-700"
+              onClick={() =>
+                setMobileExpanded(
+                  mobileExpanded === "freeTools" ? null : "freeTools"
+                )
+              }
             >
-              <LogIn className="w-4 h-4" />
-              Login
-            </a>
+              Free Tools
+              <ChevronDown
+                className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
+                  mobileExpanded === "freeTools" ? "rotate-180" : ""
+                }`}
+              />
+            </button>
+            {mobileExpanded === "freeTools" && (
+              <div className="pl-4 pb-3 flex flex-col">
+                <Link
+                  href="/audit"
+                  className="flex items-center gap-3 py-3 text-sm text-gray-600 active:bg-gray-50 rounded-lg px-2"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <Search className="w-4 h-4 text-emerald-500" />
+                  Free Business Audit
+                </Link>
+                <Link
+                  href="/tools/ai-visibility-checker"
+                  className="flex items-center gap-3 py-3 text-sm text-gray-600 active:bg-gray-50 rounded-lg px-2"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <Sparkles className="w-4 h-4 text-emerald-500" />
+                  AI Visibility Checker
+                </Link>
+                <Link
+                  href="/results"
+                  className="flex items-center gap-3 py-3 text-sm text-gray-600 active:bg-gray-50 rounded-lg px-2"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  <TrendingUp className="w-4 h-4 text-emerald-500" />
+                  Results
+                </Link>
+              </div>
+            )}
+          </div>
+
+          {/* Contact + phone */}
+          <div className="border-t border-gray-100 pt-4 mt-2 flex flex-col gap-3">
+            <Link
+              href="/contact"
+              className="text-sm text-gray-600"
+              onClick={() => setMobileOpen(false)}
+            >
+              Contact
+            </Link>
             <a
               href="tel:+18449102116"
               className="text-sm text-gray-500"
