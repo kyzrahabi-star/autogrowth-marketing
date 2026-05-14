@@ -3,9 +3,14 @@ import Link from "next/link";
 import { Check, X, ArrowRight, Zap, Search, FileText, MousePointer, Gauge } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Website Optimization — AutoGrowth AI",
+  title: "Website Optimization",
   description:
     "AutoGrowth's AI fixes your HVAC website in days — schema markup, service pages, chatbot, booking, speed, and AI search citations. Included in every plan.",
+  openGraph: {
+    title: "Website Optimization — AutoGrowth AI",
+    description:
+      "AutoGrowth's AI fixes your HVAC website in days — schema markup, service pages, chatbot, booking, speed, and AI search citations. Included in every plan.",
+  },
 };
 
 const BEFORE_ITEMS = [

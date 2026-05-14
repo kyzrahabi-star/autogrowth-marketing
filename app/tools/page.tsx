@@ -3,9 +3,14 @@ import Link from "next/link";
 import { Check, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Free Tools — AutoGrowth AI",
+  title: "Free Tools",
   description:
-    "Free visibility audit for local service businesses. See where you rank on Google, Maps, ChatGPT, Perplexity, and Google AI Overviews in under 3 minutes.",
+    "Free tools to check your online visibility. Get a full business audit or check if AI assistants like ChatGPT are recommending your competitors instead of you.",
+  openGraph: {
+    title: "Free Tools — AutoGrowth AI",
+    description:
+      "Free tools to check your online visibility. Get a full business audit or check if AI assistants like ChatGPT are recommending your competitors instead of you.",
+  },
 };
 
 export default function ToolsPage() {

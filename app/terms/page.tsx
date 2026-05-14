@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — AutoGrowth AI",
+  title: "Terms of Service",
   description:
-    "Terms of Service for AutoGrowth AI's free tools and paid subscription products.",
+    "AutoGrowth AI Terms of Service. Terms and conditions for using our platform and services.",
   robots: { index: true, follow: true },
+  openGraph: {
+    title: "Terms of Service — AutoGrowth AI",
+    description:
+      "AutoGrowth AI Terms of Service. Terms and conditions for using our platform and services.",
+  },
 };
 
 export default function TermsPage() {

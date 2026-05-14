@@ -4,9 +4,14 @@ import { Home, Check, Phone, Star, Zap, MapPin, Brain, PenTool, ArrowRight } fro
 import { WaitlistForm } from "@/components/WaitlistForm";
 
 export const metadata: Metadata = {
-  title: "Roofing Marketing & AI Visibility — AutoGrowth AI",
+  title: "Roofing Marketing & AI Visibility",
   description:
     "Storm season or slow season — AutoGrowth keeps your roofing business visible across Google and every AI search engine. Launching soon — join the waitlist.",
+  openGraph: {
+    title: "Roofing Marketing & AI Visibility — AutoGrowth AI",
+    description:
+      "Storm season or slow season — AutoGrowth keeps your roofing business visible across Google and every AI search engine. Launching soon — join the waitlist.",
+  },
 };
 
 const features = [

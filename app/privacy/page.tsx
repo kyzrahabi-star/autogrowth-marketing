@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — AutoGrowth AI",
+  title: "Privacy Policy",
   description:
-    "How AutoGrowth AI collects, uses, shares, and protects personal information.",
+    "AutoGrowth AI Privacy Policy. How we collect, use, and protect your information.",
   robots: { index: true, follow: true },
+  openGraph: {
+    title: "Privacy Policy — AutoGrowth AI",
+    description:
+      "AutoGrowth AI Privacy Policy. How we collect, use, and protect your information.",
+  },
 };
 
 export default function PrivacyPage() {

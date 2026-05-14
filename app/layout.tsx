@@ -8,16 +8,15 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: {
-    default: "AutoGrowth AI — AI Search Domination for Trades",
+    default: "AutoGrowth AI — AI Growth Platform for Local Service Businesses",
     template: "%s | AutoGrowth AI",
   },
   description:
-    "When homeowners ask ChatGPT who to call, your competitors get recommended. You don't. AutoGrowth AI fixes that — with 5 specialists that run 24/7.",
+    "Free AI-powered business audit. See how your Google presence, reviews, and AI visibility stack up — and how much revenue you're leaving on the table.",
   openGraph: {
     type: "website",
     url: "https://autogrowthai.co",
     siteName: "AutoGrowth AI",
-    images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: { card: "summary_large_image" },
   metadataBase: new URL("https://autogrowthai.co"),

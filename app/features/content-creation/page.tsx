@@ -3,9 +3,14 @@ import Link from "next/link";
 import { PenTool, Check, Brain, MapPin, ArrowRight, Video } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI Content Creation — AutoGrowth AI",
+  title: "AI Content Creation",
   description:
     "Weekly blog posts and video scripts written like a real technician, not a marketing bot. Optimized for Google SEO and AI search citations.",
+  openGraph: {
+    title: "AI Content Creation — AutoGrowth AI",
+    description:
+      "Weekly blog posts and video scripts written like a real technician, not a marketing bot. Optimized for Google SEO and AI search citations.",
+  },
 };
 
 const qualityGate = [

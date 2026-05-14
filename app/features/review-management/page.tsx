@@ -3,9 +3,14 @@ import Link from "next/link";
 import { Star, Check, Bell, MessageSquare, Shield, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI Review Management — AutoGrowth AI",
+  title: "AI Review Management",
   description:
     "Automated review requests after every job. Google review monitoring. AI-drafted responses in your voice. Negative review alerts in real time.",
+  openGraph: {
+    title: "AI Review Management — AutoGrowth AI",
+    description:
+      "Automated review requests after every job. Google review monitoring. AI-drafted responses in your voice. Negative review alerts in real time.",
+  },
 };
 
 export default function ReviewManagementPage() {

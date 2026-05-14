@@ -4,7 +4,12 @@ import { Mail, Phone } from "lucide-react";
 export const metadata: Metadata = {
   title: "Contact AutoGrowth AI",
   description:
-    "Get in touch with the AutoGrowth AI team. Email support@autogrowthai.co or call (844) 910-2116.",
+    "Get in touch with AutoGrowth AI. Call 844-910-2116 or email support@autogrowthai.co. We help local service businesses grow with AI.",
+  openGraph: {
+    title: "Contact AutoGrowth AI",
+    description:
+      "Get in touch with AutoGrowth AI. Call 844-910-2116 or email support@autogrowthai.co. We help local service businesses grow with AI.",
+  },
 };
 
 export default function ContactPage() {

@@ -14,9 +14,14 @@ import {
 } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "HVAC Marketing & AI Visibility — AutoGrowth AI",
+  title: "HVAC Marketing & AI Visibility",
   description:
     "AutoGrowth gets your HVAC business recommended by Google AND AI search — so homeowners call you first, not your competitors. Full schedules, no matter the season.",
+  openGraph: {
+    title: "HVAC Marketing & AI Visibility — AutoGrowth AI",
+    description:
+      "AutoGrowth gets your HVAC business recommended by Google AND AI search — so homeowners call you first, not your competitors. Full schedules, no matter the season.",
+  },
 };
 
 const features = [

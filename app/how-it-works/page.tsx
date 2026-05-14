@@ -5,7 +5,12 @@ import { Check } from "lucide-react";
 export const metadata: Metadata = {
   title: "How AutoGrowth AI Works",
   description:
-    "5 specialists that run your marketing on autopilot — AI search, content, leads, follow-up, and reputation.",
+    "Enter your business name. Our AI analyzes your Google presence, reviews, website, and AI visibility. Get a detailed report with your score in minutes.",
+  openGraph: {
+    title: "How AutoGrowth AI Works",
+    description:
+      "Enter your business name. Our AI analyzes your Google presence, reviews, website, and AI visibility. Get a detailed report with your score in minutes.",
+  },
 };
 
 const specialists: Array<{

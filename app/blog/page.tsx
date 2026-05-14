@@ -5,9 +5,14 @@ import path from "path";
 import matter from "gray-matter";
 
 export const metadata: Metadata = {
-  title: "Blog — AutoGrowth AI",
+  title: "Blog",
   description:
-    "Tactics, data, and real examples for trades businesses trying to get found by AI search.",
+    "Tips and insights for local service businesses on AI search visibility, Google reviews, call capture, and growing revenue with automation.",
+  openGraph: {
+    title: "Blog — AutoGrowth AI",
+    description:
+      "Tips and insights for local service businesses on AI search visibility, Google reviews, call capture, and growing revenue with automation.",
+  },
 };
 
 interface PostMeta {

@@ -4,9 +4,14 @@ import { Zap, Check, Phone, Star, MapPin, Brain, PenTool, ArrowRight } from "luc
 import { WaitlistForm } from "@/components/WaitlistForm";
 
 export const metadata: Metadata = {
-  title: "Electrician Marketing & AI Visibility — AutoGrowth AI",
+  title: "Electrician Marketing & AI Visibility",
   description:
     "From panel upgrades to emergency calls — AutoGrowth makes sure AI and Google recommend your electrical business first. Launching soon — join the waitlist.",
+  openGraph: {
+    title: "Electrician Marketing & AI Visibility — AutoGrowth AI",
+    description:
+      "From panel upgrades to emergency calls — AutoGrowth makes sure AI and Google recommend your electrical business first. Launching soon — join the waitlist.",
+  },
 };
 
 const features = [

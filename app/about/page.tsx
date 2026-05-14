@@ -5,7 +5,12 @@ import { ArrowRight } from "lucide-react";
 export const metadata: Metadata = {
   title: "About AutoGrowth AI",
   description:
-    "AutoGrowth AI is an all-in-one growth platform for local service businesses. AI visibility monitoring, audits, AI receptionist, automated follow-ups, weekly ROI reports.",
+    "AutoGrowth AI helps local service businesses get found on Google and AI search, answer every call 24/7, and book more appointments. Based in Houston, TX.",
+  openGraph: {
+    title: "About AutoGrowth AI",
+    description:
+      "AutoGrowth AI helps local service businesses get found on Google and AI search, answer every call 24/7, and book more appointments. Based in Houston, TX.",
+  },
 };
 
 type Capability = {

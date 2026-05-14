@@ -4,9 +4,14 @@ import { Wrench, Check, Phone, Star, Zap, MapPin, Brain, PenTool, ArrowRight } f
 import { WaitlistForm } from "@/components/WaitlistForm";
 
 export const metadata: Metadata = {
-  title: "Plumbing Marketing & AI Visibility — AutoGrowth AI",
+  title: "Plumbing Marketing & AI Visibility",
   description:
     "AutoGrowth makes your plumbing business the first recommendation when homeowners ask AI or search Google for help. Launching soon — join the waitlist.",
+  openGraph: {
+    title: "Plumbing Marketing & AI Visibility — AutoGrowth AI",
+    description:
+      "AutoGrowth makes your plumbing business the first recommendation when homeowners ask AI or search Google for help. Launching soon — join the waitlist.",
+  },
 };
 
 const features = [

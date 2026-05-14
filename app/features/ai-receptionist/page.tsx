@@ -3,9 +3,14 @@ import Link from "next/link";
 import { Phone, Check, ArrowRight, X } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI Receptionist — AutoGrowth AI",
+  title: "AI Receptionist",
   description:
     "Your AI receptionist answers every call 24/7, greets callers by your business name, books appointments, and texts back missed calls in 30 seconds.",
+  openGraph: {
+    title: "AI Receptionist — AutoGrowth AI",
+    description:
+      "Your AI receptionist answers every call 24/7, greets callers by your business name, books appointments, and texts back missed calls in 30 seconds.",
+  },
 };
 
 const conversationSteps = [

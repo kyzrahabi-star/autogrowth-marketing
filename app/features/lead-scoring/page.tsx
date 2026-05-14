@@ -3,9 +3,14 @@ import Link from "next/link";
 import { Target, ArrowRight, Zap, Mail, MessageSquare } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI Lead Scoring — AutoGrowth AI",
+  title: "AI Lead Scoring",
   description:
     "Every lead scored 0-100 in under 60 seconds. Hot leads trigger instant SMS + email. No more guessing which calls to return first.",
+  openGraph: {
+    title: "AI Lead Scoring — AutoGrowth AI",
+    description:
+      "Every lead scored 0-100 in under 60 seconds. Hot leads trigger instant SMS + email. No more guessing which calls to return first.",
+  },
 };
 
 const rubric = [
