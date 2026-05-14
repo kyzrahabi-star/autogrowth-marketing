@@ -220,7 +220,7 @@ export default function PrivacyPage() {
         <p>
           <strong>AutoGrowth AI</strong>
           <br />
-          Columbus, OH
+          Houston, TX
           <br />
           Email:{" "}
           <a

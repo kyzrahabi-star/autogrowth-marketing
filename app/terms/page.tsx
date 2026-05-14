@@ -304,7 +304,7 @@ export default function TermsPage() {
         <p>
           <strong>AutoGrowth AI</strong>
           <br />
-          Columbus, OH
+          Houston, TX
           <br />
           Email:{" "}
           <a
