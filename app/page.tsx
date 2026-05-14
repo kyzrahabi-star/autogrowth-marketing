@@ -181,25 +181,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Social proof bar */}
-      <section className="bg-gray-50 border-y border-gray-200 py-6 px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <p className="text-center text-sm text-gray-500 mb-5">
-            Trusted by contractors across Ohio
-          </p>
-          <div className="flex items-center justify-center gap-6 flex-wrap">
-            {["Logo", "Logo", "Logo"].map((label, i) => (
-              <div
-                key={i}
-                className="bg-white border border-gray-200 rounded-lg px-6 py-3 text-sm text-gray-400"
-              >
-                {label}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Dashboard mockup */}
       <section className="relative overflow-hidden bg-white py-16 px-6 lg:px-8">
         <div
