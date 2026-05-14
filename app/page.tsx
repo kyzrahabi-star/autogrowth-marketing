@@ -182,7 +182,7 @@ export default function HomePage() {
       </section>
 
       {/* Dashboard mockup */}
-      <section className="relative overflow-hidden bg-white py-16 px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-white py-16 px-4 sm:px-6 lg:px-8">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -191,14 +191,14 @@ export default function HomePage() {
           }}
         />
 
-        <div className="relative z-10 max-w-[900px] mx-auto">
+        <div className="relative z-10 w-full max-w-[900px] mx-auto">
           <div className="shadow-[0_20px_80px_-20px_rgba(0,0,0,0.3)]">
-            <div className="bg-gray-900 rounded-t-2xl pt-8 px-4 pb-4 relative">
+            <div className="bg-gray-900 rounded-t-2xl pt-6 sm:pt-8 px-2 sm:px-4 pb-2 sm:pb-4 relative">
               <div className="w-2.5 h-2.5 rounded-full bg-gray-600 mx-auto mb-3" />
 
               <div className="rounded-xl bg-white overflow-hidden min-h-[480px] flex">
-                {/* Sidebar */}
-                <div className="w-[200px] shrink-0 bg-gray-50 border-r border-gray-200 flex flex-col">
+                {/* Sidebar — hidden on mobile to save horizontal space */}
+                <div className="hidden sm:flex w-[200px] shrink-0 bg-gray-50 border-r border-gray-200 flex-col">
                   <div className="px-4 pt-4 pb-3 border-b border-gray-200">
                     <div className="flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
@@ -243,13 +243,13 @@ export default function HomePage() {
                 </div>
 
                 {/* Main content */}
-                <div className="flex-1 p-5 overflow-hidden">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="text-lg font-semibold text-gray-900">Good morning, James</span>
-                    <span className="text-sm text-gray-400">Tuesday, May 6, 2026</span>
+                <div className="flex-1 p-3 sm:p-5 overflow-hidden min-w-0">
+                  <div className="flex items-center justify-between mb-3 sm:mb-4 gap-2">
+                    <span className="text-sm sm:text-lg font-semibold text-gray-900 truncate">Good morning, James</span>
+                    <span className="hidden sm:inline text-sm text-gray-400 shrink-0">Tuesday, May 6, 2026</span>
                   </div>
 
-                  <div className="grid grid-cols-4 gap-3 mb-4">
+                  <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-3 mb-3 sm:mb-4">
                     {[
                       {
                         label: "AI Visibility",
@@ -290,23 +290,23 @@ export default function HomePage() {
                     ].map((card) => (
                       <div
                         key={card.label}
-                        className="bg-white border border-gray-100 rounded-xl p-3 shadow-sm"
+                        className="bg-white border border-gray-100 rounded-xl p-2.5 sm:p-3 shadow-sm min-w-0"
                       >
-                        <p className="text-[10px] uppercase tracking-wide text-gray-400 mb-1">
+                        <p className="text-[9px] sm:text-[10px] uppercase tracking-wide text-gray-400 mb-1 truncate">
                           {card.label}
                         </p>
-                        <p className={`text-3xl font-bold leading-none mb-1 ${card.valueCls}`}>
+                        <p className={`text-2xl sm:text-3xl font-bold leading-none mb-1 ${card.valueCls}`}>
                           {card.value}
                           {card.suffix && (
                             <span className={card.suffixCls}>{card.suffix}</span>
                           )}
                         </p>
-                        <p className={`text-[10px] ${card.subCls}`}>{card.sub}</p>
+                        <p className={`text-[10px] ${card.subCls} truncate`}>{card.sub}</p>
                       </div>
                     ))}
                   </div>
 
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                     <div className="bg-white border border-gray-100 rounded-xl p-4 shadow-sm">
                       <p className="text-sm font-semibold text-gray-900 mb-3">Competitor Visibility</p>
                       <div className="space-y-2.5">
@@ -368,11 +368,11 @@ export default function HomePage() {
                             }`}
                           >
                             <span className={`w-1.5 h-1.5 rounded-full shrink-0 ${lead.dot}`} />
-                            <span className="text-gray-800 font-medium w-24 truncate shrink-0">
+                            <span className="text-gray-800 font-medium min-w-0 truncate flex-1">
                               {lead.name}
                             </span>
-                            <span className="text-gray-400 flex-1 truncate">{lead.service}</span>
-                            <span className="text-gray-500 w-16 shrink-0 text-right">
+                            <span className="hidden sm:inline text-gray-400 min-w-0 truncate flex-1">{lead.service}</span>
+                            <span className="hidden sm:inline text-gray-500 shrink-0 text-right">
                               Score: {lead.score}
                             </span>
                             <span
@@ -389,8 +389,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            <div className="bg-gradient-to-b from-gray-300 to-gray-400 h-5 rounded-b-2xl mx-16 flex items-center justify-center">
-              <div className="w-16 h-2.5 bg-black/10 rounded-full" />
+            <div className="bg-gradient-to-b from-gray-300 to-gray-400 h-5 rounded-b-2xl mx-6 sm:mx-16 flex items-center justify-center">
+              <div className="w-12 sm:w-16 h-2.5 bg-black/10 rounded-full" />
             </div>
           </div>
         </div>
