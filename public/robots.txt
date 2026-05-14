@@ -13,4 +13,4 @@ Allow: /
 User-agent: Google-Extended
 Allow: /
 
-Sitemap: https://autogrowthai.com/sitemap.xml
+Sitemap: https://autogrowthai.co/sitemap.xml

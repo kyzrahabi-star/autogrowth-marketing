@@ -129,7 +129,7 @@ export default function HomePage() {
     provider: {
       "@type": "Organization",
       name: "AutoGrowth AI",
-      url: "https://autogrowthai.com",
+      url: "https://autogrowthai.co",
     },
   };
 
