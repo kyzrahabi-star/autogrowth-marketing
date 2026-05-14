@@ -181,6 +181,13 @@ export function Navbar() {
             </div>
 
             <Link
+              href="/about"
+              className="text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
+            >
+              About
+            </Link>
+
+            <Link
               href="/pricing"
               className="text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
             >
@@ -363,6 +370,14 @@ export function Navbar() {
           </div>
 
           {/* Direct links */}
+          <Link
+            href="/about"
+            className="block py-3 text-sm font-medium text-gray-700 border-t border-gray-100"
+            onClick={() => setMobileOpen(false)}
+          >
+            About
+          </Link>
+
           <Link
             href="/pricing"
             className="block py-3 text-sm font-medium text-gray-700 border-t border-gray-100"
