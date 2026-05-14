@@ -83,6 +83,7 @@ type FormData = {
   existing_phone: string;
   special_instructions: string;
   referral_source: string;
+  consent: boolean;
 };
 
 const defaultHours: BusinessHours = {
@@ -103,6 +104,7 @@ const INITIAL: FormData = {
   emergency_definition: "", pricing_policy: "", promotions: "",
   uses_google_calendar: "", calendar_other: "",
   existing_phone: "", special_instructions: "", referral_source: "",
+  consent: false,
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -147,6 +149,7 @@ function validateStep3(f: FormData) {
   if (!f.emergency_definition.trim())   e.emergency_definition = "Please define what counts as an emergency";
   if (!f.pricing_policy.trim())         e.pricing_policy = "Please describe your pricing policy";
   if (!f.uses_google_calendar)          e.uses_google_calendar = "Please select a calendar option";
+  if (!f.consent)                        e.consent = "Please agree to the Terms and Privacy Policy to continue";
   return e;
 }
 
@@ -414,10 +417,12 @@ function StepThree({
   form,
   errors,
   set,
+  setConsent,
 }: {
   form: FormData;
   errors: Record<string, string>;
   set: (f: keyof FormData, v: string) => void;
+  setConsent: (v: boolean) => void;
 }) {
   return (
     <div className="space-y-5">
@@ -484,6 +489,40 @@ function StepThree({
           {REFERRAL_OPTIONS.map((o) => <option key={o} value={o}>{o}</option>)}
         </select>
       </div>
+
+      <div className="pt-2 border-t border-gray-100">
+        <label className="flex items-start gap-3 text-xs text-gray-600 leading-relaxed cursor-pointer select-none">
+          <input
+            type="checkbox"
+            checked={form.consent}
+            onChange={(e) => setConsent(e.target.checked)}
+            className="mt-0.5 w-4 h-4 rounded border-gray-300 text-emerald-500 focus:ring-emerald-500 cursor-pointer shrink-0"
+          />
+          <span>
+            I agree to AutoGrowth&apos;s{" "}
+            <Link
+              href="/terms"
+              target="_blank"
+              className="text-emerald-600 hover:text-emerald-700 underline"
+            >
+              Terms
+            </Link>{" "}
+            and{" "}
+            <Link
+              href="/privacy"
+              target="_blank"
+              className="text-emerald-600 hover:text-emerald-700 underline"
+            >
+              Privacy Policy
+            </Link>
+            , and consent to receive transactional and marketing calls, SMS,
+            and emails at the contact info provided. Msg &amp; data rates may
+            apply. Reply STOP to opt out of SMS. Consent is not a condition
+            of purchase.
+          </span>
+        </label>
+        <FieldError msg={errors.consent} />
+      </div>
     </div>
   );
 }
@@ -528,8 +567,8 @@ function ConfirmationScreen({ businessName }: { businessName: string }) {
 
       <p className="text-sm text-gray-500 mb-6">
         Questions?{" "}
-        <a href="mailto:support@autogrowth.ai" className="text-emerald-600 hover:text-emerald-700 font-medium">
-          support@autogrowth.ai
+        <a href="mailto:support@autogrowthai.co" className="text-emerald-600 hover:text-emerald-700 font-medium">
+          support@autogrowthai.co
         </a>
       </p>
 
@@ -567,6 +606,15 @@ export function OnboardingForm() {
     setErrors((prev) => {
       const next = { ...prev };
       delete next[field as string];
+      return next;
+    });
+  }
+
+  function setConsent(value: boolean) {
+    setForm((prev) => ({ ...prev, consent: value }));
+    setErrors((prev) => {
+      const next = { ...prev };
+      delete next.consent;
       return next;
     });
   }
@@ -618,6 +666,7 @@ export function OnboardingForm() {
         ? `other: ${form.calendar_other.trim()}`
         : form.uses_google_calendar;
 
+    const consentTimestamp = new Date().toISOString();
     const payload = {
       source: "onboarding_form",
       business_name: form.business_name.trim(),
@@ -639,6 +688,8 @@ export function OnboardingForm() {
       existing_phone: form.existing_phone.trim() || undefined,
       special_instructions: form.special_instructions.trim() || undefined,
       referral_source: form.referral_source || undefined,
+      tcpa_consent: true,
+      consent_timestamp_client: consentTimestamp,
     };
 
     try {
@@ -654,7 +705,7 @@ export function OnboardingForm() {
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (err) {
-      setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please try again or email support@autogrowth.ai.");
+      setSubmitError(err instanceof Error ? err.message : "Something went wrong. Please try again or email support@autogrowthai.co.");
     } finally {
       setSubmitting(false);
     }
@@ -667,8 +718,8 @@ export function OnboardingForm() {
       <div className="max-w-2xl mx-auto">
         {/* Logo */}
         <Link href="/" className="inline-block mb-10">
-          <span className="text-xl font-bold text-gray-900">
-            AutoGrowth<span className="text-emerald-500">.</span>
+          <span className="text-xl font-bold tracking-tight text-gray-900">
+            Auto<span className="text-indigo-600">Growth</span>
           </span>
         </Link>
 
@@ -686,7 +737,7 @@ export function OnboardingForm() {
 
               {step === 1 && <StepOne form={form} errors={errors} set={set} />}
               {step === 2 && <StepTwo form={form} errors={errors} set={set} setHours={setHours} />}
-              {step === 3 && <StepThree form={form} errors={errors} set={set} />}
+              {step === 3 && <StepThree form={form} errors={errors} set={set} setConsent={setConsent} />}
 
               {submitError && (
                 <div className="mt-5 bg-red-50 border border-red-200 rounded-xl px-4 py-3">
@@ -721,8 +772,8 @@ export function OnboardingForm() {
                   <button
                     type="button"
                     onClick={submit}
-                    disabled={submitting}
-                    className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-3 rounded-full text-sm transition-colors disabled:opacity-60"
+                    disabled={submitting || !form.consent}
+                    className="flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-3 rounded-full text-sm transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {submitting ? (
                       <>
@@ -744,8 +795,8 @@ export function OnboardingForm() {
 
         <p className="text-center text-xs text-gray-400 mt-6">
           Need help?{" "}
-          <a href="mailto:support@autogrowth.ai" className="underline underline-offset-2 hover:text-gray-600">
-            support@autogrowth.ai
+          <a href="mailto:support@autogrowthai.co" className="underline underline-offset-2 hover:text-gray-600">
+            support@autogrowthai.co
           </a>
         </p>
       </div>

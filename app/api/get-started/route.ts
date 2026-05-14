@@ -4,11 +4,6 @@ export async function POST(req: NextRequest) {
   try {
     const body = await req.json() as Record<string, unknown>;
 
-    console.log("[get-started-submission]", {
-      ...body,
-      submittedAt: new Date().toISOString(),
-    });
-
     const b = body as {
       businessName?: string;
       firstName?: string;
@@ -19,7 +14,33 @@ export async function POST(req: NextRequest) {
       industry?: string;
       services?: string[];
       hearAbout?: string;
+      consent?: boolean;
     };
+
+    if (b.consent !== true) {
+      return NextResponse.json(
+        { error: "Consent is required to submit this form." },
+        { status: 400 },
+      );
+    }
+
+    const consentIp =
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("x-real-ip") ||
+      "unknown";
+    const consentUserAgent = req.headers.get("user-agent") || "unknown";
+    const consentTimestamp = new Date().toISOString();
+
+    console.log("[get-started-submission]", {
+      ...body,
+      submittedAt: consentTimestamp,
+      consent: {
+        granted: true,
+        timestamp: consentTimestamp,
+        ip: consentIp,
+        userAgent: consentUserAgent,
+      },
+    });
 
     fetch(
       "https://build.twin.so/triggers/990247dd-e6d8-4e12-9a15-d822a2b296a3/webhook",
@@ -39,6 +60,10 @@ export async function POST(req: NextRequest) {
           source: "website_get_started",
           website: b.website ?? "",
           industry: b.industry ?? "",
+          tcpa_consent: true,
+          consent_timestamp: consentTimestamp,
+          consent_ip: consentIp,
+          consent_user_agent: consentUserAgent,
           full_payload: JSON.stringify(body),
         }),
       }

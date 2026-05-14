@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Check } from "lucide-react";
 
 interface FormState {
@@ -31,6 +32,7 @@ interface FormState {
   planInterest: string;
   hearAbout: string;
   additionalInfo: string;
+  consent: boolean;
 }
 
 const INITIAL: FormState = {
@@ -41,6 +43,7 @@ const INITIAL: FormState = {
   googleRating: "", respondsToReviews: "",
   primaryGoal: "", additionalJobsGoal: "", planInterest: "",
   hearAbout: "", additionalInfo: "",
+  consent: false,
 };
 
 const SERVICES_BY_INDUSTRY: Record<string, string[]> = {
@@ -218,6 +221,10 @@ export default function GetStartedPage() {
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (!form.consent) {
+      setError("Please agree to the Terms and Privacy Policy to continue.");
+      return;
+    }
     setError("");
     setLoading(true);
     try {
@@ -509,6 +516,39 @@ export default function GetStartedPage() {
                     placeholder="Special circumstances, questions, or anything helpful..."
                     className={inputCls("resize-none")} />
                 </div>
+
+                <label className="flex items-start gap-3 text-xs text-gray-600 leading-relaxed cursor-pointer select-none pt-2">
+                  <input
+                    type="checkbox"
+                    name="consent"
+                    required
+                    checked={form.consent}
+                    onChange={(e) => set("consent", e.target.checked)}
+                    className="mt-0.5 w-4 h-4 rounded border-gray-300 text-emerald-500 focus:ring-emerald-500 cursor-pointer shrink-0"
+                  />
+                  <span>
+                    I agree to AutoGrowth&apos;s{" "}
+                    <Link
+                      href="/terms"
+                      target="_blank"
+                      className="text-emerald-600 hover:text-emerald-700 underline"
+                    >
+                      Terms
+                    </Link>{" "}
+                    and{" "}
+                    <Link
+                      href="/privacy"
+                      target="_blank"
+                      className="text-emerald-600 hover:text-emerald-700 underline"
+                    >
+                      Privacy Policy
+                    </Link>
+                    , and consent to receive transactional and marketing calls,
+                    SMS, and emails at the contact info provided. Msg &amp;
+                    data rates may apply. Reply STOP to opt out of SMS. Consent
+                    is not a condition of purchase.
+                  </span>
+                </label>
               </>
             )}
           </div>
@@ -546,8 +586,8 @@ export default function GetStartedPage() {
               ) : (
                 <button
                   type="submit"
-                  disabled={loading}
-                  className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-3 rounded-full text-sm transition-colors disabled:opacity-60 flex items-center gap-2"
+                  disabled={loading || !form.consent}
+                  className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-3 rounded-full text-sm transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"
                 >
                   {loading ? (
                     <>
