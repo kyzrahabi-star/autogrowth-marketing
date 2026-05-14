@@ -220,8 +220,6 @@ export default function PrivacyPage() {
         <p>
           <strong>AutoGrowth AI</strong>
           <br />
-          Houston, TX
-          <br />
           Email:{" "}
           <a
             href="mailto:support@autogrowthai.co"
