@@ -13,10 +13,10 @@ export default function TermsPage() {
         <p className="text-zinc-400">
           This page is being updated. Contact us at{" "}
           <a
-            href="mailto:hello@autogrowthai.com"
+            href="mailto:support@autogrowthai.co"
             className="text-blue-400 hover:text-blue-300"
           >
-            hello@autogrowthai.com
+            support@autogrowthai.co
           </a>{" "}
           for questions.
         </p>
