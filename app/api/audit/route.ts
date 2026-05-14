@@ -10,13 +10,28 @@ export async function POST(req: NextRequest) {
       phone?: string;
       email?: string;
       hearAbout?: string;
+      consent?: boolean;
     };
 
-    const { businessName, city, state, service, phone, email, hearAbout } = body;
+    const { businessName, city, state, service, phone, email, hearAbout, consent } = body;
 
     if (!businessName || !city || !state || !service || !phone || !email) {
       return NextResponse.json({ error: "All fields required" }, { status: 400 });
     }
+
+    if (consent !== true) {
+      return NextResponse.json(
+        { error: "Consent is required to submit this form." },
+        { status: 400 },
+      );
+    }
+
+    const consentIp =
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("x-real-ip") ||
+      "unknown";
+    const consentUserAgent = req.headers.get("user-agent") || "unknown";
+    const consentTimestamp = new Date().toISOString();
 
     console.log("[audit-submission]", {
       businessName,
@@ -26,7 +41,13 @@ export async function POST(req: NextRequest) {
       phone,
       email,
       hearAbout,
-      submittedAt: new Date().toISOString(),
+      submittedAt: consentTimestamp,
+      consent: {
+        granted: true,
+        timestamp: consentTimestamp,
+        ip: consentIp,
+        userAgent: consentUserAgent,
+      },
     });
 
     // Fire-and-forget — Twin Lead Specialist webhook
@@ -44,6 +65,10 @@ export async function POST(req: NextRequest) {
           email,
           hear_about: hearAbout ?? "",
           source: "website_audit",
+          tcpa_consent: true,
+          consent_timestamp: consentTimestamp,
+          consent_ip: consentIp,
+          consent_user_agent: consentUserAgent,
         }),
       }
     ).catch((err) => console.error("[audit-webhook]", err));

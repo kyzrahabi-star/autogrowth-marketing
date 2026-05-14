@@ -12,9 +12,10 @@ export async function POST(req: NextRequest) {
       industry?: string;
       email?: string;
       phone?: string;
+      consent?: boolean;
     };
 
-    const { business_name, city, state, industry, email } = body;
+    const { business_name, city, state, industry, email, consent } = body;
 
     if (!business_name || !city || !state || !industry || !email) {
       return NextResponse.json(
@@ -23,9 +24,29 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    if (consent !== true) {
+      return NextResponse.json(
+        { error: "Consent is required to submit this form." },
+        { status: 400 },
+      );
+    }
+
+    const consentIp =
+      req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ||
+      req.headers.get("x-real-ip") ||
+      "unknown";
+    const consentUserAgent = req.headers.get("user-agent") || "unknown";
+    const consentTimestamp = new Date().toISOString();
+
     console.log("[ai-visibility-checker-submission]", {
       ...body,
-      submittedAt: new Date().toISOString(),
+      submittedAt: consentTimestamp,
+      consent: {
+        granted: true,
+        timestamp: consentTimestamp,
+        ip: consentIp,
+        userAgent: consentUserAgent,
+      },
     });
 
     fetch(TWIN_WEBHOOK_URL, {
@@ -38,6 +59,10 @@ export async function POST(req: NextRequest) {
         industry,
         email,
         phone: body.phone ?? "",
+        tcpa_consent: true,
+        consent_timestamp: consentTimestamp,
+        consent_ip: consentIp,
+        consent_user_agent: consentUserAgent,
       }),
     }).catch((err) => console.error("[ai-visibility-checker-webhook]", err));
 

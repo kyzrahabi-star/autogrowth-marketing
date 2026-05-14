@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 import { Check } from "lucide-react";
 
 const US_STATES: Array<{ value: string; label: string }> = [
@@ -80,6 +81,7 @@ export default function AiVisibilityCheckerPage() {
     industry: "",
     email: "",
     phone: "",
+    consent: false,
   });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
@@ -106,6 +108,7 @@ export default function AiVisibilityCheckerPage() {
           industry: form.industry,
           email: form.email,
           phone: form.phone,
+          consent: form.consent,
         }),
       });
 
@@ -264,6 +267,41 @@ export default function AiVisibilityCheckerPage() {
               />
             </div>
 
+            <label className="flex items-start gap-3 text-xs text-gray-600 leading-relaxed cursor-pointer select-none">
+              <input
+                type="checkbox"
+                name="consent"
+                required
+                checked={form.consent}
+                onChange={(e) =>
+                  setForm((prev) => ({ ...prev, consent: e.target.checked }))
+                }
+                className="mt-0.5 w-4 h-4 rounded border-gray-300 text-emerald-500 focus:ring-emerald-500 cursor-pointer shrink-0"
+              />
+              <span>
+                I agree to AutoGrowth&apos;s{" "}
+                <Link
+                  href="/terms"
+                  target="_blank"
+                  className="text-emerald-600 hover:text-emerald-700 underline"
+                >
+                  Terms
+                </Link>{" "}
+                and{" "}
+                <Link
+                  href="/privacy"
+                  target="_blank"
+                  className="text-emerald-600 hover:text-emerald-700 underline"
+                >
+                  Privacy Policy
+                </Link>
+                , and consent to receive transactional and marketing calls,
+                SMS, and emails at the contact info provided. Msg &amp; data
+                rates may apply. Reply STOP to opt out of SMS. Consent is not
+                a condition of purchase.
+              </span>
+            </label>
+
             {error && (
               <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded-lg px-4 py-3">
                 {error}
@@ -272,8 +310,8 @@ export default function AiVisibilityCheckerPage() {
 
             <button
               type="submit"
-              disabled={loading}
-              className="w-full py-4 rounded-xl text-lg font-semibold text-white bg-emerald-500 hover:bg-emerald-600 transition-colors disabled:opacity-60 flex items-center justify-center gap-3"
+              disabled={loading || !form.consent}
+              className="w-full py-4 rounded-xl text-lg font-semibold text-white bg-emerald-500 hover:bg-emerald-600 transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-3"
             >
               {loading ? (
                 <>
