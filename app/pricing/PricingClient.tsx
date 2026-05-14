@@ -64,7 +64,7 @@ const tiers = [
       "Owner Alerts — SMS + email on every lead and emergency",
     ],
     cta: "Get Started",
-    ctaHref: "https://buy.stripe.com/8x214mco8euZbtPfP06Zy07",
+    ctaHref: "https://buy.stripe.com/fZu3cu73OeuZ41n8my6Zy0c",
     ctaVariant: "green",
   },
   {
@@ -104,7 +104,7 @@ const tiers = [
       "Full AutoGrowth dashboard",
     ],
     cta: "Get More Jobs",
-    ctaHref: "https://buy.stripe.com/7sY4gyag02MhgO96eq6Zy09",
+    ctaHref: "https://buy.stripe.com/6oUcN4ewg3QleG1gT46Zy0b",
     ctaVariant: "green",
   },
   {
