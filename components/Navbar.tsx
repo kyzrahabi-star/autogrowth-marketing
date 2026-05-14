@@ -14,9 +14,6 @@ import {
   PenTool,
   Star,
   ChevronDown,
-  Search,
-  Sparkles,
-  TrendingUp,
 } from "lucide-react";
 
 export function Navbar() {
@@ -190,51 +187,12 @@ export function Navbar() {
               Pricing
             </Link>
 
-            {/* Free Tools dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => openDropdown("freeTools")}
-              onMouseLeave={scheduleClose}
+            <Link
+              href="/audit"
+              className="text-sm text-gray-600 hover:text-gray-900 font-medium transition-colors"
             >
-              <button className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900 font-medium py-2">
-                Free Tools{" "}
-                <ChevronDown
-                  className={`w-3.5 h-3.5 transition-transform ${
-                    activeDropdown === "freeTools" ? "rotate-180" : ""
-                  }`}
-                />
-              </button>
-              {activeDropdown === "freeTools" && (
-                <div className="absolute top-full left-0 w-60 pt-2 z-50">
-                  <div className="bg-white rounded-xl shadow-xl border border-gray-200 py-2">
-                    <p className="uppercase text-[10px] tracking-widest text-gray-400 px-4 pt-2 pb-2">
-                      Free Tools
-                    </p>
-                    <Link
-                      href="/audit"
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-lg text-sm text-gray-700 mx-1"
-                    >
-                      <Search className="w-4 h-4 text-emerald-500 shrink-0" />
-                      Free Business Audit
-                    </Link>
-                    <Link
-                      href="/tools/ai-visibility-checker"
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-lg text-sm text-gray-700 mx-1"
-                    >
-                      <Sparkles className="w-4 h-4 text-emerald-500 shrink-0" />
-                      AI Visibility Checker
-                    </Link>
-                    <Link
-                      href="/results"
-                      className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-lg text-sm text-gray-700 mx-1"
-                    >
-                      <TrendingUp className="w-4 h-4 text-emerald-500 shrink-0" />
-                      Results
-                    </Link>
-                  </div>
-                </div>
-              )}
-            </div>
+              Free Tools
+            </Link>
           </nav>
 
           {/* Right side — desktop */}
@@ -413,52 +371,13 @@ export function Navbar() {
             Pricing
           </Link>
 
-          {/* Free Tools accordion */}
-          <div className="border-t border-gray-100">
-            <button
-              className="w-full flex items-center justify-between py-3 text-sm font-medium text-gray-700"
-              onClick={() =>
-                setMobileExpanded(
-                  mobileExpanded === "freeTools" ? null : "freeTools"
-                )
-              }
-            >
-              Free Tools
-              <ChevronDown
-                className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
-                  mobileExpanded === "freeTools" ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-            {mobileExpanded === "freeTools" && (
-              <div className="pl-4 pb-3 flex flex-col">
-                <Link
-                  href="/audit"
-                  className="flex items-center gap-3 py-3 text-sm text-gray-600 active:bg-gray-50 rounded-lg px-2"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  <Search className="w-4 h-4 text-emerald-500" />
-                  Free Business Audit
-                </Link>
-                <Link
-                  href="/tools/ai-visibility-checker"
-                  className="flex items-center gap-3 py-3 text-sm text-gray-600 active:bg-gray-50 rounded-lg px-2"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  <Sparkles className="w-4 h-4 text-emerald-500" />
-                  AI Visibility Checker
-                </Link>
-                <Link
-                  href="/results"
-                  className="flex items-center gap-3 py-3 text-sm text-gray-600 active:bg-gray-50 rounded-lg px-2"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  <TrendingUp className="w-4 h-4 text-emerald-500" />
-                  Results
-                </Link>
-              </div>
-            )}
-          </div>
+          <Link
+            href="/audit"
+            className="block py-3 text-sm font-medium text-gray-700 border-t border-gray-100"
+            onClick={() => setMobileOpen(false)}
+          >
+            Free Tools
+          </Link>
 
           {/* Contact + phone */}
           <div className="border-t border-gray-100 pt-4 mt-2 flex flex-col gap-3">
