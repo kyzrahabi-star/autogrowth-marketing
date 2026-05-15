@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Check } from "lucide-react";
+import { buildFaqSchema } from "@/lib/seo-data";
 
 export const metadata: Metadata = {
   title: "How AutoGrowth AI Works",
@@ -278,8 +279,14 @@ const specialists: Array<{
 ];
 
 export default function HowItWorksPage() {
+  const faqSchema = buildFaqSchema();
   return (
-    <div className="min-h-screen bg-white">
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
+      <div className="min-h-screen bg-white">
       {/* Hero */}
       <section className="py-24 px-6 lg:px-8 text-center bg-white">
         <div className="max-w-3xl mx-auto">
@@ -441,6 +448,7 @@ export default function HowItWorksPage() {
           </div>
         </div>
       </section>
-    </div>
+      </div>
+    </>
   );
 }

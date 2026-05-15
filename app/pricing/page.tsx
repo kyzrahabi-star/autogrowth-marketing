@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import PricingClient from "./PricingClient";
+import { PRICING_TIERS_SEO } from "@/lib/seo-data";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -13,5 +14,34 @@ export const metadata: Metadata = {
 };
 
 export default function PricingPage() {
-  return <PricingClient />;
+  const productSchemas = PRICING_TIERS_SEO.map((tier) => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: tier.name,
+    description: tier.description,
+    brand: {
+      "@type": "Brand",
+      name: "AutoGrowth AI",
+    },
+    offers: {
+      "@type": "Offer",
+      price: tier.price,
+      priceCurrency: "USD",
+      url: tier.url,
+      availability: "https://schema.org/InStock",
+    },
+  }));
+
+  return (
+    <>
+      {productSchemas.map((schema, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
+      <PricingClient />
+    </>
+  );
 }

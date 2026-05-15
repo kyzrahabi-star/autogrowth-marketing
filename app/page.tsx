@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Search, PenTool, Zap, MessageSquare, Star, Check, type LucideIcon } from "lucide-react";
+import { ORGANIZATION_SCHEMA, buildFaqSchema } from "@/lib/seo-data";
 
 export default function HomePage() {
   const specialists: Array<{ Icon: LucideIcon; name: string; description: string }> = [
@@ -114,12 +115,12 @@ export default function HomePage() {
     },
   ];
 
-  const jsonLd = {
+  const softwareSchema = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
     name: "AutoGrowth AI",
     applicationCategory: "BusinessApplication",
-    description: "AI search domination platform for trades businesses",
+    description: "AI growth platform for local service businesses",
     offers: {
       "@type": "AggregateOffer",
       lowPrice: "497",
@@ -129,15 +130,25 @@ export default function HomePage() {
     provider: {
       "@type": "Organization",
       name: "AutoGrowth AI",
-      url: "https://autogrowthai.co",
+      url: "https://www.autogrowthai.co",
     },
   };
+
+  const faqSchema = buildFaqSchema();
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_SCHEMA) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
       {/* ── 1. HERO ── */}
