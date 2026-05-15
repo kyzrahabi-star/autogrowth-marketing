@@ -14,7 +14,7 @@ export default function DemoPage() {
         {/* Header */}
         <div className="text-center mb-12">
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-4">
-            See AutoGrowth in action
+            See AutoGrowth AI in action
           </h1>
           <p className="text-gray-600 text-xl mb-8">
             15 minutes. No pitch. We&apos;ll run a live visibility audit across

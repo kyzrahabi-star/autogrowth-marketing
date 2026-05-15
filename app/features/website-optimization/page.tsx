@@ -5,11 +5,11 @@ import { Check, X, ArrowRight, Zap, Search, FileText, MousePointer, Gauge } from
 export const metadata: Metadata = {
   title: "Website Optimization",
   description:
-    "AutoGrowth's AI fixes your HVAC website in days — schema markup, service pages, chatbot, booking, speed, and AI search citations. Included in every plan.",
+    "AutoGrowth AI's AI fixes your HVAC website in days — schema markup, service pages, chatbot, booking, speed, and AI search citations. Included in every plan.",
   openGraph: {
     title: "Website Optimization — AutoGrowth AI",
     description:
-      "AutoGrowth's AI fixes your HVAC website in days — schema markup, service pages, chatbot, booking, speed, and AI search citations. Included in every plan.",
+      "AutoGrowth AI's AI fixes your HVAC website in days — schema markup, service pages, chatbot, booking, speed, and AI search citations. Included in every plan.",
   },
 };
 
@@ -138,7 +138,7 @@ export default function WebsiteOptimizationPage() {
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
             Most agencies take 3–6 months and charge $10,000+ to fix your
-            website. AutoGrowth&apos;s AI does it in days for a fraction of the
+            website. AutoGrowth AI&apos;s AI does it in days for a fraction of the
             cost.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -156,7 +156,7 @@ export default function WebsiteOptimizationPage() {
       <section className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-3">
-            Before and after AutoGrowth
+            Before and after AutoGrowth AI
           </h2>
           <p className="text-gray-500 text-center text-sm mb-12">
             Same business. Same owner. Completely different results.
@@ -207,7 +207,7 @@ export default function WebsiteOptimizationPage() {
             <div className="bg-white rounded-2xl border border-emerald-200 overflow-hidden">
               <div className="px-6 py-4 border-b border-emerald-100 bg-emerald-50">
                 <p className="text-xs font-semibold text-emerald-600 uppercase tracking-wide mb-1">
-                  After AutoGrowth
+                  After AutoGrowth AI
                 </p>
                 <p className="font-bold text-gray-900">Bob&apos;s HVAC — Columbus, OH</p>
               </div>
@@ -324,7 +324,7 @@ export default function WebsiteOptimizationPage() {
       <section className="py-20 px-6 lg:px-8 bg-gray-50">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-3">
-            Website optimization is included in every AutoGrowth plan
+            Website optimization is included in every AutoGrowth AI plan
           </h2>
           <p className="text-gray-500 text-center text-sm mb-12">
             No add-ons. No agency retainers. Pick a plan and we handle the rest.
@@ -376,7 +376,7 @@ export default function WebsiteOptimizationPage() {
             What our clients see after 30 days
           </h2>
           <p className="text-gray-500 text-sm mb-12">
-            Measured across all active AutoGrowth websites.
+            Measured across all active AutoGrowth AI websites.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             {RESULTS.map(({ stat, label }) => (

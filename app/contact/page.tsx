@@ -22,7 +22,7 @@ export default function ContactPage() {
               Get in touch
             </h1>
             <p className="text-gray-500 text-lg max-w-xl mx-auto">
-              Questions about pricing, the audit, or whether AutoGrowth fits your
+              Questions about pricing, the audit, or whether AutoGrowth AI fits your
               business? We&apos;re a real team, not a chatbot, and we reply
               within one business day.
             </p>

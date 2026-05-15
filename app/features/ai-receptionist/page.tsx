@@ -243,7 +243,7 @@ export default function AiReceptionistPage() {
             Included in every plan
           </h2>
           <p className="text-gray-400 mb-8">
-            Every AutoGrowth tier gets the AI Receptionist from day one. No
+            Every AutoGrowth AI tier gets the AI Receptionist from day one. No
             add-ons, no upgrades, no feature gating.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">

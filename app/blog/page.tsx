@@ -51,7 +51,7 @@ export default function BlogPage() {
       <div className="max-w-4xl mx-auto">
         <div className="mb-14">
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-3">
-            The AutoGrowth Blog
+            The AutoGrowth AI Blog
           </h1>
           <p className="text-gray-600 text-lg">
             Tactics, data, and real examples — no theory.

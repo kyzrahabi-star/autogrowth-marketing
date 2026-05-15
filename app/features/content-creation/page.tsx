@@ -271,7 +271,7 @@ export default function ContentCreationPage() {
           </h2>
           <p className="text-gray-400 mb-8">
             One blog post and four video scripts every week, every year — while
-            you run jobs. Included in every AutoGrowth tier.
+            you run jobs. Included in every AutoGrowth AI tier.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link

@@ -482,7 +482,7 @@ function StepThree({
       </div>
 
       <div>
-        <FieldLabel>How did you hear about AutoGrowth?</FieldLabel>
+        <FieldLabel>How did you hear about AutoGrowth AI?</FieldLabel>
         <select value={form.referral_source} onChange={(e) => set("referral_source", e.target.value)}
           className={selectCls}>
           <option value="">Select (optional)</option>
@@ -499,7 +499,7 @@ function StepThree({
             className="mt-0.5 w-4 h-4 rounded border-gray-300 text-emerald-500 focus:ring-emerald-500 cursor-pointer shrink-0"
           />
           <span>
-            I agree to AutoGrowth&apos;s{" "}
+            I agree to AutoGrowth AI&apos;s{" "}
             <Link
               href="/terms"
               target="_blank"
@@ -577,7 +577,7 @@ function ConfirmationScreen({ businessName }: { businessName: string }) {
         className="inline-flex items-center gap-2 text-sm font-medium text-gray-600 hover:text-gray-900 transition-colors"
       >
         <ChevronLeft className="w-4 h-4" />
-        Back to AutoGrowth
+        Back to AutoGrowth AI
       </Link>
     </div>
   );
@@ -719,7 +719,7 @@ export function OnboardingForm() {
         {/* Logo */}
         <Link href="/" className="inline-block mb-10">
           <span className="text-xl font-bold tracking-tight text-gray-900">
-            Auto<span className="text-indigo-600">Growth</span>
+            Auto<span className="text-indigo-600">Growth</span> AI
           </span>
         </Link>
 

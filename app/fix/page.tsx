@@ -138,7 +138,7 @@ export default function FixPage() {
           </h1>
           <p className="text-lg text-gray-600 max-w-xl mx-auto">
             Based on your audit, here are the issues we found and exactly how
-            AutoGrowth fixes each one.
+            AutoGrowth AI fixes each one.
           </p>
           <div className="flex items-center justify-center gap-6 mt-8 text-sm flex-wrap">
             {(["critical", "important", "quickwin"] as Severity[]).map((s) => (
@@ -208,7 +208,7 @@ export default function FixPage() {
                       </div>
                       <div className="bg-emerald-50 rounded-xl p-4 border border-emerald-100">
                         <p className="text-xs font-semibold text-emerald-600 uppercase tracking-wide mb-2">
-                          How AutoGrowth fixes it
+                          How AutoGrowth AI fixes it
                         </p>
                         <p className="text-sm text-gray-700 leading-relaxed">
                           {issue.fix}
@@ -256,7 +256,7 @@ export default function FixPage() {
             </div>
 
             <p className="text-zinc-400 text-sm leading-relaxed mb-8">
-              With AutoGrowth, all of these are fixed automatically. No
+              With AutoGrowth AI, all of these are fixed automatically. No
               developers. No agencies. No waiting.
             </p>
 

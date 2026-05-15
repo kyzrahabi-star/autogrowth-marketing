@@ -188,7 +188,7 @@ export default function LeadScoringPage() {
               <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
               <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
               <span className="ml-2 text-gray-400 text-xs font-mono">
-                AutoGrowth Lead Agent — #2847
+                AutoGrowth AI Lead Agent — #2847
               </span>
             </div>
             <div className="p-6 font-mono text-sm space-y-3">
@@ -265,7 +265,7 @@ export default function LeadScoringPage() {
             Included in every plan
           </h2>
           <p className="text-gray-400 mb-8">
-            Lead scoring is baked into every AutoGrowth tier. No add-ons, no
+            Lead scoring is baked into every AutoGrowth AI tier. No add-ons, no
             upgrades.
           </p>
           <Link

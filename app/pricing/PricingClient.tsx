@@ -101,7 +101,7 @@ const tiers = [
       "Lead Specialist — real-time lead scoring (0–100) with instant SMS + email alerts",
       "Customer Pursuit Manager — automated 6-step follow-up drip over 14 days",
       "Hot lead SMS alerts to your phone in under 60 seconds",
-      "Full AutoGrowth dashboard",
+      "Full AutoGrowth AI dashboard",
     ],
     cta: "Get More Jobs",
     ctaHref: "https://buy.stripe.com/6oUcN4ewg3QleG1gT46Zy0b",
@@ -160,7 +160,7 @@ const faqs = [
   },
   {
     q: "$4,997/month — why?",
-    a: "You're replacing a receptionist ($4,100/mo), marketing person ($4,000/mo), follow-up coordinator ($3,000/mo), and review manager ($1,500/mo). That's $12,600/month. AutoGrowth does it all for $4,997.",
+    a: "You're replacing a receptionist ($4,100/mo), marketing person ($4,000/mo), follow-up coordinator ($3,000/mo), and review manager ($1,500/mo). That's $12,600/month. AutoGrowth AI does it all for $4,997.",
   },
   {
     q: "What's the AI Receptionist?",

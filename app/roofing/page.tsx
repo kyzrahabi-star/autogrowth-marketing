@@ -6,11 +6,11 @@ import { WaitlistForm } from "@/components/WaitlistForm";
 export const metadata: Metadata = {
   title: "Roofing Marketing & AI Visibility",
   description:
-    "Storm season or slow season — AutoGrowth keeps your roofing business visible across Google and every AI search engine. Launching soon — join the waitlist.",
+    "Storm season or slow season — AutoGrowth AI keeps your roofing business visible across Google and every AI search engine. Launching soon — join the waitlist.",
   openGraph: {
     title: "Roofing Marketing & AI Visibility — AutoGrowth AI",
     description:
-      "Storm season or slow season — AutoGrowth keeps your roofing business visible across Google and every AI search engine. Launching soon — join the waitlist.",
+      "Storm season or slow season — AutoGrowth AI keeps your roofing business visible across Google and every AI search engine. Launching soon — join the waitlist.",
   },
 };
 
@@ -81,7 +81,7 @@ export default function RoofingPage() {
             <span className="text-purple-500">Maximum Revenue.</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-            Storm season or slow season — AutoGrowth keeps your roofing business
+            Storm season or slow season — AutoGrowth AI keeps your roofing business
             visible across Google and every AI search engine.
           </p>
           <a
@@ -212,14 +212,14 @@ export default function RoofingPage() {
             HVAC is live now. Roofing is next.
           </h2>
           <p className="text-gray-400 mb-6 text-sm">
-            While you wait, see the full AutoGrowth platform and what it does
+            While you wait, see the full AutoGrowth AI platform and what it does
             for service contractors.
           </p>
           <Link
             href="/how-it-works"
             className="inline-flex items-center gap-2 text-white border border-white/20 hover:border-white/40 font-medium px-6 py-3 rounded-xl text-sm transition-colors"
           >
-            See how AutoGrowth works
+            See how AutoGrowth AI works
             <ArrowRight className="w-4 h-4" />
           </Link>
         </div>

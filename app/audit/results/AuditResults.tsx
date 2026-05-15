@@ -650,7 +650,7 @@ export function AuditResults() {
                       href="/fix"
                       className="shrink-0 text-xs font-semibold text-emerald-600 hover:text-emerald-700 whitespace-nowrap underline underline-offset-2"
                     >
-                      Fix with AutoGrowth →
+                      Fix with AutoGrowth AI →
                     </Link>
                   </div>
                 ))}

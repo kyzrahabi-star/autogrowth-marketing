@@ -252,7 +252,7 @@ export default function ReviewManagementPage() {
             Included in every plan
           </h2>
           <p className="text-gray-400 mb-8">
-            The Reputation Agent runs on every AutoGrowth account from day one.
+            The Reputation Agent runs on every AutoGrowth AI account from day one.
             No setup fee. No extra charge.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">

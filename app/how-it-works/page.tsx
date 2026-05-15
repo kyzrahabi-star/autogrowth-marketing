@@ -400,7 +400,7 @@ export default function HowItWorksPage() {
           </h2>
           <p className="text-zinc-300 text-lg leading-relaxed mb-10">
             Other agencies do SEO. Some startups do AI optimization. Nobody does both.
-            AutoGrowth covers Google Search, Google Maps, Google AI Overviews, ChatGPT,
+            AutoGrowth AI covers Google Search, Google Maps, Google AI Overviews, ChatGPT,
             and Perplexity — all from one dashboard.
           </p>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 max-w-xl mx-auto mb-10">

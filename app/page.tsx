@@ -487,7 +487,7 @@ export default function HomePage() {
             The AutoGrowth Engine™
           </h2>
           <p className="text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto">
-            AutoGrowth uses AI to answer your calls, capture every lead, follow
+            AutoGrowth AI uses AI to answer your calls, capture every lead, follow
             up automatically, and make you visible where your customers are
             searching — including ChatGPT and Perplexity.
           </p>
@@ -759,7 +759,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold tracking-tight text-gray-900 mb-3">
-              Why AutoGrowth vs Competitors
+              Why AutoGrowth AI vs Competitors
             </h2>
             <p className="text-gray-600">
               Full-stack AI marketing platform. Not a DIY tool. Not a $10k agency.
@@ -774,7 +774,7 @@ export default function HomePage() {
                     Feature
                   </th>
                   <th className="px-6 py-4 text-center text-xs font-bold text-emerald-700 uppercase tracking-wide">
-                    AutoGrowth
+                    AutoGrowth AI
                   </th>
                   <th className="px-6 py-4 text-center text-xs font-semibold text-gray-500 uppercase tracking-wide">
                     GoHighLevel

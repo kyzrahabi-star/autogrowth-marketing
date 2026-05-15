@@ -57,7 +57,7 @@ export function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center shrink-0">
             <span className="text-2xl font-bold tracking-tight text-gray-900">
-              Auto<span className="text-indigo-600">Growth</span>
+              Auto<span className="text-indigo-600">Growth</span> AI
             </span>
           </Link>
 

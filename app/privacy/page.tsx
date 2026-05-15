@@ -27,7 +27,7 @@ export default function PrivacyPage() {
         </p>
 
         <p>
-          AutoGrowth AI (&ldquo;AutoGrowth,&rdquo; &ldquo;we,&rdquo;
+          AutoGrowth AI (&ldquo;AutoGrowth AI,&rdquo; &ldquo;we,&rdquo;
           &ldquo;us,&rdquo; or &ldquo;our&rdquo;) respects your privacy. This
           Privacy Policy explains how we collect, use, share, and protect
           personal information when you visit autogrowthai.co or use our
@@ -102,7 +102,7 @@ export default function PrivacyPage() {
             safety, or that of others.
           </li>
           <li>
-            <strong>Business transfers</strong> — if AutoGrowth is acquired,
+            <strong>Business transfers</strong> — if AutoGrowth AI is acquired,
             merged, or sold, your information may be transferred as part of
             that transaction.
           </li>

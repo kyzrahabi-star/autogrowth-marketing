@@ -16,11 +16,11 @@ import {
 export const metadata: Metadata = {
   title: "HVAC Marketing & AI Visibility",
   description:
-    "AutoGrowth gets your HVAC business recommended by Google AND AI search — so homeowners call you first, not your competitors. Full schedules, no matter the season.",
+    "AutoGrowth AI gets your HVAC business recommended by Google AND AI search — so homeowners call you first, not your competitors. Full schedules, no matter the season.",
   openGraph: {
     title: "HVAC Marketing & AI Visibility — AutoGrowth AI",
     description:
-      "AutoGrowth gets your HVAC business recommended by Google AND AI search — so homeowners call you first, not your competitors. Full schedules, no matter the season.",
+      "AutoGrowth AI gets your HVAC business recommended by Google AND AI search — so homeowners call you first, not your competitors. Full schedules, no matter the season.",
   },
 };
 
@@ -73,7 +73,7 @@ export default function HvacPage() {
             No Matter the Season.
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-            AutoGrowth gets your HVAC business recommended by Google AND AI
+            AutoGrowth AI gets your HVAC business recommended by Google AND AI
             search — so homeowners call you first, not your competitors.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -178,7 +178,7 @@ export default function HvacPage() {
           </div>
 
           <p className="text-center text-gray-500 text-sm mt-6">
-            AutoGrowth rebuilds your online presence so you get into these
+            AutoGrowth AI rebuilds your online presence so you get into these
             answers — and stay there.
           </p>
         </div>
@@ -294,7 +294,7 @@ export default function HvacPage() {
               ))}
             </div>
             <blockquote className="text-lg text-gray-700 leading-relaxed mb-6">
-              &ldquo;Since we started with AutoGrowth, our phones ring
+              &ldquo;Since we started with AutoGrowth AI, our phones ring
               differently. Before, we&apos;d miss calls and lose jobs to whoever
               answered first. Now our leads come pre-scored, our reviews are
               climbing toward 4.9 stars, and ChatGPT actually mentions us when

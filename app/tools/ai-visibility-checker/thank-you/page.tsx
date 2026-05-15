@@ -43,7 +43,7 @@ export default function AiVisibilityCheckerThankYouPage() {
                 href="/how-it-works"
                 className="text-base text-emerald-600 hover:text-emerald-700 transition-colors"
               >
-                → See how AutoGrowth works
+                → See how AutoGrowth AI works
               </Link>
             </li>
             <li>

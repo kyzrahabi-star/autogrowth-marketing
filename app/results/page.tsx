@@ -17,7 +17,7 @@ export default function ResultsPage() {
             Real Results for Real Contractors
           </h1>
           <p className="text-xl text-gray-500 mt-4 max-w-2xl mx-auto">
-            See how AutoGrowth transforms online visibility and lead flow for home
+            See how AutoGrowth AI transforms online visibility and lead flow for home
             services businesses.
           </p>
         </div>
@@ -70,7 +70,7 @@ export default function ResultsPage() {
             {/* Before */}
             <div className="bg-white border border-gray-200 rounded-2xl p-6">
               <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">
-                Before AutoGrowth
+                Before AutoGrowth AI
               </p>
               <p className="text-5xl font-bold text-gray-900">0/100</p>
               <p className="text-xs text-gray-400 mb-4">AI Visibility Score</p>

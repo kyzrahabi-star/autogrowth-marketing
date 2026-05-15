@@ -279,7 +279,7 @@ export default function AiVisibilityCheckerPage() {
                 className="mt-0.5 w-4 h-4 rounded border-gray-300 text-emerald-500 focus:ring-emerald-500 cursor-pointer shrink-0"
               />
               <span>
-                I agree to AutoGrowth&apos;s{" "}
+                I agree to AutoGrowth AI&apos;s{" "}
                 <Link
                   href="/terms"
                   target="_blank"

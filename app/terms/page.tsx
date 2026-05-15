@@ -28,7 +28,7 @@ export default function TermsPage() {
 
         <p>
           These Terms of Service (&ldquo;Terms&rdquo;) govern your access to
-          and use of AutoGrowth AI (&ldquo;AutoGrowth,&rdquo;
+          and use of AutoGrowth AI (&ldquo;AutoGrowth AI,&rdquo;
           &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) services,
           including our website at autogrowthai.co, free audit tools, and paid
           subscription products (collectively, the &ldquo;Services&rdquo;).
@@ -46,7 +46,7 @@ export default function TermsPage() {
         </p>
 
         <h2>2. The Services</h2>
-        <p>AutoGrowth provides AI-powered growth tools for local service businesses, including:</p>
+        <p>AutoGrowth AI provides AI-powered growth tools for local service businesses, including:</p>
         <ul>
           <li>
             <strong>Free tools</strong>: Business Audit and AI Visibility
@@ -79,7 +79,7 @@ export default function TermsPage() {
         </p>
 
         <h2>4. Free audit tools</h2>
-        <p>By submitting a free audit request, you grant AutoGrowth permission to:</p>
+        <p>By submitting a free audit request, you grant AutoGrowth AI permission to:</p>
         <ul>
           <li>
             Generate an audit report using publicly available information
@@ -106,7 +106,7 @@ export default function TermsPage() {
         <p>Paid subscriptions are billed in advance on a monthly or annual basis. By starting a subscription:</p>
         <ul>
           <li>
-            You authorize AutoGrowth to charge your payment method on each
+            You authorize AutoGrowth AI to charge your payment method on each
             renewal
           </li>
           <li>
@@ -162,7 +162,7 @@ export default function TermsPage() {
 
         <h2>7. Content and intellectual property</h2>
         <p>
-          <strong>Our content.</strong> AutoGrowth owns all rights to the
+          <strong>Our content.</strong> AutoGrowth AI owns all rights to the
           Services, including the platform, software, content, designs,
           trademarks, and AI models. We grant you a limited, non-exclusive,
           non-transferable license to use the Services during your
@@ -171,15 +171,15 @@ export default function TermsPage() {
         <p>
           <strong>Your content.</strong> You retain ownership of content you
           submit (business information, logos, photos, etc.). By submitting
-          content, you grant AutoGrowth a worldwide, royalty-free license to
+          content, you grant AutoGrowth AI a worldwide, royalty-free license to
           use it solely to provide the Services. You represent that you have
           the rights to all content you submit.
         </p>
         <p>
-          <strong>Generated content.</strong> AutoGrowth may generate websites,
+          <strong>Generated content.</strong> AutoGrowth AI may generate websites,
           articles, audits, and other materials on your behalf. Subject to
           payment of all fees, you own the generated content delivered to you.
-          AutoGrowth retains the right to use anonymized, aggregated data to
+          AutoGrowth AI retains the right to use anonymized, aggregated data to
           improve the Services.
         </p>
 
@@ -189,7 +189,7 @@ export default function TermsPage() {
           marketing content, and other materials. AI-generated content may
           contain inaccuracies, omissions, or errors. We recommend reviewing
           all AI-generated content before publishing or relying on it.
-          AutoGrowth makes no warranty as to the accuracy or completeness of
+          AutoGrowth AI makes no warranty as to the accuracy or completeness of
           AI-generated outputs.
         </p>
 
@@ -200,7 +200,7 @@ export default function TermsPage() {
           depend on many factors outside our control, including competitive
           landscape, algorithm changes by third parties (Google, OpenAI,
           Perplexity, and others), and your own implementation of our
-          recommendations. AutoGrowth does not guarantee specific rankings,
+          recommendations. AutoGrowth AI does not guarantee specific rankings,
           traffic, lead counts, or revenue results.
         </p>
 
@@ -209,13 +209,13 @@ export default function TermsPage() {
           The Services are provided &ldquo;as is&rdquo; and &ldquo;as
           available&rdquo; without warranties of any kind, express or implied,
           including warranties of merchantability, fitness for a particular
-          purpose, and non-infringement. AutoGrowth does not warrant that the
+          purpose, and non-infringement. AutoGrowth AI does not warrant that the
           Services will be uninterrupted, error-free, or secure.
         </p>
 
         <h2>11. Limitation of liability</h2>
         <p className="uppercase text-sm">
-          To the maximum extent permitted by law, AutoGrowth shall not be
+          To the maximum extent permitted by law, AutoGrowth AI shall not be
           liable for any indirect, incidental, special, consequential, or
           punitive damages, including lost profits, lost revenue, or lost
           data, arising from your use of the Services.
@@ -232,7 +232,7 @@ export default function TermsPage() {
 
         <h2>12. Indemnification</h2>
         <p>
-          You agree to indemnify and hold harmless AutoGrowth and its officers,
+          You agree to indemnify and hold harmless AutoGrowth AI and its officers,
           employees, and agents from any claims, damages, losses, or expenses
           (including reasonable attorneys&apos; fees) arising from: (a) your
           use of the Services, (b) your violation of these Terms, (c) your
@@ -251,7 +251,7 @@ export default function TermsPage() {
         <h2>14. Communications and consent</h2>
         <p>
           By providing your phone number, you consent to receive automated
-          calls and SMS from AutoGrowth and its service providers for
+          calls and SMS from AutoGrowth AI and its service providers for
           business-related communications including audit results, account
           updates, and marketing. Message and data rates may apply. Reply STOP
           to opt out of SMS. Consent to marketing is not a condition of
@@ -269,7 +269,7 @@ export default function TermsPage() {
           regard to conflict-of-law principles. Any dispute arising from these
           Terms or the Services shall be resolved exclusively in the state or
           federal courts located in Franklin County, Ohio, and you consent to
-          personal jurisdiction there. You and AutoGrowth waive any right to a
+          personal jurisdiction there. You and AutoGrowth AI waive any right to a
           jury trial.
         </p>
 
@@ -287,7 +287,7 @@ export default function TermsPage() {
           <li>
             <strong>Entire agreement</strong> — these Terms, together with the
             Privacy Policy and any subscription-specific agreement, constitute
-            the entire agreement between you and AutoGrowth.
+            the entire agreement between you and AutoGrowth AI.
           </li>
           <li>
             <strong>Severability</strong> — if any provision is found
