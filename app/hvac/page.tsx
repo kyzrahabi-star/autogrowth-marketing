@@ -12,6 +12,7 @@ import {
   ArrowRight,
   PenTool,
 } from "lucide-react";
+import { HVAC_CITY_PAGES } from "@/lib/hvac-cities";
 
 export const metadata: Metadata = {
   title: "HVAC Marketing & AI Visibility",
@@ -353,6 +354,58 @@ export default function HvacPage() {
               </li>
             ))}
           </ul>
+        </div>
+      </section>
+
+      {/* City pages (pillar → spokes) */}
+      <section className="bg-gray-50 border-t border-gray-200 py-20 px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
+              HVAC AI Receptionist by City
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-3">
+              Find AutoGrowth AI for HVAC in your market
+            </h2>
+            <p className="text-gray-600 max-w-xl mx-auto">
+              City-specific landing pages with local pricing, climate context,
+              and emergency definitions. Same platform, configured per market.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {[...HVAC_CITY_PAGES]
+              .sort((a, b) => a.city.localeCompare(b.city))
+              .map((p) => (
+                <Link
+                  key={p.slug}
+                  href={`/hvac/${p.slug}`}
+                  className="group bg-white border border-gray-200 hover:border-emerald-300 hover:shadow-md rounded-xl px-5 py-4 transition-all flex items-center justify-between gap-3"
+                >
+                  <div>
+                    <p className="text-xs text-gray-500 mb-0.5">
+                      HVAC AI Receptionist in
+                    </p>
+                    <p className="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
+                      {p.city}, {p.state}
+                    </p>
+                  </div>
+                  <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-emerald-500 transition-colors shrink-0" />
+                </Link>
+              ))}
+          </div>
+
+          <p className="text-center text-sm text-gray-500 mt-10">
+            Your city not listed? Every AutoGrowth AI deployment is configured
+            per business — pricing and coverage works in any U.S. metro.{" "}
+            <Link
+              href="/contact"
+              className="text-emerald-600 hover:text-emerald-700 font-semibold"
+            >
+              Contact us
+            </Link>{" "}
+            and we&apos;ll set you up.
+          </p>
         </div>
       </section>
 

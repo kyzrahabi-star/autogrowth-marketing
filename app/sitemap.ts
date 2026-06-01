@@ -2,6 +2,7 @@ import { MetadataRoute } from "next";
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
+import { HVAC_CITY_PAGES } from "@/lib/hvac-cities";
 
 const BASE = "https://www.autogrowthai.co";
 
@@ -66,6 +67,16 @@ function getBlogPosts() {
     });
 }
 
+function getHvacCityPages() {
+  const now = new Date();
+  return HVAC_CITY_PAGES.map((p) => ({
+    url: `${BASE}/hvac/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const staticEntries = STATIC_PAGES.map((p) => ({
@@ -74,5 +85,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: p.changeFrequency,
     priority: p.priority,
   }));
-  return [...staticEntries, ...getBlogPosts()];
+  return [...staticEntries, ...getHvacCityPages(), ...getBlogPosts()];
 }
