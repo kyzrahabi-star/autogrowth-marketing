@@ -11,6 +11,7 @@ const tiers = [
     price: "$0",
     priceNote: "/one-time",
     tagline: null,
+    revenueImpact: null,
     popular: false,
     badge: null,
     comparisonNote: null,
@@ -30,6 +31,7 @@ const tiers = [
     price: "$497",
     priceNote: "/month",
     tagline: "Never miss another call",
+    revenueImpact: "Typically recovers $3,000–5,000/mo in missed calls",
     popular: false,
     badge: null,
     comparisonNote: null,
@@ -49,6 +51,7 @@ const tiers = [
     price: "$997",
     priceNote: "/month",
     tagline: "Your entire front office automated. One AI employee, 8 jobs.",
+    revenueImpact: "Typically recovers $8,000–15,000/mo across all workflows",
     popular: true,
     badge: "BEST VALUE",
     comparisonNote:
@@ -73,6 +76,7 @@ const tiers = [
     price: "$1,497",
     priceNote: "/month",
     tagline: "Less than the cost of one job per month",
+    revenueImpact: "Clients average 3× ROI within 60 days",
     popular: false,
     badge: null,
     comparisonNote: null,
@@ -93,6 +97,7 @@ const tiers = [
     price: "$1,997",
     priceNote: "/month",
     tagline: "One extra job per month pays for the entire system",
+    revenueImpact: "Full revenue optimization — calls, estimates, reviews, visibility",
     popular: false,
     badge: null,
     comparisonNote: null,
@@ -113,6 +118,7 @@ const tiers = [
     price: "$4,997",
     priceNote: "/month",
     tagline: "Your entire front office — for less than one employee",
+    revenueImpact: "Enterprise-grade revenue recovery across multiple locations",
     popular: false,
     badge: null,
     comparisonNote: null,
@@ -280,6 +286,11 @@ export default function PricingPage() {
                 </div>
                 {tier.tagline && (
                   <p className="text-xs text-gray-400 mt-1 italic">{tier.tagline}</p>
+                )}
+                {tier.revenueImpact && (
+                  <p className="text-xs font-semibold text-emerald-600 mt-2">
+                    {tier.revenueImpact}
+                  </p>
                 )}
               </div>
               <ul className="space-y-2 mb-6 flex-1">

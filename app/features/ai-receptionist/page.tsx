@@ -33,12 +33,12 @@ export default function AiReceptionistPage() {
             AI Receptionist
           </div>
           <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-gray-900 mb-5">
-            Never Miss a Call Again
+            Missed Call Revenue Recovery
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-            Your AI receptionist answers every call 24/7. Greets callers by
-            your business name. Books appointments. Texts back missed calls in
-            30 seconds.
+            Never lose a $400 job to voicemail again. Your AI receptionist answers
+            every call 24/7, greets by your business name, books appointments,
+            and texts back missed calls in 30 seconds.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

@@ -21,34 +21,34 @@ type Capability = {
 
 const CAPABILITIES: Capability[] = [
   {
+    emoji: "📞",
+    title: "Missed Call Revenue Recovery",
+    body: "Never lose a $400 job to voicemail again. AI receptionist Sarah answers every call 24/7 — nights, weekends, holidays — books appointments, and SMS-alerts you on every emergency.",
+  },
+  {
     emoji: "🔍",
-    title: "AI Visibility Monitoring",
-    body: "We check if your business shows up when customers ask ChatGPT, Perplexity, and Google for help. If your competitors are showing up and you're not, we fix that.",
+    title: "Competitive Intelligence",
+    body: "See which competitors are stealing your customers on ChatGPT, Perplexity, and Google AI Overviews. We check daily, show you exactly where you're invisible, and fix it.",
+  },
+  {
+    emoji: "💬",
+    title: "Estimate Recovery Engine",
+    body: "Close the 60% of quotes that never convert. Personalized text + email follow-ups for every lead, with a 14-day sequence that stops the moment they book.",
+  },
+  {
+    emoji: "⭐",
+    title: "Reputation Growth System",
+    body: "Turn every happy customer into a 5-star Google review. Automated review requests after every job, AI-drafted responses in your voice, instant alerts on anything below 4 stars.",
+  },
+  {
+    emoji: "📈",
+    title: "Revenue Dashboard",
+    body: "See exactly how much money we made you this month. Calls captured, appointments booked, revenue generated. Clear numbers, no guesswork.",
   },
   {
     emoji: "📊",
     title: "Free Business Audit",
-    body: "We analyze your Google presence, website, reviews, and AI visibility, then show you exactly what you're missing and how much revenue it's costing you.",
-  },
-  {
-    emoji: "📞",
-    title: "AI Receptionist (Sarah)",
-    body: "A 24/7 AI-powered phone system that answers every call, books appointments, captures lead info, handles emergencies, and sends instant notifications — so you never miss a customer again.",
-  },
-  {
-    emoji: "💬",
-    title: "Automated Follow-Ups",
-    body: "Every caller gets a personalized text and email. Appointments get confirmed. Emergencies get escalated to the owner instantly.",
-  },
-  {
-    emoji: "📈",
-    title: "Weekly ROI Reports",
-    body: "See exactly how many calls Sarah captured, appointments booked, and revenue generated. Clear numbers, no guesswork.",
-  },
-  {
-    emoji: "🛡️",
-    title: "After-Hours Coverage",
-    body: "Nights, weekends, holidays — Sarah never sleeps. Every call gets answered, every lead gets captured, even when you're off the clock.",
+    body: "Before you pay us a dollar — we analyze your Google presence, website, reviews, and AI visibility, then show you exactly what you're missing and how much revenue it's costing you.",
   },
 ];
 

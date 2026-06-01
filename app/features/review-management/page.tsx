@@ -24,12 +24,12 @@ export default function ReviewManagementPage() {
             Reputation Agent
           </div>
           <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-gray-900 mb-5">
-            Build Your Reputation on Autopilot
+            Reputation Growth System
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-            Automated review requests after every job. Google review monitoring.
-            AI-drafted responses in your voice. Negative review alerts in real
-            time.
+            Turn every happy customer into a 5-star Google review. Automated
+            review requests after every job, AI-drafted responses in your voice,
+            and instant alerts on negative reviews.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

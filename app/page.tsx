@@ -162,9 +162,7 @@ export default function HomePage() {
             <span className="text-gradient">All the Calls</span>
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto">
-            When homeowners search Google, ask ChatGPT, or check Perplexity for
-            who to call — your competitors show up. You don&apos;t. We fix that
-            across every platform.
+            Local service businesses lose <span className="font-semibold text-gray-900">$62,000/year</span> from missed calls alone. AutoGrowth AI recovers that revenue &mdash; automatically.
           </p>
 
           <form
@@ -190,6 +188,16 @@ export default function HomePage() {
           </form>
           <p className="text-sm text-gray-500">⚡ Free audit. No credit card. Results in under 3 minutes.</p>
         </div>
+      </section>
+
+      {/* Revenue-first tagline band */}
+      <section className="bg-gray-50 border-y border-gray-200 py-6 px-6 lg:px-8">
+        <p className="max-w-3xl mx-auto text-center text-base sm:text-lg text-gray-700">
+          Every AutoGrowth AI feature answers one question:{" "}
+          <span className="font-semibold text-gray-900">
+            How does this make you more money?
+          </span>
+        </p>
       </section>
 
       {/* Dashboard mockup */}
