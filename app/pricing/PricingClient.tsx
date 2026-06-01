@@ -12,6 +12,7 @@ const tiers = [
     priceNote: "/one-time",
     tagline: null,
     revenueImpact: null,
+    hvacMath: null,
     popular: false,
     badge: null,
     comparisonNote: null,
@@ -31,7 +32,8 @@ const tiers = [
     price: "$497",
     priceNote: "/month",
     tagline: "Never miss another call",
-    revenueImpact: "Typically recovers $3,000–5,000/mo in missed calls",
+    revenueImpact: "Typically recovers $3,000–5,000/mo in missed HVAC calls",
+    hvacMath: "Average HVAC ticket: $400. Miss 3 calls a week = $62,400/year lost.",
     popular: false,
     badge: null,
     comparisonNote: null,
@@ -51,7 +53,8 @@ const tiers = [
     price: "$997",
     priceNote: "/month",
     tagline: "Your entire front office automated. One AI employee, 8 jobs.",
-    revenueImpact: "Typically recovers $8,000–15,000/mo across all workflows",
+    revenueImpact: "Typically recovers $8,000–15,000/mo across calls, estimates, and reviews",
+    hvacMath: "Average HVAC ticket: $400. Miss 3 calls a week = $62,400/year lost.",
     popular: true,
     badge: "BEST VALUE",
     comparisonNote:
@@ -76,7 +79,8 @@ const tiers = [
     price: "$1,497",
     priceNote: "/month",
     tagline: "Less than the cost of one job per month",
-    revenueImpact: "Clients average 3× ROI within 60 days",
+    revenueImpact: "HVAC clients average 3× ROI within 60 days",
+    hvacMath: "Average HVAC ticket: $400. Miss 3 calls a week = $62,400/year lost.",
     popular: false,
     badge: null,
     comparisonNote: null,
@@ -97,7 +101,8 @@ const tiers = [
     price: "$1,997",
     priceNote: "/month",
     tagline: "One extra job per month pays for the entire system",
-    revenueImpact: "Full revenue optimization — calls, estimates, reviews, visibility",
+    revenueImpact: "Full HVAC revenue optimization — calls, estimates, reviews, visibility",
+    hvacMath: "Average HVAC ticket: $400. Miss 3 calls a week = $62,400/year lost.",
     popular: false,
     badge: null,
     comparisonNote: null,
@@ -118,7 +123,8 @@ const tiers = [
     price: "$4,997",
     priceNote: "/month",
     tagline: "Your entire front office — for less than one employee",
-    revenueImpact: "Enterprise-grade revenue recovery across multiple locations",
+    revenueImpact: "Enterprise-grade revenue recovery across multiple HVAC locations",
+    hvacMath: "Average HVAC ticket: $400. Miss 3 calls a week = $62,400/year lost.",
     popular: false,
     badge: null,
     comparisonNote: null,
@@ -290,6 +296,11 @@ export default function PricingPage() {
                 {tier.revenueImpact && (
                   <p className="text-xs font-semibold text-emerald-600 mt-2">
                     {tier.revenueImpact}
+                  </p>
+                )}
+                {tier.hvacMath && (
+                  <p className="text-[11px] text-gray-500 mt-1.5 leading-snug">
+                    {tier.hvacMath}
                   </p>
                 )}
               </div>

@@ -3,13 +3,13 @@ import Link from "next/link";
 import { Star, Check, Bell, MessageSquare, Shield, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI Review Management",
+  title: "Review Automation for HVAC Companies",
   description:
-    "Automated review requests after every job. Google review monitoring. AI-drafted responses in your voice. Negative review alerts in real time.",
+    "Turn every completed HVAC install or service call into a 5-star Google review. Automated requests, AI-drafted responses in your voice, alerts on negative reviews.",
   openGraph: {
-    title: "AI Review Management — AutoGrowth AI",
+    title: "Review Automation for HVAC Companies — AutoGrowth AI",
     description:
-      "Automated review requests after every job. Google review monitoring. AI-drafted responses in your voice. Negative review alerts in real time.",
+      "Turn every completed HVAC install or service call into a 5-star Google review. Automated requests, AI-drafted responses in your voice, alerts on negative reviews.",
   },
 };
 
@@ -27,9 +27,10 @@ export default function ReviewManagementPage() {
             Reputation Growth System
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-            Turn every happy customer into a 5-star Google review. Automated
-            review requests after every job, AI-drafted responses in your voice,
-            and instant alerts on negative reviews.
+            Turn every completed install or service call into a 5-star Google
+            review. Automated requests 2 hours after the job, AI-drafted
+            responses in your voice, and instant alerts on anything below 4
+            stars.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

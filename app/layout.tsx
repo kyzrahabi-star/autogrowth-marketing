@@ -5,11 +5,11 @@ import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: {
-    default: "AutoGrowth AI — AI Growth Platform for Local Service Businesses",
+    default: "AutoGrowth AI — AI Receptionist & Growth Platform for HVAC Companies",
     template: "%s | AutoGrowth AI",
   },
   description:
-    "Free AI-powered business audit. See how your Google presence, reviews, and AI visibility stack up — and how much revenue you're leaving on the table.",
+    "We help HVAC companies book more jobs without hiring more office staff. 24/7 AI receptionist, estimate follow-up, review automation, and AI search visibility — done for you.",
   openGraph: {
     type: "website",
     url: "https://autogrowthai.co",

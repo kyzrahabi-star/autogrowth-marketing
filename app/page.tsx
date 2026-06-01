@@ -158,11 +158,13 @@ export default function HomePage() {
             Powered by The AutoGrowth Engine™
           </span>
           <h1 className="text-5xl lg:text-6xl font-bold tracking-tight text-gray-900 leading-tight mb-6">
-            Your Competitors Are Getting{" "}
-            <span className="text-gradient">All the Calls</span>
+            We Help HVAC Companies Book More Jobs Without{" "}
+            <span className="text-gradient">Hiring More Office Staff</span>
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto">
-            Local service businesses lose <span className="font-semibold text-gray-900">$62,000/year</span> from missed calls alone. AutoGrowth AI recovers that revenue &mdash; automatically.
+            AutoGrowth AI recovers your missed calls, follows up on unsold
+            estimates, generates 5-star Google reviews, and covers your phones
+            24/7 &mdash; so you make more money without adding headcount.
           </p>
 
           <form
@@ -418,23 +420,39 @@ export default function HomePage() {
       {/* ── 2. THE PROBLEM ── */}
       <section className="py-20 px-6 lg:px-8 bg-gray-50">
         <div className="max-w-5xl mx-auto">
-          <h2 className="text-4xl font-bold tracking-tight text-gray-900 text-center mb-12">
-            The $50,000 problem most contractors don&apos;t see
+          <h2 className="text-4xl font-bold tracking-tight text-gray-900 text-center mb-4">
+            The $50,000 problem most HVAC contractors don&apos;t see
           </h2>
+          <p className="text-center text-gray-500 mb-12">
+            Three scenarios happening in your business right now.
+          </p>
 
-          {/* 3-stat bar */}
-          <div className="grid sm:grid-cols-3 gap-6 mb-14">
+          {/* 3 narrative pain points */}
+          <div className="grid md:grid-cols-3 gap-6 mb-14">
             {[
-              { stat: "62%", text: "of calls go unanswered after hours" },
-              { stat: "91%", text: "of leads never get a callback" },
-              { stat: "40%", text: "of consumers now use AI to find businesses" },
-            ].map(({ stat, text }) => (
+              {
+                icon: "📞",
+                title: "Missed AC call at 9pm",
+                body: "Your phone rings at 9pm when a homeowner's AC dies. Nobody answers. They call your competitor.",
+              },
+              {
+                icon: "📋",
+                title: "$112,000 in unsold estimates",
+                body: "You sent 47 estimates last month. 28 never responded. That's $112,000 sitting on the table.",
+              },
+              {
+                icon: "⭐",
+                title: "Zero reviews on a $2,400 install",
+                body: "Your technician finished a $2,400 install. No one asked for a Google review. Your competitor with 200 reviews just took the next call.",
+              },
+            ].map(({ icon, title, body }) => (
               <div
-                key={stat}
-                className="bg-white border border-gray-200 rounded-2xl p-8 text-center shadow-sm"
+                key={title}
+                className="bg-white border border-gray-200 rounded-2xl p-7 shadow-sm"
               >
-                <p className="text-5xl font-black text-red-500 mb-3">{stat}</p>
-                <p className="text-gray-600 text-sm leading-relaxed">{text}</p>
+                <div className="text-3xl mb-4">{icon}</div>
+                <p className="font-bold text-gray-900 mb-2">{title}</p>
+                <p className="text-gray-600 text-sm leading-relaxed">{body}</p>
               </div>
             ))}
           </div>
@@ -443,9 +461,9 @@ export default function HomePage() {
             <div>
               <p className="text-gray-700 text-lg leading-relaxed mb-6">
                 Google search, Google Maps, Google AI Overviews, ChatGPT,
-                Perplexity — there are now 5+ places homeowners look before they
-                call someone. Most contractors show up in maybe one. Your
-                competitors are showing up in all of them.
+                Perplexity — there are now 5+ places homeowners look before
+                they call someone for HVAC. Most HVAC contractors show up in
+                maybe one. Your competitors are showing up in all of them.
               </p>
               <p className="text-gray-900 font-semibold text-lg">
                 You don&apos;t know which calls you&apos;re missing because you

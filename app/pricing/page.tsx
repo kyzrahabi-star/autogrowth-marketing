@@ -3,13 +3,13 @@ import PricingClient from "./PricingClient";
 import { PRICING_TIERS_SEO } from "@/lib/seo-data";
 
 export const metadata: Metadata = {
-  title: "Pricing",
+  title: "Pricing for HVAC Companies",
   description:
-    "Transparent pricing for AI-powered growth. From free audits to 24/7 AI receptionists. See which plan fits your business.",
+    "Transparent pricing for HVAC companies. From free audits to 24/7 AI receptionists. Plans recover $3K-$15K/mo in missed calls, estimates, and reviews.",
   openGraph: {
-    title: "Pricing — AutoGrowth AI",
+    title: "Pricing for HVAC Companies — AutoGrowth AI",
     description:
-      "Transparent pricing for AI-powered growth. From free audits to 24/7 AI receptionists. See which plan fits your business.",
+      "Transparent pricing for HVAC companies. From free audits to 24/7 AI receptionists. Plans recover $3K-$15K/mo in missed calls, estimates, and reviews.",
   },
 };
 

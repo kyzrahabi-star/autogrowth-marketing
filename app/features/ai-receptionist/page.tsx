@@ -3,13 +3,13 @@ import Link from "next/link";
 import { Phone, Check, ArrowRight, X } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI Receptionist",
+  title: "AI Receptionist for HVAC Companies",
   description:
-    "Your AI receptionist answers every call 24/7, greets callers by your business name, books appointments, and texts back missed calls in 30 seconds.",
+    "Never lose a $400 HVAC service call to voicemail again. AI receptionist answers every call 24/7, books appointments, and texts back missed calls in 30 seconds.",
   openGraph: {
-    title: "AI Receptionist — AutoGrowth AI",
+    title: "AI Receptionist for HVAC Companies — AutoGrowth AI",
     description:
-      "Your AI receptionist answers every call 24/7, greets callers by your business name, books appointments, and texts back missed calls in 30 seconds.",
+      "Never lose a $400 HVAC service call to voicemail again. AI receptionist answers every call 24/7, books appointments, and texts back missed calls in 30 seconds.",
   },
 };
 
@@ -36,9 +36,10 @@ export default function AiReceptionistPage() {
             Missed Call Revenue Recovery
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-            Never lose a $400 job to voicemail again. Your AI receptionist answers
-            every call 24/7, greets by your business name, books appointments,
-            and texts back missed calls in 30 seconds.
+            Never lose a $400 service call to voicemail again. Your AI
+            receptionist answers every HVAC call 24/7, greets by your business
+            name, books service appointments, and texts back missed calls in
+            30 seconds.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link

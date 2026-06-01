@@ -3,13 +3,13 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "About AutoGrowth AI",
+  title: "About AutoGrowth AI — Built for HVAC Companies",
   description:
-    "AutoGrowth AI helps local service businesses get found on Google and AI search, answer every call 24/7, and book more appointments. Based in Houston, TX.",
+    "AutoGrowth AI helps HVAC contractors get found on Google and AI search, answer every call 24/7, and book more service jobs. Based in Houston, TX.",
   openGraph: {
-    title: "About AutoGrowth AI",
+    title: "About AutoGrowth AI — Built for HVAC Companies",
     description:
-      "AutoGrowth AI helps local service businesses get found on Google and AI search, answer every call 24/7, and book more appointments. Based in Houston, TX.",
+      "AutoGrowth AI helps HVAC contractors get found on Google and AI search, answer every call 24/7, and book more service jobs. Based in Houston, TX.",
   },
 };
 
@@ -23,32 +23,32 @@ const CAPABILITIES: Capability[] = [
   {
     emoji: "📞",
     title: "Missed Call Revenue Recovery",
-    body: "Never lose a $400 job to voicemail again. AI receptionist Sarah answers every call 24/7 — nights, weekends, holidays — books appointments, and SMS-alerts you on every emergency.",
+    body: "Never lose a $400 service call to voicemail again. AI receptionist Sarah answers every HVAC call 24/7 — nights, weekends, holidays — books service appointments, and SMS-alerts you on every emergency.",
   },
   {
-    emoji: "🔍",
-    title: "Competitive Intelligence",
-    body: "See which competitors are stealing your customers on ChatGPT, Perplexity, and Google AI Overviews. We check daily, show you exactly where you're invisible, and fix it.",
+    emoji: "🛡️",
+    title: "After-Hours Coverage",
+    body: "AC emergencies don't wait for business hours. Neither does Sarah. Every 9pm no-cooling call, every Sunday morning furnace failure, every holiday weekend gets answered live.",
   },
   {
     emoji: "💬",
     title: "Estimate Recovery Engine",
-    body: "Close the 60% of quotes that never convert. Personalized text + email follow-ups for every lead, with a 14-day sequence that stops the moment they book.",
+    body: "Chase the 60% of HVAC quotes that never close. Personalized text + email follow-ups for every estimate, with a 14-day sequence that stops the moment they book.",
   },
   {
     emoji: "⭐",
     title: "Reputation Growth System",
-    body: "Turn every happy customer into a 5-star Google review. Automated review requests after every job, AI-drafted responses in your voice, instant alerts on anything below 4 stars.",
+    body: "Turn every completed install or service call into a 5-star Google review. Automated requests 2 hours after the job, AI-drafted responses in your voice, instant alerts on anything below 4 stars.",
+  },
+  {
+    emoji: "🔍",
+    title: "Competitive Intelligence",
+    body: "See which HVAC competitors ChatGPT, Perplexity, and Google AI Overviews recommend instead of you. We check daily, show you where you're invisible, and fix it.",
   },
   {
     emoji: "📈",
     title: "Revenue Dashboard",
-    body: "See exactly how much money we made you this month. Calls captured, appointments booked, revenue generated. Clear numbers, no guesswork.",
-  },
-  {
-    emoji: "📊",
-    title: "Free Business Audit",
-    body: "Before you pay us a dollar — we analyze your Google presence, website, reviews, and AI visibility, then show you exactly what you're missing and how much revenue it's costing you.",
+    body: "See exactly how many jobs AutoGrowth AI booked you this month. Calls captured, appointments booked, revenue generated. Clear numbers, no guesswork.",
   },
 ];
 
@@ -62,12 +62,11 @@ export default function AboutPage() {
             About AutoGrowth AI
           </p>
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-6 leading-[1.1]">
-            We Help Local Businesses Get Found, Get Calls, and Get Booked.
+            We Help HVAC Companies Get Found, Get Calls, and Get Booked.
           </h1>
           <p className="text-gray-600 text-lg leading-relaxed">
-            AutoGrowth AI is an all-in-one growth platform built for local
-            service businesses &mdash; HVAC, plumbing, electrical, dental,
-            legal, roofing, and more.
+            AutoGrowth AI is an all-in-one growth platform built for HVAC
+            contractors. Plumbing, electrical, and roofing on the roadmap.
           </p>
         </div>
       </section>
@@ -107,8 +106,11 @@ export default function AboutPage() {
       <section className="px-6 lg:px-8 pb-24">
         <div className="max-w-3xl mx-auto">
           <div className="bg-gradient-to-br from-emerald-50 via-white to-white border border-emerald-200 rounded-3xl p-8 sm:p-10 text-center">
+            <p className="text-sm font-semibold text-gray-500 mb-2">
+              Based in Houston, Texas
+            </p>
             <p className="text-lg text-gray-700 mb-8">
-              Serving local service businesses nationwide.
+              Serving HVAC companies nationwide.
             </p>
             <Link
               href="/audit"

@@ -70,7 +70,7 @@ export function Navbar() {
               onMouseLeave={scheduleClose}
             >
               <button className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900 font-medium py-2">
-                Who We Help{" "}
+                Industries{" "}
                 <ChevronDown
                   className={`w-3.5 h-3.5 transition-transform ${
                     activeDropdown === "whoWeHelp" ? "rotate-180" : ""
@@ -86,7 +86,7 @@ export function Navbar() {
                       Industries
                     </p>
                     <Link
-                      href="/hvac"
+                      href="/"
                       className="flex items-center gap-3 px-4 py-3 hover:bg-gray-50 rounded-lg text-sm text-gray-700 mx-1"
                     >
                       <Flame className="w-4 h-4 text-orange-500 shrink-0" />
@@ -260,7 +260,7 @@ export function Navbar() {
                 )
               }
             >
-              Who We Help
+              Industries
               <ChevronDown
                 className={`w-4 h-4 text-gray-400 transition-transform duration-200 ${
                   mobileExpanded === "whoWeHelp" ? "rotate-180" : ""
@@ -270,7 +270,7 @@ export function Navbar() {
             {mobileExpanded === "whoWeHelp" && (
               <div className="pl-4 pb-3 flex flex-col">
                 <Link
-                  href="/hvac"
+                  href="/"
                   className="flex items-center gap-3 py-3 text-sm text-gray-600 active:bg-gray-50 rounded-lg px-2"
                   onClick={() => setMobileOpen(false)}
                 >

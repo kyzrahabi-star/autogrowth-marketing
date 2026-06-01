@@ -3,13 +3,13 @@ import Link from "next/link";
 import { Target, ArrowRight, Zap, Mail, MessageSquare } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "AI Lead Scoring",
+  title: "Estimate Recovery Engine for HVAC Companies",
   description:
-    "Every lead scored 0-100 in under 60 seconds. Hot leads trigger instant SMS + email. No more guessing which calls to return first.",
+    "Chase the 60% of HVAC quotes that never close. Lead scoring 0-100 in under 60 seconds, 14-day automated follow-up sequences, instant SMS alerts on hot leads.",
   openGraph: {
-    title: "AI Lead Scoring — AutoGrowth AI",
+    title: "Estimate Recovery Engine for HVAC Companies — AutoGrowth AI",
     description:
-      "Every lead scored 0-100 in under 60 seconds. Hot leads trigger instant SMS + email. No more guessing which calls to return first.",
+      "Chase the 60% of HVAC quotes that never close. Lead scoring 0-100 in under 60 seconds, 14-day automated follow-up sequences, instant SMS alerts on hot leads.",
   },
 };
 
@@ -67,11 +67,12 @@ export default function LeadScoringPage() {
             Lead Agent
           </div>
           <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-gray-900 mb-5">
-            Know Which Leads Are Worth Your Time
+            Estimate Recovery Engine
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-            Every lead scored 0–100 in under 60 seconds. Hot leads trigger
-            instant SMS + email. No more guessing which calls to return first.
+            Chase the 60% of HVAC quotes that never close. Every lead scored
+            0–100 in under 60 seconds, with a 14-day follow-up sequence on
+            unsold estimates that stops the moment they book.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
