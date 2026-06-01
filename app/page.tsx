@@ -503,6 +503,109 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── 2.5 SEVEN REVENUE LEAKS ── */}
+      <section className="py-20 px-6 lg:px-8 bg-white">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold text-red-500 uppercase tracking-widest mb-3">
+              Where your money is going
+            </p>
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-3">
+              The 7 Revenue Leaks Killing Your HVAC Business
+            </h2>
+            <p className="text-gray-500 text-base">
+              How many of these are happening in your shop right now?
+            </p>
+          </div>
+
+          <div className="space-y-3">
+            {[
+              {
+                title: "Missed calls",
+                quote: "Your phone rings at 9pm. Nobody answers. That’s a $400 job gone.",
+                status: "fixed" as const,
+              },
+              {
+                title: "Slow follow-up",
+                quote: "A lead comes in at 9am. You respond at 4pm. They already booked your competitor.",
+                status: "fixed" as const,
+              },
+              {
+                title: "Unbooked estimates",
+                quote: "You sent 47 estimates last month. 28 never responded.",
+                status: "fixed" as const,
+              },
+              {
+                title: "No review generation",
+                quote: "Your last Google review was 3 months ago. Your competitor just hit 200.",
+                status: "fixed" as const,
+              },
+              {
+                title: "No reactivation campaigns",
+                quote: "You have 500 past customers who haven’t heard from you in a year.",
+                status: "coming-soon" as const,
+              },
+              {
+                title: "No membership renewals",
+                quote: "Your maintenance agreements expire and nobody follows up.",
+                status: "coming-soon" as const,
+              },
+              {
+                title: "No financing follow-up",
+                quote: "Customer says “too expensive.” Nobody mentions your financing options.",
+                status: "coming-soon" as const,
+              },
+            ].map((leak) => (
+              <div
+                key={leak.title}
+                className="bg-white border border-gray-200 rounded-2xl p-5 sm:p-6 shadow-sm hover:shadow-md transition-shadow"
+              >
+                <div className="flex items-start gap-4">
+                  <div className="w-9 h-9 rounded-full bg-red-50 flex items-center justify-center shrink-0 text-base leading-none">
+                    ❌
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-bold text-gray-900 mb-1">
+                      {leak.title}
+                    </h3>
+                    <p className="text-sm text-gray-600 italic leading-relaxed mb-3">
+                      {leak.quote}
+                    </p>
+                    {leak.status === "fixed" ? (
+                      <span className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1.5 rounded-full">
+                        <span className="text-sm leading-none">✅</span>
+                        We fix this
+                      </span>
+                    ) : (
+                      <span className="inline-flex items-center gap-1.5 bg-amber-50 text-amber-700 text-xs font-bold px-3 py-1.5 rounded-full">
+                        <span className="w-1.5 h-1.5 rounded-full bg-amber-500" />
+                        Coming soon
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Closing statement + CTA */}
+          <div className="text-center mt-12">
+            <p className="text-base sm:text-lg text-gray-700 mb-8 max-w-xl mx-auto">
+              AutoGrowth AI plugs these leaks automatically.{" "}
+              <span className="font-semibold text-gray-900">
+                No new hires. No extra software. Just more revenue.
+              </span>
+            </p>
+            <Link
+              href="/audit"
+              className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors shadow-sm"
+            >
+              See How Much You&apos;re Leaking → Get Your Free Audit
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* ── 3. THE SOLUTION ── */}
       <section className="py-20 px-6 lg:px-8 bg-white">
         <div className="max-w-3xl mx-auto text-center">
