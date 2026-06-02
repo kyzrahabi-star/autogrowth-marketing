@@ -1,5 +1,9 @@
 import { ImageResponse } from "next/og";
 
+// Edge runtime uses @vercel/og's edge build, avoiding the Node build's
+// fileURLToPath font-loading crash that broke `next build` (and every deploy).
+export const runtime = "edge";
+
 export const alt = "AutoGrowth AI";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
