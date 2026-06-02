@@ -12,16 +12,16 @@ import {
   ArrowRight,
   PenTool,
 } from "lucide-react";
-import { HVAC_CITY_PAGES } from "@/lib/hvac-cities";
+import { getPagesGroupedByService } from "@/lib/hvac-cities";
 
 export const metadata: Metadata = {
-  title: "HVAC Marketing & AI Visibility",
+  title: "HVAC AI Solutions by City",
   description:
-    "AutoGrowth AI gets your HVAC business recommended by Google AND AI search — so homeowners call you first, not your competitors. Full schedules, no matter the season.",
+    "Find AI-powered call answering, missed call recovery, estimate follow-up, and review generation for HVAC companies in 20 major US cities.",
   openGraph: {
-    title: "HVAC Marketing & AI Visibility — AutoGrowth AI",
+    title: "HVAC AI Solutions by City — AutoGrowth AI",
     description:
-      "AutoGrowth AI gets your HVAC business recommended by Google AND AI search — so homeowners call you first, not your competitors. Full schedules, no matter the season.",
+      "Find AI-powered call answering, missed call recovery, estimate follow-up, and review generation for HVAC companies in 20 major US cities.",
   },
 };
 
@@ -69,13 +69,13 @@ export default function HvacPage() {
             Built for HVAC contractors
           </div>
           <h1 className="text-5xl sm:text-6xl font-bold tracking-tight text-gray-900 mb-5 leading-tight">
-            Full Schedules.
-            <br />
-            No Matter the Season.
+            HVAC AI Solutions{" "}
+            <span className="text-emerald-500">by City</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
-            AutoGrowth AI gets your HVAC business recommended by Google AND AI
-            search — so homeowners call you first, not your competitors.
+            AI-powered call answering, missed call recovery, estimate
+            follow-up, and review generation for HVAC contractors in 20 major
+            US cities. Pick your city, pick your service.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
@@ -357,42 +357,54 @@ export default function HvacPage() {
         </div>
       </section>
 
-      {/* City pages (pillar → spokes) */}
+      {/* Directory: 6 services × 20 cities, grouped by service */}
       <section className="bg-gray-50 border-t border-gray-200 py-20 px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-12">
             <p className="text-xs font-semibold text-emerald-600 uppercase tracking-widest mb-3">
-              HVAC AI Receptionist by City
+              The directory
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-gray-900 mb-3">
-              Find AutoGrowth AI for HVAC in your market
+              6 services. 20 cities. 120 dedicated pages.
             </h2>
             <p className="text-gray-600 max-w-xl mx-auto">
-              City-specific landing pages with local pricing, climate context,
-              and emergency definitions. Same platform, configured per market.
+              Pick the AI workflow you want, then your market. Each page is
+              configured with local pricing context and HVAC-specific emergency
+              definitions.
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            {[...HVAC_CITY_PAGES]
-              .sort((a, b) => a.city.localeCompare(b.city))
-              .map((p) => (
-                <Link
-                  key={p.slug}
-                  href={`/hvac/${p.slug}`}
-                  className="group bg-white border border-gray-200 hover:border-emerald-300 hover:shadow-md rounded-xl px-5 py-4 transition-all flex items-center justify-between gap-3"
-                >
-                  <div>
-                    <p className="text-xs text-gray-500 mb-0.5">
-                      HVAC AI Receptionist in
-                    </p>
-                    <p className="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
-                      {p.city}, {p.state}
-                    </p>
-                  </div>
-                  <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-emerald-500 transition-colors shrink-0" />
-                </Link>
-              ))}
+          <div className="space-y-10">
+            {getPagesGroupedByService().map((group) => (
+              <div
+                key={group.service}
+                id={group.service}
+                className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 shadow-sm scroll-mt-24"
+              >
+                <div className="flex items-baseline justify-between gap-4 mb-5 pb-4 border-b border-gray-100">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
+                    {group.serviceDisplay}
+                  </h3>
+                  <span className="text-xs font-medium text-gray-400 shrink-0">
+                    {group.pages.length} cities
+                  </span>
+                </div>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-2">
+                  {group.pages.map((p) => (
+                    <Link
+                      key={p.slug}
+                      href={`/hvac/${p.slug}`}
+                      className="group flex items-center justify-between gap-2 text-sm text-gray-600 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg px-3 py-2 transition-colors"
+                    >
+                      <span className="truncate">
+                        {p.city}, {p.state}
+                      </span>
+                      <ArrowRight className="w-3 h-3 text-gray-300 group-hover:text-emerald-500 shrink-0" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
 
           <p className="text-center text-sm text-gray-500 mt-10">

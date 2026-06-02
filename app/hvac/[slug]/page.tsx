@@ -31,17 +31,19 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-export default function HvacCityPage({ params }: Props) {
+export default function HvacCityServicePage({ params }: Props) {
   const page = getCityPage(params.slug);
   if (!page) notFound();
 
-  const spokes = getSpokeLinks(page.slug, 3);
+  const { sameService, sameCity } = getSpokeLinks(page.slug);
+
+  const canonicalUrl = `https://www.autogrowthai.co/hvac/${page.slug}`;
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "AutoGrowth AI",
-    url: `https://www.autogrowthai.co/hvac/${page.slug}`,
+    url: canonicalUrl,
     telephone: "+18449102116",
     email: "support@autogrowthai.co",
     description: page.metaDescription,
@@ -56,17 +58,51 @@ export default function HvacCityPage({ params }: Props) {
     priceRange: "$497 - $4997/mo",
   };
 
-  const faqSchema = {
+  const faqSchema =
+    page.faqJson.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: page.faqJson.map((item) => ({
+            "@type": "Question",
+            name: item.q,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.a,
+            },
+          })),
+        }
+      : null;
+
+  const breadcrumbSchema = {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: page.faqJson.map((item) => ({
-      "@type": "Question",
-      name: item.q,
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: item.a,
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://www.autogrowthai.co",
       },
-    })),
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "HVAC",
+        item: "https://www.autogrowthai.co/hvac",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: page.serviceDisplay,
+        item: `https://www.autogrowthai.co/hvac#${page.service}`,
+      },
+      {
+        "@type": "ListItem",
+        position: 4,
+        name: `${page.city}, ${page.state}`,
+        item: canonicalUrl,
+      },
+    ],
   };
 
   return (
@@ -77,32 +113,68 @@ export default function HvacCityPage({ params }: Props) {
           __html: JSON.stringify(localBusinessSchema),
         }}
       />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
 
       <div className="min-h-screen bg-white">
+        {/* Breadcrumbs */}
+        <nav
+          aria-label="Breadcrumb"
+          className="pt-6 px-6 lg:px-8 max-w-3xl mx-auto"
+        >
+          <ol className="flex flex-wrap items-center gap-1.5 text-xs text-gray-500">
+            <li>
+              <Link href="/" className="hover:text-gray-900 transition-colors">
+                Home
+              </Link>
+            </li>
+            <li aria-hidden="true">›</li>
+            <li>
+              <Link
+                href="/hvac"
+                className="hover:text-gray-900 transition-colors"
+              >
+                HVAC
+              </Link>
+            </li>
+            <li aria-hidden="true">›</li>
+            <li>
+              <Link
+                href={`/hvac#${page.service}`}
+                className="hover:text-gray-900 transition-colors"
+              >
+                {page.serviceDisplay}
+              </Link>
+            </li>
+            <li aria-hidden="true">›</li>
+            <li className="text-gray-700 font-medium" aria-current="page">
+              {page.city}, {page.state}
+            </li>
+          </ol>
+        </nav>
+
         {/* Hero */}
-        <section className="pt-24 pb-12 px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+        <section className="pt-8 pb-12 px-6 lg:px-8">
           <div className="max-w-3xl mx-auto">
-            <Link
-              href="/hvac"
-              className="inline-flex items-center gap-1 text-sm text-gray-500 hover:text-gray-900 transition-colors mb-6"
-            >
-              ← All HVAC city pages
-            </Link>
             <div className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
               <MapPin className="w-3 h-3" />
               {page.city}, {page.state}
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 mb-6 leading-tight">
+            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-gray-900 leading-tight">
               {page.h1}
             </h1>
           </div>
         </section>
 
-        {/* BLUF block (40-80 word direct answer) */}
+        {/* BLUF block */}
         <section className="px-6 lg:px-8 pb-12">
           <div className="max-w-3xl mx-auto">
             <div className="bg-emerald-50 border-l-4 border-emerald-500 rounded-r-2xl p-6 sm:p-8">
@@ -126,31 +198,33 @@ export default function HvacCityPage({ params }: Props) {
         </section>
 
         {/* FAQ */}
-        <section className="px-6 lg:px-8 pb-16 bg-gray-50 py-16">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-8">
-              Frequently asked questions
-            </h2>
-            <div className="space-y-4">
-              {page.faqJson.map((item) => (
-                <details
-                  key={item.q}
-                  className="group bg-white border border-gray-200 rounded-2xl p-6 [&_summary]:cursor-pointer"
-                >
-                  <summary className="font-semibold text-gray-900 flex items-center justify-between gap-4 list-none">
-                    <span>{item.q}</span>
-                    <span className="text-gray-400 group-open:rotate-45 transition-transform text-2xl leading-none shrink-0">
-                      +
-                    </span>
-                  </summary>
-                  <p className="text-gray-600 mt-4 leading-relaxed">
-                    {item.a}
-                  </p>
-                </details>
-              ))}
+        {page.faqJson.length > 0 && (
+          <section className="px-6 lg:px-8 pb-16 bg-gray-50 py-16">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl font-bold tracking-tight text-gray-900 mb-8">
+                Frequently asked questions
+              </h2>
+              <div className="space-y-4">
+                {page.faqJson.map((item, i) => (
+                  <details
+                    key={i}
+                    className="group bg-white border border-gray-200 rounded-2xl p-6 [&_summary]:cursor-pointer"
+                  >
+                    <summary className="font-semibold text-gray-900 flex items-center justify-between gap-4 list-none">
+                      <span>{item.q}</span>
+                      <span className="text-gray-400 group-open:rotate-45 transition-transform text-2xl leading-none shrink-0">
+                        +
+                      </span>
+                    </summary>
+                    <p className="text-gray-600 mt-4 leading-relaxed whitespace-pre-line">
+                      {item.a}
+                    </p>
+                  </details>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* CTA */}
         <section className="px-6 lg:px-8 py-16">
@@ -176,27 +250,64 @@ export default function HvacCityPage({ params }: Props) {
           </div>
         </section>
 
-        {/* Spoke links */}
+        {/* Related — same service in other cities + same city other services */}
         <section className="px-6 lg:px-8 pb-24">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
-              Also serving
-            </p>
-            <div className="grid sm:grid-cols-3 gap-3">
-              {spokes.map((s) => (
-                <Link
-                  key={s.slug}
-                  href={`/hvac/${s.slug}`}
-                  className="group bg-white border border-gray-200 hover:border-emerald-300 hover:shadow-md rounded-xl px-5 py-4 transition-all"
-                >
-                  <p className="text-xs text-gray-500 mb-0.5">
-                    HVAC AI Receptionist
-                  </p>
-                  <p className="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
-                    {s.city}, {s.state}
-                  </p>
-                </Link>
-              ))}
+          <div className="max-w-3xl mx-auto space-y-10">
+            {sameService.length > 0 && (
+              <div>
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
+                  {page.serviceDisplay} in other cities
+                </p>
+                <div className="grid sm:grid-cols-3 gap-3">
+                  {sameService.map((s) => (
+                    <Link
+                      key={s.slug}
+                      href={`/hvac/${s.slug}`}
+                      className="group bg-white border border-gray-200 hover:border-emerald-300 hover:shadow-md rounded-xl px-5 py-4 transition-all"
+                    >
+                      <p className="text-xs text-gray-500 mb-0.5">
+                        {page.serviceDisplay}
+                      </p>
+                      <p className="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
+                        {s.city}, {s.state}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {sameCity.length > 0 && (
+              <div>
+                <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
+                  Other services in {page.city}
+                </p>
+                <div className="grid sm:grid-cols-3 gap-3">
+                  {sameCity.map((s) => (
+                    <Link
+                      key={s.slug}
+                      href={`/hvac/${s.slug}`}
+                      className="group bg-white border border-gray-200 hover:border-emerald-300 hover:shadow-md rounded-xl px-5 py-4 transition-all"
+                    >
+                      <p className="text-xs text-gray-500 mb-0.5">
+                        {s.city}, {s.state}
+                      </p>
+                      <p className="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
+                        {s.serviceDisplay}
+                      </p>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            <div className="text-center pt-2">
+              <Link
+                href="/hvac"
+                className="inline-flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                ← Browse all 120 HVAC city pages
+              </Link>
             </div>
           </div>
         </section>
