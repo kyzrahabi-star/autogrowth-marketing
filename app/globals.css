@@ -68,3 +68,19 @@
 .blog-body > p:first-child {
   @apply font-bold text-gray-900 text-lg leading-relaxed;
 }
+
+/* BLUF box on service + comparison pages (markdown-rendered) */
+.bluf-content p:last-child {
+  @apply mb-0;
+}
+.bluf-content strong {
+  @apply font-bold text-gray-900;
+}
+
+/* HTML comparison tables in service/comparison body content */
+.mdx-content table {
+  @apply block w-full overflow-x-auto my-6 text-sm;
+}
+.mdx-content th {
+  @apply text-left font-semibold text-gray-900;
+}

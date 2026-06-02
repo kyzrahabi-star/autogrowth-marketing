@@ -8,33 +8,60 @@ import {
   getCityPage,
   getSpokeLinks,
 } from "@/lib/hvac-cities";
+import {
+  SERVICE_PAGES,
+  getServicePage,
+} from "@/lib/hvac-service-comparison";
+import { SeoContentPage } from "@/components/SeoContentPage";
 
 interface Props {
   params: { slug: string };
 }
 
 export async function generateStaticParams() {
-  return HVAC_CITY_PAGES.map((p) => ({ slug: p.slug }));
+  return [
+    ...HVAC_CITY_PAGES.map((p) => ({ slug: p.slug })),
+    ...SERVICE_PAGES.map((p) => ({ slug: p.slug })),
+  ];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const page = getCityPage(params.slug);
-  if (!page) return { title: "Page Not Found" };
-  return {
-    title: page.metaTitle,
-    description: page.metaDescription,
-    alternates: { canonical: `/hvac/${page.slug}` },
-    openGraph: {
+  if (page) {
+    return {
       title: page.metaTitle,
       description: page.metaDescription,
-      type: "website",
-    },
-  };
+      alternates: { canonical: `/hvac/${page.slug}` },
+      openGraph: {
+        title: page.metaTitle,
+        description: page.metaDescription,
+        type: "website",
+      },
+    };
+  }
+  const service = getServicePage(params.slug);
+  if (service) {
+    return {
+      title: service.metaTitle,
+      description: service.metaDescription,
+      alternates: { canonical: `/hvac/${service.slug}` },
+      openGraph: {
+        title: service.metaTitle,
+        description: service.metaDescription,
+        type: "website",
+      },
+    };
+  }
+  return { title: "Page Not Found" };
 }
 
 export default function HvacCityServicePage({ params }: Props) {
   const page = getCityPage(params.slug);
-  if (!page) notFound();
+  if (!page) {
+    const service = getServicePage(params.slug);
+    if (service) return <HvacServicePage slug={service.slug} />;
+    notFound();
+  }
 
   const { sameService, sameCity } = getSpokeLinks(page.slug);
 
@@ -314,5 +341,70 @@ export default function HvacCityServicePage({ params }: Props) {
         </section>
       </div>
     </>
+  );
+}
+
+/**
+ * Service pillar page (e.g. /hvac/hvac-ai-receptionist). Sits above the
+ * service × city spokes and links down to any matching city pages.
+ */
+function HvacServicePage({ slug }: { slug: string }) {
+  const page = getServicePage(slug);
+  if (!page) notFound();
+
+  // Service slugs are "hvac-<service>"; city pages key off "<service>".
+  const citySlug = page.slug.replace(/^hvac-/, "");
+  const spokes = HVAC_CITY_PAGES.filter((p) => p.service === citySlug).slice(
+    0,
+    6,
+  );
+
+  return (
+    <SeoContentPage
+      crumbs={[
+        { name: "Home", href: "/" },
+        { name: "HVAC", href: "/hvac" },
+        { name: page.h1 },
+      ]}
+      badge="HVAC Service"
+      h1={page.h1}
+      blufBlock={page.blufBlock}
+      bodyContent={page.bodyContent}
+      faqJson={page.faqJson}
+      ctaHeading="See what this is costing your HVAC business"
+      ctaBody="Free audit. We scan your Google presence, reviews, website, and AI search visibility, then show you exactly how many calls you're missing and what they're worth."
+      related={
+        <div className="space-y-10">
+          {spokes.length > 0 && (
+            <div>
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
+                {page.h1} by city
+              </p>
+              <div className="grid sm:grid-cols-3 gap-3">
+                {spokes.map((s) => (
+                  <Link
+                    key={s.slug}
+                    href={`/hvac/${s.slug}`}
+                    className="group bg-white border border-gray-200 hover:border-emerald-300 hover:shadow-md rounded-xl px-5 py-4 transition-all"
+                  >
+                    <p className="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
+                      {s.city}, {s.state}
+                    </p>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+          <div className="text-center pt-2">
+            <Link
+              href="/hvac"
+              className="inline-flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 transition-colors"
+            >
+              ← Browse all 120 HVAC city pages
+            </Link>
+          </div>
+        </div>
+      }
+    />
   );
 }
