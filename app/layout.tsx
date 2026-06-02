@@ -12,11 +12,16 @@ export const metadata: Metadata = {
     "We help HVAC companies book more jobs without hiring more office staff. 24/7 AI receptionist, estimate follow-up, review automation, and AI search visibility — done for you.",
   openGraph: {
     type: "website",
-    url: "https://autogrowthai.co",
+    url: "https://www.autogrowthai.co",
     siteName: "AutoGrowth AI",
   },
   twitter: { card: "summary_large_image" },
-  metadataBase: new URL("https://autogrowthai.co"),
+  // www host — matches sitemap.ts and all JSON-LD, so canonicals stay consistent.
+  metadataBase: new URL("https://www.autogrowthai.co"),
+  // Self-referencing canonical. Next resolves "./" against the current route
+  // path, so every page inherits a canonical pointing at its own URL unless it
+  // overrides alternates.canonical itself.
+  alternates: { canonical: "./" },
 };
 
 export default function RootLayout({
