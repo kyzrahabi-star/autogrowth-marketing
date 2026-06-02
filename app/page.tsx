@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Search, PenTool, Zap, MessageSquare, Star, Check, type LucideIcon } from "lucide-react";
 import { ORGANIZATION_SCHEMA, buildFaqSchema } from "@/lib/seo-data";
+import { RevenueCalculator } from "@/components/RevenueCalculator";
 
 export default function HomePage() {
   const specialists: Array<{ Icon: LucideIcon; name: string; description: string }> = [
@@ -605,6 +606,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── 2.75 REVENUE CALCULATOR ── */}
+      <RevenueCalculator />
 
       {/* ── 3. THE SOLUTION ── */}
       <section className="py-20 px-6 lg:px-8 bg-white">
