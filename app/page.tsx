@@ -193,6 +193,20 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* BLUF */}
+      <section className="bg-white px-6 lg:px-8 pb-10">
+        <div className="max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl font-bold text-gray-900 leading-relaxed">
+            HVAC companies lose $3,000&ndash;$15,000 a month to calls that go
+            unanswered, estimates that never get a follow-up, and reviews that
+            never get asked for. AutoGrowth AI is a done-for-you AI staff that
+            plugs those leaks 24/7 &mdash; answering every call, chasing every
+            estimate, and earning 5-star Google reviews automatically. No new
+            hires, no software to learn, live in under a week.
+          </p>
+        </div>
+      </section>
+
       {/* Revenue-first tagline band */}
       <section className="bg-gray-50 border-y border-gray-200 py-6 px-6 lg:px-8">
         <p className="max-w-3xl mx-auto text-center text-base sm:text-lg text-gray-700">

@@ -262,6 +262,13 @@ export default function PricingPage() {
           <p className="text-gray-600">
             Start with a free audit. Upgrade when you&apos;re ready.
           </p>
+          <p className="max-w-2xl mx-auto mt-6 text-base sm:text-lg font-bold text-gray-900 leading-relaxed">
+            Every plan pays for itself by recovering revenue you&apos;re already
+            losing &mdash; $3,000&ndash;$15,000 a month in missed calls, unsold
+            estimates, and un-asked-for reviews. Plans start at $997/mo with no
+            contract, and most clients are live within a week. Not sure which
+            tier fits? Start with the free audit and we&apos;ll show you the math.
+          </p>
         </div>
 
         {/* Pricing cards */}
