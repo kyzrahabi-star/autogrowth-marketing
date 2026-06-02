@@ -206,8 +206,9 @@ export function Navbar() {
           <div className="hidden md:flex items-center gap-4">
             <a
               href="tel:+18449102116"
-              className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
+              className="flex items-center gap-1.5 text-sm font-semibold text-gray-900 hover:text-emerald-600 transition-colors"
             >
+              <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
               (844) 910-2116
             </a>
             <Link
@@ -405,8 +406,9 @@ export function Navbar() {
             </Link>
             <a
               href="tel:+18449102116"
-              className="text-sm text-gray-500"
+              className="flex items-center gap-1.5 text-sm font-semibold text-gray-900"
             >
+              <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
               (844) 910-2116
             </a>
           </div>
