@@ -3,6 +3,10 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { HVAC_CITY_PAGES } from "@/lib/hvac-cities";
+import {
+  SERVICE_PAGES,
+  COMPARISON_PAGES,
+} from "@/lib/hvac-service-comparison";
 
 const BASE = "https://www.autogrowthai.co";
 
@@ -32,6 +36,7 @@ const STATIC_PAGES: StaticEntry[] = [
   { path: "/contact", changeFrequency: "monthly", priority: 0.7 },
   { path: "/demo", changeFrequency: "monthly", priority: 0.7 },
   { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
+  { path: "/compare", changeFrequency: "monthly", priority: 0.8 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3 },
   // Industry pages
@@ -77,6 +82,26 @@ function getHvacCityPages() {
   }));
 }
 
+function getServicePages() {
+  const now = new Date();
+  return SERVICE_PAGES.map((p) => ({
+    url: `${BASE}/hvac/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+}
+
+function getComparisonPages() {
+  const now = new Date();
+  return COMPARISON_PAGES.map((p) => ({
+    url: `${BASE}/compare/${p.slug}`,
+    lastModified: now,
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+}
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
   const staticEntries = STATIC_PAGES.map((p) => ({
@@ -85,5 +110,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: p.changeFrequency,
     priority: p.priority,
   }));
-  return [...staticEntries, ...getHvacCityPages(), ...getBlogPosts()];
+  return [
+    ...staticEntries,
+    ...getHvacCityPages(),
+    ...getServicePages(),
+    ...getComparisonPages(),
+    ...getBlogPosts(),
+  ];
 }
