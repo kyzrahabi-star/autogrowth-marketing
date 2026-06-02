@@ -30,6 +30,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: post.title,
     description: post.excerpt,
+    alternates: { canonical: `/blog/${params.slug}` },
     openGraph: {
       title: post.title,
       description: post.excerpt,
@@ -51,10 +52,11 @@ export default function BlogPostPage({ params }: Props) {
 
   const articleSchema = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
+    dateModified: post.date,
     author: {
       "@type": "Organization",
       name: post.author,
@@ -95,7 +97,7 @@ export default function BlogPostPage({ params }: Props) {
             <p className="text-gray-600">{post.excerpt}</p>
           </div>
 
-          <div className="mdx-content text-gray-700 leading-relaxed space-y-4">
+          <div className="mdx-content blog-body text-gray-700 leading-relaxed space-y-4">
             <MDXRemote source={post.content} />
           </div>
         </div>

@@ -63,3 +63,8 @@
 .mdx-content code { @apply bg-gray-100 text-emerald-700 px-1.5 py-0.5 rounded text-sm font-mono; }
 .mdx-content pre { @apply bg-gray-50 border border-gray-200 rounded-xl p-4 overflow-x-auto mb-4; }
 .mdx-content pre code { @apply bg-transparent p-0; }
+
+/* BLUF: bold, lead-styled first paragraph on blog posts */
+.blog-body > p:first-child {
+  @apply font-bold text-gray-900 text-lg leading-relaxed;
+}
