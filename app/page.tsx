@@ -164,31 +164,25 @@ export default function HomePage() {
           </h1>
           <p className="text-xl text-gray-600 leading-relaxed mb-10 max-w-2xl mx-auto">
             AutoGrowth AI recovers your missed calls, follows up on unsold
-            estimates, generates 5-star Google reviews, and covers your phones
-            24/7 &mdash; so you make more money without adding headcount.
+            estimates, generates 5-star Google reviews, covers your phones 24/7,
+            and makes sure AI search engines recommend you &mdash; so you make
+            more money without adding headcount.
           </p>
 
-          <form
-            action="/audit"
-            method="GET"
-            className="flex items-center bg-white rounded-full shadow-lg border border-gray-200 p-2 max-w-lg mx-auto mb-4"
-          >
-            <input
-              type="text"
-              name="q"
-              placeholder="Find your business name"
-              className="flex-1 min-w-0 px-4 py-2 bg-transparent outline-none text-gray-900 text-sm placeholder-gray-400"
-            />
-            <button
-              type="submit"
-              className="shrink-0 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-5 py-2.5 rounded-full text-sm transition-colors flex items-center gap-2"
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4">
+            <a
+              href="tel:8449102116"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-7 py-4 rounded-full text-base transition-colors shadow-sm"
             >
-              See Where You&apos;re Missing
-              <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true">
-                <path d="M3 7h8M7 3l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-          </form>
+              Call 844-910-2116 &mdash; Hear Your AI Employee
+            </a>
+            <Link
+              href="/audit"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-white hover:bg-gray-50 text-gray-900 font-semibold px-7 py-4 rounded-full text-base transition-colors border border-gray-300"
+            >
+              Get Your Free Audit
+            </Link>
+          </div>
           <p className="text-sm text-gray-500">⚡ Free audit. No credit card. Results in under 3 minutes.</p>
         </div>
       </section>
