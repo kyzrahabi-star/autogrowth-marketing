@@ -211,8 +211,8 @@ export default function HomePage() {
         </p>
       </section>
 
-      {/* Dashboard mockup */}
-      <section className="relative overflow-hidden bg-white py-16 px-4 sm:px-6 lg:px-8">
+      {/* Dashboard mockup — desktop only (hidden on mobile under 768px) */}
+      <section className="relative overflow-hidden bg-white py-16 px-4 sm:px-6 lg:px-8 hidden md:block">
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
@@ -607,7 +607,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/audit"
-              className="inline-flex items-center justify-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors shadow-sm"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors shadow-sm"
             >
               See How Much You&apos;re Leaking → Get Your Free Audit
             </Link>
@@ -675,7 +675,7 @@ export default function HomePage() {
           <div className="mt-14 text-center">
             <Link
               href="/audit"
-              className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+              className="inline-flex items-center justify-center w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
             >
               Start with a free audit →
             </Link>
@@ -740,7 +740,7 @@ export default function HomePage() {
             </p>
             <p className="text-gray-500 mt-2">No contracts. Cancel any time.</p>
           </div>
-          <div className="grid sm:grid-cols-3 gap-6 mt-10">
+          <div className="grid md:grid-cols-3 gap-6 mt-10">
             {pricingTiers.map((tier) => (
               <div
                 key={tier.name}
@@ -870,7 +870,7 @@ export default function HomePage() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full text-sm transition-colors"
+              className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-6 py-3 rounded-full text-sm transition-colors"
             >
               Get Started →
             </Link>
@@ -984,7 +984,7 @@ export default function HomePage() {
           </p>
           <Link
             href="/audit"
-            className="inline-flex items-center justify-center bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
+            className="inline-flex items-center justify-center w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full transition-colors text-base"
           >
             Get Your Free Audit →
           </Link>

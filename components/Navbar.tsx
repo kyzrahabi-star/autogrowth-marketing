@@ -226,15 +226,15 @@ export function Navbar() {
           </div>
 
           {/* Mobile right side */}
-          <div className="flex md:hidden items-center gap-3">
+          <div className="flex md:hidden items-center gap-2">
             <a
               href="/audit"
-              className="bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-4 py-2 rounded-full text-xs transition-colors"
+              className="inline-flex items-center justify-center min-h-[44px] bg-emerald-500 hover:bg-emerald-600 text-white font-medium px-4 py-2 rounded-full text-sm transition-colors"
             >
               Free Audit
             </a>
             <button
-              className="text-gray-600 hover:text-gray-900 p-1.5"
+              className="flex items-center justify-center min-h-[44px] min-w-[44px] text-gray-600 hover:text-gray-900"
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
             >
@@ -396,20 +396,21 @@ export function Navbar() {
           </Link>
 
           {/* Contact + phone */}
-          <div className="border-t border-gray-100 pt-4 mt-2 flex flex-col gap-3">
+          <div className="border-t border-gray-100 pt-2 mt-2 flex flex-col">
             <Link
               href="/contact"
-              className="text-sm text-gray-600"
+              className="flex items-center min-h-[44px] py-3 text-sm font-medium text-gray-700"
               onClick={() => setMobileOpen(false)}
             >
               Contact
             </Link>
+            {/* Tap-to-call CTA */}
             <a
-              href="tel:+18449102116"
-              className="flex items-center gap-1.5 text-sm font-semibold text-gray-900"
+              href="tel:8449102116"
+              className="flex items-center justify-center gap-2 min-h-[44px] mt-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 rounded-full text-sm transition-colors"
             >
-              <Phone className="w-4 h-4 text-emerald-500 shrink-0" />
-              (844) 910-2116
+              <Phone className="w-4 h-4 shrink-0" />
+              Call (844) 910-2116
             </a>
           </div>
         </div>

@@ -15,6 +15,25 @@
     color: #111827;
     font-weight: 500;
   }
+  /* Responsive images everywhere — never overflow their container */
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+/* Mobile readability: enforce a 16px minimum on body copy (paragraphs and
+   list items) so text is legible without zooming. Element+class specificity
+   beats Tailwind's text-sm/text-xs utilities, while leaving small UI labels,
+   pills, and badges (rendered as <span>) at their intended size. */
+@media (max-width: 767px) {
+  p.text-sm,
+  p.text-xs,
+  li.text-sm,
+  li.text-xs {
+    font-size: 16px;
+    line-height: 1.55;
+  }
 }
 
 @layer utilities {
