@@ -86,7 +86,7 @@ export default function PlumbingPage() {
           </p>
           <a
             href="#waitlist"
-            className="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
           >
             Join the Plumbing Waitlist
             <ArrowRight className="w-4 h-4" />
@@ -217,7 +217,7 @@ export default function PlumbingPage() {
           </p>
           <Link
             href="/how-it-works"
-            className="inline-flex items-center gap-2 text-white border border-white/20 hover:border-white/40 font-medium px-6 py-3 rounded-xl text-sm transition-colors"
+            className="inline-flex items-center justify-center gap-2 w-full sm:w-auto text-white border border-white/20 hover:border-white/40 font-medium px-6 py-3 rounded-xl text-sm transition-colors"
           >
             See how AutoGrowth AI works
             <ArrowRight className="w-4 h-4" />
