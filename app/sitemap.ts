@@ -36,6 +36,7 @@ const STATIC_PAGES: StaticEntry[] = [
   { path: "/contact", changeFrequency: "monthly", priority: 0.7 },
   { path: "/demo", changeFrequency: "monthly", priority: 0.7 },
   { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
+  { path: "/hvac-ai-receptionist-guide", changeFrequency: "monthly", priority: 0.9 },
   { path: "/compare", changeFrequency: "monthly", priority: 0.8 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.3 },

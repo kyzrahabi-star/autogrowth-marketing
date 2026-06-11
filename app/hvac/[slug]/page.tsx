@@ -281,6 +281,22 @@ export default function HvacCityServicePage({ params }: Props) {
         {/* Related — same service in other cities + same city other services */}
         <section className="px-6 lg:px-8 pb-24">
           <div className="max-w-3xl mx-auto space-y-10">
+            <div>
+              <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
+                Go deeper
+              </p>
+              <Link
+                href="/hvac-ai-receptionist-guide"
+                className="group block bg-white border border-gray-200 hover:border-emerald-300 hover:shadow-md rounded-xl px-5 py-4 transition-all"
+              >
+                <p className="text-xs text-gray-500 mb-0.5">Pillar guide</p>
+                <p className="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
+                  The Ultimate Guide to HVAC AI Receptionists &amp; Lead Recovery
+                  Systems →
+                </p>
+              </Link>
+            </div>
+
             {sameService.length > 0 && (
               <div>
                 <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
@@ -375,6 +391,22 @@ function HvacServicePage({ slug }: { slug: string }) {
       ctaBody="Free audit. We scan your Google presence, reviews, website, and AI search visibility, then show you exactly how many calls you're missing and what they're worth."
       related={
         <div className="space-y-10">
+          <div>
+            <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
+              Go deeper
+            </p>
+            <Link
+              href="/hvac-ai-receptionist-guide"
+              className="group block bg-white border border-gray-200 hover:border-emerald-300 hover:shadow-md rounded-xl px-5 py-4 transition-all"
+            >
+              <p className="text-xs text-gray-500 mb-0.5">Pillar guide</p>
+              <p className="font-semibold text-gray-900 group-hover:text-emerald-600 transition-colors">
+                The Ultimate Guide to HVAC AI Receptionists &amp; Lead Recovery
+                Systems →
+              </p>
+            </Link>
+          </div>
+
           {spokes.length > 0 && (
             <div>
               <p className="text-xs font-semibold text-gray-400 uppercase tracking-widest mb-4">
